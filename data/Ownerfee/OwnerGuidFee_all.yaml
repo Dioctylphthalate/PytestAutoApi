@@ -10,11 +10,11 @@ allOwnerGuidFee_01:
     url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
     method: POST
     detail: 查询客户欠费
-    headers: $cache{header}
+    headers:
       # 这里cookie的值，写的是存入缓存的名称
-#      Authorization: $cache{Authorization}
-#      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
-#      Content-Type: application/json
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
     # 请求的数据，是 params 还是 json、或者file、data
     requestType: json
     # 是否执行，空或者 true 都会执行
