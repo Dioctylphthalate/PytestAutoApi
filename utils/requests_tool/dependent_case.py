@@ -256,5 +256,7 @@ class DependentCase:
                 yaml_case = self.__yaml_case
                 _new_data = jsonpath_replace(change_data=_change_data, key_name='yaml_case')
                 # 最终提取到的数据,转换成 __yaml_case.data
-                _new_data += ' = ' + str(value)
+                # _new_data += ' = ' + str(value)     # 原类型，缺少引号程序报错（2023-08-23），可以看情况调整
+                _new_data += ' = ' + '"' + str(value) + '"'
                 exec(_new_data)
+

@@ -1,56 +1,59 @@
 # 公共参数
 case_common:
-  allureEpic: 开发平台接口
+  allureEpic: 测试平台接口
   allureFeature: 登录模块
   allureStory: 登录
 
 login_01:
     host: ${{host()}}
-    url: /user/login
+    url: /api/auth/oauth/token
     method: POST
     detail: 正常登录
     headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+      Authorization: Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=
 #      Content-Type: multipart/form-data;
     # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
+    requestType: params
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      username: '18800000001'
-      password: '123456'
+      grant_type: password
+      username: xXCyGNhXS23YpIdfE/PrHw==
+      password: xXCyGNhXS23YpIdfE/PrHw==
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
     dependence_case_data:
+
+#    current_request_set_cache:
+#      # 断言接口状态码
+#      - type: response
+#        jsonpath: $.access_token
+#          # 自定义的缓存名称
+#        name: Authorization
     assert:
       # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: 0
-        AssertType:
-      # 断言接口返回的username
-      username:
-        jsonpath: $.data.username
-        type: ==
-        value: '18800000001'
-        AssertType:
+      status_code: 200
     sql:
 
 login_02:
     host: ${{host()}}
-    url: /user/login
+    url: /api/auth/oauth/token
     method: POST
     detail: 输入错误的密码
     headers:
-      Content-Type: multipart/form-data;
+      Authorization: Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=
+#      Content-Type: multipart/form-data;
     # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
+    requestType: params
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      username: '18800000001'
-      password: '12345'
+      grant_type: password
+      username: xXCyGNhXS23YpIdfE/PrHw==
+      password: xXCyGNhXS23YpIdfE/PrH
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
@@ -58,31 +61,33 @@ login_02:
     assert:
       # 断言接口状态码
       errorCode:
-        jsonpath: $.errorCode
+        jsonpath: $.code
         type: ==
-        value: -1
+        value: 510
         AssertType:
       # 断言接口返回的username
       errorMsg:
-        jsonpath: $.errorMsg
+        jsonpath: $.message
         type: ==
-        value: "账号密码不匹配！"
+        value: "账号或密码不正确"
         AssertType:
     sql:
 
 login_03:
     host: ${{host()}}
-    url: /user/login
+    url: /api/auth/oauth/token
     method: POST
     detail: 登录密码为空
     headers:
-      Content-Type: multipart/form-data;
+      Authorization: Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=
+#      Content-Type: multipart/form-data;
     # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
+    requestType: params
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      username: '18800000001'
+      grant_type: password
+      username: xXCyGNhXS23YpIdfE/PrHw==
       password:
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
@@ -91,179 +96,16 @@ login_03:
     assert:
       # 断言接口状态码
       errorCode:
-        jsonpath: $.errorCode
+        jsonpath: $.code
         type: ==
-        value: -1
+        value: 510
         AssertType:
       # 断言接口返回的username
       errorMsg:
-        jsonpath: $.errorMsg
+        jsonpath: $.message
         type: ==
-        value: "账号密码不匹配！"
+        value: "账号或密码不正确"
         AssertType:
     sql:
 
-login_04:
-    host: ${{host()}}
-    url: /user/login
-    method: POST
-    detail: 输入非1开头的手机号码
-    headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
-    # 是否执行，空或者 true 都会执行
-    is_run:
-    data:
-      username: '28800000001'
-      password: '12345'
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
-        # 依赖的数据
-    dependence_case_data:
-    assert:
-      # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: -1
-        AssertType:
-      # 断言接口返回的username
-      errorMsg:
-        jsonpath: $.errorMsg
-        type: ==
-        value: "账号密码不匹配！"
-        AssertType:
-    sql:
 
-login_05:
-    host: ${{host()}}
-    url: /user/login
-    method: POST
-    detail: 输入手机号码小于11位
-    headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
-    # 是否执行，空或者 true 都会执行
-    is_run:
-    data:
-      username: '1880000000'
-      password: '12345'
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
-        # 依赖的数据
-    dependence_case_data:
-    assert:
-      # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: -1
-        AssertType:
-      # 断言接口返回的username
-      errorMsg:
-        jsonpath: $.errorMsg
-        type: ==
-        value: "账号密码不匹配！"
-        AssertType:
-    sql:
-
-login_06:
-    host: ${{host()}}
-    url: /user/login
-    method: POST
-    detail: 输入手机号码大于于11位
-    headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
-    # 是否执行，空或者 true 都会执行
-    is_run:
-    data:
-      username: '18800000000'
-      password: '12345'
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
-        # 依赖的数据
-    dependence_case_data:
-    assert:
-      # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: -1
-        AssertType:
-      # 断言接口返回的username
-      errorMsg:
-        jsonpath: $.errorMsg
-        type: ==
-        value: "账号密码不匹配！"
-        AssertType:
-    sql:
-
-login_07:
-    host: ${{host()}}
-    url: /user/login
-    method: POST
-    detail: 手机号码为空
-    headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
-    # 是否执行，空或者 true 都会执行
-    is_run:
-    data:
-      username:
-      password: '12345'
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
-        # 依赖的数据
-    dependence_case_data:
-    assert:
-      # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: -1
-        AssertType:
-      # 断言接口返回的username
-      errorMsg:
-        jsonpath: $.errorMsg
-        type: ==
-        value: "账号密码不匹配！"
-        AssertType:
-    sql:
-
-login_08:
-    host: ${{host()}}
-    url: /user/login
-    method: POST
-    detail: 手机号码首位包含空格
-    headers:
-      Content-Type: multipart/form-data;
-    # 请求的数据，是 params 还是 json、或者file、data
-    requestType: data
-    # 是否执行，空或者 true 都会执行
-    is_run:
-    data:
-      username: ' 18867507063 '
-      password: '12345'
-      # 是否有依赖业务，为空或者false则表示没有
-    dependence_case: False
-        # 依赖的数据
-    dependence_case_data:
-    assert:
-      # 断言接口状态码
-      errorCode:
-        jsonpath: $.errorCode
-        type: ==
-        value: -1
-        AssertType:
-      # 断言接口返回的username
-      errorMsg:
-        jsonpath: $.errorMsg
-        type: ==
-        value: "账号密码不匹配！"
-        AssertType:
-    sql:

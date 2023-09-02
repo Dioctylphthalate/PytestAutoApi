@@ -2,12 +2,18 @@ project_name: xxx项目名称
 
 env: 测试环境
 # 测试人员名称，作用于自动生成代码的作者，以及发送企业微信、钉钉通知的测试负责人
-tester_name: 七月
+tester_name: OvO
 
 # 域名1
-host: https://www.wanandroid.com
+host: http://ceshi.es-iot.cn
 # 域名2，支持多个域名配置
-app_host:
+app_host: ""
+# 请求头
+#head:
+#  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+#  Content-Type: application/json
+#  Authorization: $cache{Authorization}
+
 
 # 实时更新用例内容，False时，已生成的代码不会在做变更
 # 设置为True的时候，修改yaml文件的用例，代码中的内容会实时更新
@@ -31,18 +37,19 @@ ding_talk:
 # 数据库相关配置
 mysql_db:
   # 数据库开关
-  switch: False
-  host:
-  user: root
-  password: '123456'
+  switch: True
+  host: 8.142.109.36
+  user: easysoft_user
+  password: ABCabc123+
   port: 3306
+  database: maindb
 
 # 镜像源
 mirror_source: http://mirrors.aliyun.com/pypi/simple/
 
 # 企业通知的相关配置
 wechat:
-  webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=22748687-fa3b-4e48-a5d7-0502cef422b4
+  webhook:
 
 
 ### 邮箱必填，需要全部都配置好，程序运行失败时，会发送邮件通知!!!!
@@ -50,12 +57,12 @@ wechat:
 ### 邮箱必填，需要全部都配置好，程序运行失败时，会发送邮件通知!!!!
 ### 重要的事情说三遍
 email:
-  send_user:
+  send_user: ww
   email_host: smtp.qq.com
   # 自己到QQ邮箱中配置stamp_key
-  stamp_key:
+  stamp_key: vjmbjtfsmwmibfba
   # 收件人改成自己的邮箱
-  send_list:
+  send_list: 577253100@qq.com
 
 # 飞书通知
 lark:

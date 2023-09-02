@@ -7,6 +7,7 @@ import time
 import allure
 import requests
 import ast
+import json
 from common.setting import ensure_path_sep
 from utils.requests_tool.request_control import cache_regular
 from utils.logging_tool.log_control import INFO, ERROR, WARNING
@@ -29,24 +30,28 @@ def work_login_init():
     :return:
     """
 
-    url = "https://www.wanandroid.com/user/login"
+    url = "http://ceshi.es-iot.cn/api/auth/oauth/token"
     data = {
-        "username": 18800000001,
-        "password": 123456
+        "grant_type": "password",
+        "username": "xXCyGNhXS23YpIdfE/PrHw==",
+        "password": "xXCyGNhXS23YpIdfE/PrHw=="
     }
-    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口
 
-    res = requests.post(url=url, data=data, verify=True, headers=headers)
-    response_cookie = res.cookies
+    res = requests.post(url=url, params=data, verify=True, headers=headers)
+    response_cookie = json.loads(res.content)
 
     cookies = ''
-    for k, v in response_cookie.items():
-        _cookie = k + "=" + v + ";"
-        # 拿到登录的cookie内容，cookie拿到的是字典类型，转换成对应的格式
-        cookies += _cookie
-        # 将登录接口中的cookie写入缓存中，其中login_cookie是缓存名称
-    CacheHandler.update_cache(cache_name='login_cookie', value=cookies)
+    k = response_cookie["token_type"]
+    v = response_cookie["access_token"]
+    _cookie = k + " " + v
+    # 拿到登录的cookie内容，cookie拿到的是字典类型，转换成对应的格式
+    cookies += _cookie
+    # 将登录接口中的cookie写入缓存中，其中Authorization是缓存名称
+    CacheHandler.update_cache(cache_name='Authorization', value=cookies)
+    # head = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\ Content-Type: application/json Authorization: ' + cookies
+    # CacheHandler.update_cache(cache_name='header', value=head)
 
 
 def pytest_collection_modifyitems(items):
@@ -123,3 +128,6 @@ def pytest_terminal_summary(terminalreporter):
         INFO.logger.info("用例成功率: %.2f" % _RATE + " %")
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
+
+
+

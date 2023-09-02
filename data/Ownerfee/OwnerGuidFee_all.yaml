@@ -1,0 +1,109 @@
+# 公共参数
+case_common:
+  allureEpic: 开发平台接口
+  allureFeature: 收藏模块
+  allureStory: 收藏网址接口
+
+
+allOwnerGuidFee_01:
+    host: ${{host()}}
+    url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
+    method: POST
+    detail: 查询客户欠费
+    headers: $cache{header}
+      # 这里cookie的值，写的是存入缓存的名称
+#      Authorization: $cache{Authorization}
+#      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+#      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldAreaGuid: 33734acda31f4c1888771a04d11efa26
+      fldOwnerGuid: 0deda6e121f9414b9b3e77239de1b825
+      fldPublicGuid: ""
+      fldCurObjectGuid: 952a8c37bdf34d7a8133efe7267a2952
+      fldSelObjectGuidList:
+        - 952a8c37bdf34d7a8133efe7267a2952
+
+    dependence_case: False
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+
+    current_request_set_cache:
+      - type: response
+        jsonpath: $.success
+        # 自定义的缓存名称
+        name: yushaoqi_sql
+      - type: response
+        jsonpath: $.message
+        # 自定义的缓存名称
+        name: msg
+
+
+    sql:
+    teardown:
+#      - case_id: collect_delete_tool_01
+#        send_request:
+#          - dependent_type: response
+#            jsonpath: $.data.id
+#            replace_key: $.data.id
+
+    teardown_sql:
+#      - UPDATE `api_test`.`ysq_test` SET `name` = '$json($.data.id)$' WHERE `name` = '2' LIMIT 1
+
+allOwnerGuidFee_02:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
+  method: POST
+  detail: 查询客户欠费
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    kk: $cache{yushaoqi_sql}
+    name: $cache{msg}
+    link: 123
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: True
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.name
+          replace_key: $.data.link
+
+  assert:
+    status_code: 200
+    # 断言接口状态码
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.errorCode
+      type: ==
+      value: -1001
+      AssertType:
+    errorMsg:
+      jsonpath: $.errorMsg
+      type: ==
+      value: '请先登录！'
+      AssertType:
+  sql:
+    - SELECT CONCAT('"',UUID(),'"')  as name
+  setup_sql:
+    - SELECT UUID()  as name
