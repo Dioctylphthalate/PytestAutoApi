@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-09-04.log:log_decorator.py:42 
+======================================================
+用例标题: 正常登录
+请求路径: http://ceshi.es-iot.cn/api/auth/oauth/token?grant_type=password&username=xXCyGNhXS23YpIdfE/PrHw==&password=xXCyGNhXS23YpIdfE/PrHw==
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {"access_token":"6ab2e0b4-8501-48af-9ded-f007bdc5b6b4","token_type":"bearer","refresh_token":"3291a806-9e37-47fe-a3f7-4c120fc55407","expires_in":20105,"scope":"all","code":200}
+接口响应时长: 153 ms
+Http状态码: 200
+=====================================================

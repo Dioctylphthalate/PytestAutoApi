@@ -1,4 +1,4 @@
-project_name: xxx项目名称
+project_name: 收费系统
 
 env: 测试环境
 # 测试人员名称，作用于自动生成代码的作者，以及发送企业微信、钉钉通知的测试负责人
@@ -57,10 +57,11 @@ wechat:
 ### 邮箱必填，需要全部都配置好，程序运行失败时，会发送邮件通知!!!!
 ### 重要的事情说三遍
 email:
-  send_user: ww
+  send_user: ftfvr
+  # 邮件服务器地址
   email_host: smtp.qq.com
   # 自己到QQ邮箱中配置stamp_key
-  stamp_key: vjmbjtfsmwmibfba
+  stamp_key: xbhrtqcoghrobded
   # 收件人改成自己的邮箱
   send_list: 577253100@qq.com
 

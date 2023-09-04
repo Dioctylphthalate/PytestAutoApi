@@ -28,7 +28,7 @@ class SendEmail:
         @param content: 发送内容
         @return:
         """
-        user = "余少琪" + "<" + config.email.send_user + ">"
+        user = "OvO" + "<" + config.email.send_user + ">"
         message = MIMEText(content, _subtype='plain', _charset='utf-8')
         message['Subject'] = sub
         message['From'] = user
@@ -74,8 +74,8 @@ class SendEmail:
         {self.allure_data.get_failed_cases_detail()}
 
         **********************************
-        jenkins地址：https://121.xx.xx.47:8989/login
-        详细情况可登录jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
+        Elastic地址：39.103.172.80:5601/app/home
+        详细情况可登录Elastic平台查看，非相关负责人员可忽略此消息。谢谢。
         """
         self.send_mail(user_list, sub, content)
 
