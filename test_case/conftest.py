@@ -17,7 +17,7 @@ from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_
 from utils.cache_process.cache_control import CacheHandler
 
 
-@pytest.fixture(scope="session", autouse=False)
+@pytest.fixture(scope="session", autouse=True)
 def clear_report():
     """如clean命名无法删除报告，这里手动删除"""
     del_file(ensure_path_sep("\\report"))
@@ -65,8 +65,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_get_user_info", "test_collect_addtool", "test_Cart_List", "test_ADD", "test_Guest_ADD",
-                     "test_Clear_Cart_Item"]
+    appoint_items = ["test_login", "test_OwnerGuidFee_all"]    # test_case 文件夹中的测试用例文件运行顺序
 
     # 指定运行顺序
     run_items = []
