@@ -96,7 +96,7 @@ allOwnerGuidFee_02:
     # 断言接口状态码
       jsonpath: $.errorCode
       type: ==
-      value: -1001
+      value: 200
       AssertType:
     errorMsg:
       jsonpath: $.errorMsg
