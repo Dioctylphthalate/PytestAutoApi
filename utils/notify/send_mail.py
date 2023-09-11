@@ -74,8 +74,8 @@ class SendEmail:
         {self.allure_data.get_failed_cases_detail()}
 
         **********************************
-        Elastic地址：39.103.172.80:5601/app/home
-        详细情况可登录Elastic平台查看，非相关负责人员可忽略此消息。谢谢。
+        Jenkins地址：http://127.0.0.1:9999/
+        详细情况可登录Jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
         """
         self.send_mail(user_list, sub, content)
 
