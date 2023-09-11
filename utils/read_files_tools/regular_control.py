@@ -7,7 +7,7 @@ import re
 import datetime
 import random
 from datetime import date, timedelta, datetime
-from jsonpath import jsonpath
+# from jsonpath import jsonpath
 from faker import Faker
 from utils.logging_tool.log_control import ERROR
 
@@ -107,12 +107,12 @@ class Context:
         return config.app_host
 
 
-def sql_json(js_path, res):
-    """ 提取 sql中的 json 数据 """
-    _json_data = jsonpath(res, js_path)[0]
-    if _json_data is False:
-        raise ValueError(f"sql中的jsonpath获取失败 {res}, {js_path}")
-    return jsonpath(res, js_path)[0]
+# def sql_json(js_path, res):
+#     """ 提取 sql中的 json 数据 """
+#     _json_data = jsonpath(res, js_path)[0]
+#     if _json_data is False:
+#         raise ValueError(f"sql中的jsonpath获取失败 {res}, {js_path}")
+#     return jsonpath(res, js_path)[0]
 
 
 def sql_regular(value, res=None):
