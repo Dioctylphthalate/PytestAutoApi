@@ -107,5 +107,6 @@ login_03:
         value: "账号或密码不正确"
         AssertType:
     sql:
+      - SELECT UUID()  as name
 
 

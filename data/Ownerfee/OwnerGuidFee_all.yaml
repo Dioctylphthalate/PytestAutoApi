@@ -104,6 +104,7 @@ allOwnerGuidFee_02:
       value: '请先登录！'
       AssertType:
   sql:
+    - SELECT UUID()  as name
 
   setup_sql:
     - SELECT UUID()  as name

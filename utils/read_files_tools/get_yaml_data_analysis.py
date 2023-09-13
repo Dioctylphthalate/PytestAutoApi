@@ -403,7 +403,3 @@ class GetTestCase:
 
         return case_lists
 
-
-if __name__ == '__main__':
-    a = CaseData(r'D:\work_code\pytest-auto-api2\data\Collect\collect_addtool.yaml').case_process()
-    print(a)
