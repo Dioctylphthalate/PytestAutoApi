@@ -74,7 +74,7 @@ class SendEmail:
         {self.allure_data.get_failed_cases_detail()}
 
         **********************************
-        Jenkins地址：http://127.0.0.1:9999/
+        Jenkins地址：http://192.168.1.137:8080/
         详细情况可登录Jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
         """
         self.send_mail(user_list, sub, content)
