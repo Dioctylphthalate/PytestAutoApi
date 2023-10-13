@@ -68,13 +68,15 @@ def run():
 
         # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
         # os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
-        SendEmail(AllureFileClean().get_case_count()).send_main()
+
     except Exception:
         # 如有异常，相关异常发送邮件
         e = traceback.format_exc()
         send_email = SendEmail(AllureFileClean.get_case_count())
         send_email.error_mail(e)
         raise
+    else:
+        SendEmail(AllureFileClean().get_case_count()).send_main()
 
 
 if __name__ == '__main__':
