@@ -33,8 +33,8 @@ class SendEmail:
         message['Subject'] = sub
         message['From'] = user
         message['To'] = ";".join(user_list)
-        server = smtplib.SMTP()
-        server.connect(config.email.email_host)
+        server = smtplib.SMTP_SSL(config.email.email_host, 465)
+        # server.connect(config.email.email_host)
         server.login(config.email.send_user, config.email.stamp_key)
         server.sendmail(user, user_list, message.as_string())
         server.close()
@@ -78,6 +78,7 @@ class SendEmail:
         详细情况可登录Jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
         """
         self.send_mail(user_list, sub, content)
+        print('发送成功')
 
 
 if __name__ == '__main__':
