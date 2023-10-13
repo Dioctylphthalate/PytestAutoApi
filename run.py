@@ -76,7 +76,9 @@ def run():
         send_email.error_mail(e)
         raise
     else:
+        # 如果执行没有异常，自动发送测试报告邮件
         SendEmail(AllureFileClean().get_case_count()).send_main()
+
 
 
 if __name__ == '__main__':
