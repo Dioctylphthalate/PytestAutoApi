@@ -30,7 +30,7 @@ def work_login_init():
     :return:
     """
 
-    url = "http://ceshi.es-iot.cn/api/auth/oauth/token"
+    url = "https://ceshi.es-iot.cn/api/auth/oauth/token"
     data = {
         "grant_type": "password",
         "username": "xXCyGNhXS23YpIdfE/PrHw==",

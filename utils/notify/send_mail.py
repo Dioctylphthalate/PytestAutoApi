@@ -78,7 +78,7 @@ class SendEmail:
         详细情况可登录Jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
         """
         self.send_mail(user_list, sub, content)
-        print('发送成功')
+        print('邮件发送成功')
 
 
 if __name__ == '__main__':

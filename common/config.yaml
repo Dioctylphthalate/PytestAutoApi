@@ -5,7 +5,7 @@ env: 测试环境
 tester_name: OvO
 
 # 域名1
-host: http://ceshi.es-iot.cn
+host: https://ceshi.es-iot.cn
 # 域名2，支持多个域名配置
 app_host: ""
 # 请求头
