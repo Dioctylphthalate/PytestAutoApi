@@ -1,0 +1,23 @@
+bankPayAccountModel:
+fldAreaGuid: 33734acda31f4c1888771a04d11efa26
+fldObjectId: 5c73116893c84bc4bf21b6c31e232642
+fldImmigrationTime:
+fldIsOwner: 0
+newAddBillModel: []
+ownerInfomationRelationOwnerVos: []
+fldRelation:
+naturalPersonModel:
+  fldCardNum:
+  fldCardType:
+  fldBirthday:
+  fldSex:
+  fldNation:
+  fldMarriage:
+  fldEducation:
+  fldName:
+    $ref: 'baseinfo.yaml#/ownerinfo'
+  fldType: 1
+legalPersonModel:
+fldOwnerGuid: 0a031367-0ca0-0a9f-494c-725c9034a003
+fldPhotoGuid:
+fldDesc:
