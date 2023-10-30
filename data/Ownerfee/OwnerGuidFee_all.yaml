@@ -43,7 +43,7 @@ allOwnerGuidFee_01:
       - type: response
         jsonpath: $.success
         # 自定义的缓存名称
-        name: yushaoqi_sql
+        name: ceshi
       - type: response
         jsonpath: $.message
         # 自定义的缓存名称
@@ -76,9 +76,9 @@ allOwnerGuidFee_02:
   # 是否执行，空或者 true 都会执行
   is_run:
   data:
-    kk: $cache{yushaoqi_sql}
+    kk: $cache{ceshi}
     name: $cache{msg}
-    link: 123
+    link: $cache{projectname}
   # 是否有依赖业务，为空或者false则表示没有
   dependence_case: True
   # 依赖的数据
@@ -87,7 +87,7 @@ allOwnerGuidFee_02:
       dependent_data:
         - dependent_type: sqlData
           jsonpath: $.name
-          replace_key: $.data.link
+          replace_key: $.data.name
 
   assert:
     status_code: 200

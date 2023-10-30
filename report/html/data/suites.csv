@@ -1,21 +1,21 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Oct 17 11:07:28 CST 2023","Tue Oct 17 11:07:28 CST 2023","496","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
+"broken","Mon Oct 30 16:53:31 CST 2023","Mon Oct 30 16:53:31 CST 2023","632","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户欠费1]","
         :param :
         :return:
         "
-"passed","Tue Oct 17 11:07:28 CST 2023","Tue Oct 17 11:07:28 CST 2023","231","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
+"passed","Mon Oct 30 16:53:30 CST 2023","Mon Oct 30 16:53:30 CST 2023","253","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
         :param :
         :return:
         "
-"broken","Tue Oct 17 11:07:29 CST 2023","Tue Oct 17 11:07:29 CST 2023","725","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户欠费1]","
+"passed","Mon Oct 30 16:53:30 CST 2023","Mon Oct 30 16:53:30 CST 2023","198","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
         :param :
         :return:
         "
-"passed","Tue Oct 17 11:07:27 CST 2023","Tue Oct 17 11:07:28 CST 2023","275","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
+"passed","Mon Oct 30 16:53:30 CST 2023","Mon Oct 30 16:53:30 CST 2023","462","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
         :param :
         :return:
         "
-"passed","Tue Oct 17 11:07:28 CST 2023","Tue Oct 17 11:07:29 CST 2023","269","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户欠费0]","
+"passed","Mon Oct 30 16:53:30 CST 2023","Mon Oct 30 16:53:31 CST 2023","226","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户欠费0]","
         :param :
         :return:
         "

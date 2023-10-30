@@ -8,6 +8,10 @@ import allure
 import requests
 import ast
 import json
+import os
+
+import yaml
+
 from common.setting import ensure_path_sep
 from utils.requests_tool.request_control import cache_regular
 from utils.logging_tool.log_control import INFO, ERROR, WARNING
@@ -26,9 +30,16 @@ def clear_report():
 @pytest.fixture(scope="session", autouse=True)
 def work_login_init():
     """
-    获取登录的cookie
+    存入基础数据缓存，获取登录的cookie
     :return:
     """
+    config_path = os.path.dirname(os.path.dirname(__file__)) + '/common'
+    file_path = os.path.join(config_path, 'basicinfo.yaml')
+    with open(file_path, 'r', encoding='utf-8') as f:
+        yaml_file = yaml.load(f, Loader=yaml.FullLoader)
+        for key in yaml_file:
+            CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
+            print(key, CacheHandler.get_cache(key))
 
     url = "https://ceshi.es-iot.cn/api/auth/oauth/token"
     data = {
@@ -38,10 +49,8 @@ def work_login_init():
     }
     headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口
-
     res = requests.post(url=url, params=data, verify=True, headers=headers)
     response_cookie = json.loads(res.content)
-
     cookies = ''
     k = response_cookie["token_type"]
     v = response_cookie["access_token"]
@@ -50,8 +59,6 @@ def work_login_init():
     cookies += _cookie
     # 将登录接口中的cookie写入缓存中，其中Authorization是缓存名称
     CacheHandler.update_cache(cache_name='Authorization', value=cookies)
-    # head = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\ Content-Type: application/json Authorization: ' + cookies
-    # CacheHandler.update_cache(cache_name='header', value=head)
 
 
 def pytest_collection_modifyitems(items):
@@ -127,6 +134,4 @@ def pytest_terminal_summary(terminalreporter):
         INFO.logger.info("用例成功率: %.2f" % _RATE + " %")
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
-
-
 
