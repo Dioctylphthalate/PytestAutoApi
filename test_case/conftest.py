@@ -39,8 +39,6 @@ def work_login_init():
         yaml_file = yaml.load(f, Loader=yaml.FullLoader)
         for key in yaml_file:
             CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
-            print(key, CacheHandler.get_cache(key))
-
     url = "https://ceshi.es-iot.cn/api/auth/oauth/token"
     data = {
         "grant_type": "password",

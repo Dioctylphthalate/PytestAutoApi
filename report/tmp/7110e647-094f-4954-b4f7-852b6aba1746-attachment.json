@@ -1,0 +1,1 @@
+"[DependentCaseData(case_id='self', dependent_data=[DependentData(dependent_type='sqlData', jsonpath='$.name', set_cache=None, replace_key='$.data.name')])]"

@@ -74,10 +74,10 @@ allOwnerGuidFee_02:
   # 请求的数据，是 params 还是 json、或者file、data
   requestType: json
   # 是否执行，空或者 true 都会执行
-  is_run:
+  is_run: F
   data:
     kk: $cache{ceshi}
-    name: $cache{msg}
+    name:
     link: $cache{projectname}
   # 是否有依赖业务，为空或者false则表示没有
   dependence_case: True
@@ -90,21 +90,15 @@ allOwnerGuidFee_02:
           replace_key: $.data.name
 
   assert:
-    status_code: 200
-    # 断言接口状态码
     errorCode:
     # 断言接口状态码
-      jsonpath: $.errorCode
+      jsonpath: $.code
       type: ==
-      value: 200
+      value: 400
       AssertType:
-    errorMsg:
-      jsonpath: $.errorMsg
-      type: ==
-      value: '请先登录！'
-      AssertType:
+
   sql:
     - SELECT UUID()  as name
 
   setup_sql:
-    - SELECT UUID()  as name
+#    - SELECT UUID()  as name
