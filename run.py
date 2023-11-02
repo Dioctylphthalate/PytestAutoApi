@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/29 15:01
-# @Author : 余少琪
+# @Author : yrgs
 import os
 import sys
 import traceback
@@ -77,7 +77,8 @@ def run():
         raise
     else:
         # 如果执行没有异常，自动发送测试报告邮件
-        SendEmail(AllureFileClean().get_case_count()).send_main()
+        # SendEmail(AllureFileClean().get_case_count()).send_main()
+        pass
 
 
 

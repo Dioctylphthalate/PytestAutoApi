@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/30 14:12
-# @Author : 余少琪
+# @Author : yrgs
 import pytest
 import time
 import allure

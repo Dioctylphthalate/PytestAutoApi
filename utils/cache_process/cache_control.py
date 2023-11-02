@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/28 15:28
-# @Author : 余少琪
+# @Author : yrgs
 
 """
 缓存文件处理
@@ -87,3 +87,4 @@ class CacheHandler:
     @staticmethod
     def update_cache(*, cache_name, value):
         _cache_config[cache_name] = value
+
