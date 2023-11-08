@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2021/11/25 13:07
-# @Author : yrgs
+# @Author : YRGS
 
 import os
 from typing import Text

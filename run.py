@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/29 15:01
-# @Author : yrgs
+# @Author : YRGS
 import os
 import sys
 import traceback
@@ -22,7 +22,7 @@ def run():
     try:
         INFO.logger.info(
             """
-                             _    _         _      _____         _
+                         _    _         _      _____         _
               __ _ _ __ (_)  / \\  _   _| |_ __|_   _|__  ___| |_
              / _` | '_ \\| | / _ \\| | | | __/ _ \\| |/ _ \\/ __| __|
             | (_| | |_) | |/ ___ \\ |_| | || (_) | |  __/\\__ \\ |_

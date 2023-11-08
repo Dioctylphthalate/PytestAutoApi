@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 # @Time   : 2022/3/28 15:44
-# @Author : yrgs
+# @Author : YRGS
 描述: 收集 allure 报告
 """
 

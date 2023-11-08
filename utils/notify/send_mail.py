@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 # @Time   : 2022/3/29 14:57
-# @Author : yrgs
+# @Author : YRGS
 描述: 发送邮件
 """
 

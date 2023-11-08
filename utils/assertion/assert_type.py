@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time   : 2022/4/22 14:49
-# @Author : yrgs
+# @Author : YRGS
 
 """
 Assert 断言类型

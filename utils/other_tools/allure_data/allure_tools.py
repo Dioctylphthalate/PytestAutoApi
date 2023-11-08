@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 # @Time   : 2022/4/7 17:53
-# @Author : yrgs
+# @Author : YRGS
 """
 import json
 import allure

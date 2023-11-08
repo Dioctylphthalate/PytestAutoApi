@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 # @Time   : 2022/3/22 13:45
-# @Author : yrgs
+# @Author : YRGS
 """
 
 from typing import Union, Text, Dict, List
@@ -42,18 +42,18 @@ class CaseData:
             # 公共配置中的数据，与用例数据不同，需要单独处理
             if key != 'case_common':
                 case_date = {
-                    'method': self.get_case_method(case_id=key, case_data=values),
-                    'is_run': self.get_is_run(key, values),
                     'url': self.get_case_host(case_id=key, case_data=values),
+                    'method': self.get_case_method(case_id=key, case_data=values),
                     'detail': self.get_case_detail(case_id=key, case_data=values),
                     'headers': self.get_headers(case_id=key, case_data=values),
                     'requestType': self.get_request_type(key, values),
+                    'is_run': self.get_is_run(key, values),
                     'data': self.get_case_dates(key, values),
                     'dependence_case': self.get_dependence_case(key, values),
                     'dependence_case_data': self.get_dependence_case_data(key, values),
                     "current_request_set_cache": self.get_current_request_set_cache(values),
-                    "sql": self.get_sql(key, values),
                     "assert_data": self.get_assert(key, values),
+                    "sql": self.get_sql(key, values),
                     "setup_sql": self.setup_sql(values),
                     "teardown": self.tear_down(values),
                     "teardown_sql": self.teardown_sql(values),
@@ -402,4 +402,6 @@ class GetTestCase:
             case_lists.append(_data)
 
         return case_lists
+
+
 
