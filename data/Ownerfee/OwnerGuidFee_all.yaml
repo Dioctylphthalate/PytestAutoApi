@@ -48,18 +48,7 @@ allOwnerGuidFee_01:
         jsonpath: $.message
         # 自定义的缓存名称
         name: msg
-
-
     sql:
-    teardown:
-#      - case_id: collect_delete_tool_01
-#        send_request:
-#          - dependent_type: response
-#            jsonpath: $.data.id
-#            replace_key: $.data.id
-
-    teardown_sql:
-#      - UPDATE `api_test`.`ysq_test` SET `name` = '$json($.data.id)$' WHERE `name` = '2' LIMIT 1
 
 allOwnerGuidFee_02:
   host: ${{host()}}
@@ -101,4 +90,3 @@ allOwnerGuidFee_02:
     - SELECT UUID()  as name
 
   setup_sql:
-#    - SELECT UUID()  as name

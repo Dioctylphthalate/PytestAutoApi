@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-11-09.log:log_decorator.py:42 
+======================================================
+用例标题: 登录密码为空
+请求路径: https://ceshi.es-iot.cn/api/auth/oauth/token?grant_type=password&username=xXCyGNhXS23YpIdfE/PrHw==&password
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {"success":false,"message":"账号或密码不正确","detail":null,"code":510,"result":"","timestamp":1699513274372}
+接口响应时长: 258 ms
+Http状态码: 200
+=====================================================
