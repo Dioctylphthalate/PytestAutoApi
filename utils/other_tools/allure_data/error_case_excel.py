@@ -37,6 +37,7 @@ class ErrorTestCase:
                 # 收集执行失败的用例数据
                 if date['status'] == 'failed' or date['status'] == 'broken':
                     files.append(date)
+        print(files)
         return files
 
     @classmethod
