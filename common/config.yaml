@@ -38,7 +38,7 @@ ding_talk:
 mysql_db:
   # 数据库开关
   switch: True
-  host: 8.142.109.36
+  host: 39.103.156.18
   user: easysoft_user
   password: ABCabc123+
   port: 3306

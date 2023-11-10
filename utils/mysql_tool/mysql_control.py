@@ -33,7 +33,8 @@ class MysqlDB:
                     host=config.mysql_db.host,
                     user=config.mysql_db.user,
                     password=config.mysql_db.password,
-                    port=config.mysql_db.port
+                    port=config.mysql_db.port,
+                    database=config.mysql_db.database
                 )
 
                 # 使用 cursor 方法获取操作游标，得到一个可以执行sql语句，并且操作结果为字典返回的游标

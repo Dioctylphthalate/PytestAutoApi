@@ -156,6 +156,7 @@ class MySqlDB(BaseModel):
     user: Union[Text, None] = None
     password: Union[Text, None] = None
     port: Union[int, None] = 3306
+    database: Union[Text, None] = None
 
 
 class Webhook(BaseModel):
