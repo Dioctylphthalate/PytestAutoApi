@@ -39,7 +39,7 @@ def work_login_init():
         yaml_file = yaml.load(f, Loader=yaml.FullLoader)
         for key in yaml_file:
             CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
-    url = "https://ceshi.es-iot.cn/api/auth/oauth/token"
+    url = "http://39.103.156.18:66/api/auth/oauth/token"
     data = {
         "grant_type": "password",
         "username": "xXCyGNhXS23YpIdfE/PrHw==",

@@ -1,10 +1,13 @@
 webhost: https://ceshi.es-iot.cn
-areaname: 麓山
+areaname: 阿斯牛牛大厦
+batchname: 1批次
 buidingname: 1栋
 garagename: A车库
 cellname: 一单元
-objectname: 3-1-1-101
-ownername: 刘欣
+objectname: 1-101
+assemblyname: 1批次/1栋/1单元     # 组合名称
+ownername: 周吴郑王
+phone: 13576854774
 projectname: 商业物业费
 time:
 

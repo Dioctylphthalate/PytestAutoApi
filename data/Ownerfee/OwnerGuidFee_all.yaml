@@ -86,9 +86,9 @@ allOwnerGuidFee_02:
           set_cache: ownerguid
     - case_id: self
       dependent_data:
-      - dependent_type: sqlData
-        jsonpath: $.objectguid
-        set_cache: objectguid
+        - dependent_type: sqlData
+          jsonpath: $.objectguid
+          set_cache: objectguid
   assert:
     errorCode:
     # 断言接口状态码

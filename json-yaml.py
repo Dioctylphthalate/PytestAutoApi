@@ -16,5 +16,9 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee","fldOwnerGuid":"662713c0ae234105b7cdeff075777a82","fldSelObjectGuidList":["ded164b2a2904e218ebe15005713fb95"]}
+new_yaml = {"bankPayAccountModel":'',"fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee","fldObjectId":"7901af1f-8b60-b706-4b33-5522c3047121","fldImmigrationTime":"","fldIsOwner":0,"newAddBillModel":[],"ownerInfomationRelationOwnerVos":[{"fldType":1,"fldContent":"13546356354","fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee"}],"fldRelation":"1级","naturalPersonModel":{"fldCardNum":"","fldCardType":"","fldBirthday":"","fldSex":"","fldNation":"","fldMarriage":"","fldEducation":"","fldName":"赵钱孙李","fldType":1},"legalPersonModel":'null',"fldOwnerGuid":"ae683f51-3d38-92b9-dbfe-b7dd78ccdea7","fldPhotoGuid":"","fldDesc":""}
+
+
+
+
 add_dict('auth.yaml',  new_yaml)
