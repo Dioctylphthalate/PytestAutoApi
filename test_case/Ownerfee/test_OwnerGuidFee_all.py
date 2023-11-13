@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2023-08-19 14:41:08
+# @Time   : 2023-11-13 13:45:20
 
 
 import allure
@@ -12,16 +12,16 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['allOwnerGuidFee_01', 'allOwnerGuidFee_02']
+case_id = ['allOwnerGuidFee_01', 'allOwnerGuidFee_02', 'allOwnerGuidFee_03']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 
 
-@allure.epic("开发平台接口")
-@allure.feature("收藏模块")
+@allure.epic("测试平台接口")
+@allure.feature("综合收费模块")
 class TestOwnerguidfeeAll:
 
-    @allure.story("收藏网址接口")
+    @allure.story("综合收费接口")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_OwnerGuidFee_all(self, in_data, case_skip):
         """

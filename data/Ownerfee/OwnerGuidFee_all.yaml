@@ -1,8 +1,8 @@
 # 公共参数
 case_common:
-  allureEpic: 开发平台接口
-  allureFeature: 收藏模块
-  allureStory: 收藏网址接口
+  allureEpic: 测试平台接口
+  allureFeature: 综合收费模块
+  allureStory: 综合收费接口
 
 
 allOwnerGuidFee_01:
@@ -50,7 +50,62 @@ allOwnerGuidFee_01:
         name: msg
     sql:
 
+
 allOwnerGuidFee_02:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/getOwnerGuidObjectInfo
+  method: POST
+  detail: 查询客户的关联资源
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldPublicGuid:
+    fldCurObjectGuid: $cache{objectguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: True
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.areaguid
+          set_cache: areaguid
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.ownerguid
+          set_cache: ownerguid
+    - case_id: self
+      dependent_data:
+      - dependent_type: sqlData
+        jsonpath: $.objectguid
+        set_cache: objectguid
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  sql:
+
+  setup_sql:
+    - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '$cache{areaname}'
+    - SELECT o.fld_guid as ownerguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
+    - SELECT oo.fld_object_guid as objectguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' INNER JOIN es_info_object j on j.fld_area_guid = i.fld_guid and j.fld_name = '$cache{objectname}' INNER JOIN es_info_object_and_owner oo on oo.fld_area_guid =  i.fld_guid and oo.fld_object_guid = j.fld_guid and oo.fld_owner_guid = o.fld_guid WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
+
+
+allOwnerGuidFee_03:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/getOwnerGuidPrePayInfo
   method: POST
@@ -66,7 +121,7 @@ allOwnerGuidFee_02:
   is_run:
   data:
     fldAreaGuid: $cache{areaguid}
-    fldOwnerGuid: 1
+    fldOwnerGuid: $cache{ownerguid}
     fldSelObjectGuidList:
       - ded164b2a2904e218ebe15005713fb95
   # 是否有依赖业务，为空或者false则表示没有
@@ -78,6 +133,11 @@ allOwnerGuidFee_02:
         - dependent_type: sqlData
           jsonpath: $.areaguid
           set_cache: areaguid
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.ownerguid
+          set_cache: ownerguid
   assert:
     errorCode:
     # 断言接口状态码
@@ -87,5 +147,7 @@ allOwnerGuidFee_02:
       AssertType:
 
   sql:
-    - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '麓山'
 
+  setup_sql:
+    - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '$cache{areaname}'
+    - SELECT o.fld_guid as ownerguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
