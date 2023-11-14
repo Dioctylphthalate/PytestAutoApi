@@ -47,7 +47,9 @@ class Cache:
         """
         try:
             with open(self.path, 'r', encoding='utf-8') as file:
-                return file.read()
+
+                aa = file.read().replace("None", "\"\"")
+                return aa
         except FileNotFoundError:
             pass
 
@@ -88,3 +90,8 @@ class CacheHandler:
     def update_cache(*, cache_name, value):
         _cache_config[cache_name] = value
 
+a=CacheHandler
+b = ""
+c =Cache
+a.update_cache(cache_name='222', value=b)
+print(a.get_cache('222'))

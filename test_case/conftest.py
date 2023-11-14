@@ -70,7 +70,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_login", "test_OwnerGuidFee_all"]    # test_case 文件夹中的测试用例文件运行顺序
+    appoint_items = ["test_login", "test_AddBasicInfo", "test_OwnerGuidFee_all"]    # test_case 文件夹中的测试用例文件运行顺序
 
     # 指定运行顺序
     run_items = []

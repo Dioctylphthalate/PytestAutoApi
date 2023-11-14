@@ -6,7 +6,7 @@ case_common:
 
 addbasic_01:
   host: ${{host()}}
-  url: /api/base/base_area/add_areaNode
+  url: /api/base/base_domain/save_area
   method: POST
   detail: 基础中台新增项目
   headers:
@@ -57,8 +57,7 @@ addbasic_01:
     fldAccountSet: YB
     fldIsTest: 2
     fldStatus: 1
-    contracts:
-      -
+    contracts: []
       # 是否有依赖业务，为空或者false则表示没有
   dependence_case: True
   # 依赖的数据
@@ -239,7 +238,7 @@ addbasic_04:
     # 断言接口状态码
       jsonpath: $.result.fldGuid
       type: ==
-      value: $cache{cellname}
+      value: $cache{cellguid}
       AssertType:
 
   sql:
@@ -249,7 +248,7 @@ addbasic_04:
 
 addbasic_05:
     host: ${{host()}}
-    url: /api/base/base_domain/save_area
+    url: /api/base/base_object/save_house
     method: POST
     detail: 基础中台新增资源
     headers:
@@ -265,12 +264,9 @@ addbasic_05:
       fldPguid: $cache{cellguid} # 上级节点id
       fldGuid: $cache{objectguid}
       fldAreaGuid: $cache{areaguid}
-      fldKzTimeList:
-        -
-      fldCzTimeList:
-        -
-      fldZxTimeList:
-        -
+      fldKzTimeList: []
+      fldCzTimeList: []
+      fldZxTimeList: []
       fldAssemblyName: 1批次/1栋/1单元 # 组合名称
       fldCode:
       fldName: $cache{objectname} # 资源名称
@@ -314,7 +310,7 @@ addbasic_05:
     assert:
       # 断言接口状态码
       fldGuid:
-        jsonpath: $.result.fldGuid
+        jsonpath: $.result
         type: ==
         value: $cache{objectguid}
         AssertType:
