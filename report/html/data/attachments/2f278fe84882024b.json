@@ -1,0 +1,1 @@
+"{'fldGuid': {'jsonpath': '$.result.fldGuid', 'type': '==', 'value': '$cache{cellguid}', 'AssertType': None}}"
