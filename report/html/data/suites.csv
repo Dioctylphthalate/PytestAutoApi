@@ -1,49 +1,49 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Nov 14 16:23:07 CST 2023","Tue Nov 14 16:23:08 CST 2023","331","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
+"passed","Wed Nov 15 13:39:42 CST 2023","Wed Nov 15 13:39:43 CST 2023","313","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:08 CST 2023","Tue Nov 14 16:23:08 CST 2023","409","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
+"passed","Wed Nov 15 13:39:46 CST 2023","Wed Nov 15 13:39:46 CST 2023","189","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:09 CST 2023","Tue Nov 14 16:23:09 CST 2023","411","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
+"passed","Wed Nov 15 13:39:42 CST 2023","Wed Nov 15 13:39:42 CST 2023","110","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:11 CST 2023","Tue Nov 14 16:23:12 CST 2023","547","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
+"passed","Wed Nov 15 13:39:43 CST 2023","Wed Nov 15 13:39:44 CST 2023","739","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:10 CST 2023","Tue Nov 14 16:23:11 CST 2023","1039","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
+"passed","Wed Nov 15 13:39:46 CST 2023","Wed Nov 15 13:39:47 CST 2023","969","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:08 CST 2023","Tue Nov 14 16:23:09 CST 2023","303","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
+"passed","Wed Nov 15 13:39:44 CST 2023","Wed Nov 15 13:39:45 CST 2023","385","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:10 CST 2023","Tue Nov 14 16:23:10 CST 2023","445","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
+"passed","Wed Nov 15 13:39:42 CST 2023","Wed Nov 15 13:39:42 CST 2023","164","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:07 CST 2023","Tue Nov 14 16:23:07 CST 2023","139","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
+"passed","Wed Nov 15 13:39:47 CST 2023","Wed Nov 15 13:39:48 CST 2023","565","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:08 CST 2023","Tue Nov 14 16:23:08 CST 2023","334","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
+"passed","Wed Nov 15 13:39:45 CST 2023","Wed Nov 15 13:39:46 CST 2023","503","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:09 CST 2023","Tue Nov 14 16:23:10 CST 2023","411","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
+"passed","Wed Nov 15 13:39:45 CST 2023","Wed Nov 15 13:39:45 CST 2023","324","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:07 CST 2023","Tue Nov 14 16:23:07 CST 2023","100","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
+"passed","Wed Nov 15 13:39:45 CST 2023","Wed Nov 15 13:39:45 CST 2023","507","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
         :param :
         :return:
         "
-"passed","Tue Nov 14 16:23:10 CST 2023","Tue Nov 14 16:23:10 CST 2023","105","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
+"passed","Wed Nov 15 13:39:44 CST 2023","Wed Nov 15 13:39:44 CST 2023","593","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
         :param :
         :return:
         "

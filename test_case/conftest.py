@@ -122,9 +122,18 @@ def pytest_terminal_summary(terminalreporter):
     _TOTAL = terminalreporter._numcollected
     _TIMES = time.time() - terminalreporter._sessionstarttime
     INFO.logger.info(f"用例总数: {_TOTAL}")
-    INFO.logger.error(f"异常用例数: {_ERROR}")
-    ERROR.logger.error(f"失败用例数: {_FAILED}")
-    WARNING.logger.warning(f"跳过用例数: {_SKIPPED}")
+    if _ERROR != 0:
+        INFO.logger.error(f"异常用例数: {_ERROR}")
+    else:
+        INFO.logger.info(f"异常用例数: {_ERROR}")
+    if _FAILED != 0:
+        ERROR.logger.error(f"失败用例数: {_FAILED}")
+    else:
+        INFO.logger.info(f"失败用例数: {_FAILED}")
+    if _SKIPPED != 0:
+        WARNING.logger.warning(f"跳过用例数: {_SKIPPED}")
+    else:
+        WARNING.logger.info(f"跳过用例数: {_SKIPPED}")
     INFO.logger.info("用例执行时长: %.2f" % _TIMES + " s")
 
     try:

@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-11-15.log:log_decorator.py:42 
+======================================================
+用例标题: 基础中台新增客户
+请求路径: http://39.103.156.18:66/api/base/base_info_owner/newAddOwnerV3
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 31496f53-ef23-4cdb-9a0c-c9295f002f65', 'Content-Type': 'application/json', 'Content-Length': '708'}
+请求内容: {'bankPayAccountModel': None, 'fldAreaGuid': '5221355e-8379-11ee-88ec-00163e1c1703', 'fldObjectId': '5357d249-8379-11ee-88ec-00163e1c1703', 'fldImmigrationTime': None, 'fldIsOwner': 0, 'newAddBillModel': [], 'ownerInfomationRelationOwnerVos': [{'fldType': 1, 'fldContent': '13576854774', 'fldAreaGuid': '5221355e-8379-11ee-88ec-00163e1c1703'}], 'fldRelation': '1级', 'naturalPersonModel': {'fldCardNum': None, 'fldCardType': None, 'fldBirthday': None, 'fldSex': None, 'fldNation': None, 'fldMarriage': None, 'fldEducation': None, 'fldName': '周吴郑王', 'fldType': 1}, 'legalPersonModel': None, 'fldOwnerGuid': '53a414bc-8379-11ee-88ec-00163e1c1703', 'fldPhotoGuid': None, 'fldDesc': None}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"fldGuid":"53a414bc-8379-11ee-88ec-00163e1c1703","fldCreateUser":"王科","fldCreateDate":"2023-11-15T05:39:21.469+00:00","fldModifyUser":"王科","fldModifyDate":"2023-11-15T05:39:21.469+00:00","fldTenancy":"ceshi_java","fldType":1,"fldClass":0,"fldAreaGuid":"5221355e-8379-11ee-88ec-00163e1c1703","fldName":"周吴郑王","fldCode":"20231115014","fldOrder":1,"fldDesc":"","fldNotBindObject":0,"fldThirdId":"","fldPhoneNumber":"","fldStatus":1,"fldPhotoGuid":"","fldRelation":"1级"},"timestamp":1700026761566}
+接口响应时长: 311 ms
+Http状态码: 200
+=====================================================
