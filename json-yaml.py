@@ -22,3 +22,7 @@ new_yaml = {"bankPayAccountModel":'',"fldAreaGuid":"5b131245-a387-177d-d212-0fe6
 
 
 add_dict('auth.yaml',  new_yaml)
+
+
+
+

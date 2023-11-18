@@ -90,8 +90,3 @@ class CacheHandler:
     def update_cache(*, cache_name, value):
         _cache_config[cache_name] = value
 
-a=CacheHandler
-b = ""
-c =Cache
-a.update_cache(cache_name='222', value=b)
-print(a.get_cache('222'))

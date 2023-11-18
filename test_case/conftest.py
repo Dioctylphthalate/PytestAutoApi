@@ -30,15 +30,10 @@ def clear_report():
 @pytest.fixture(scope="session", autouse=True)
 def work_login_init():
     """
-    存入基础数据缓存，获取登录的cookie
+    获取登录的cookie
     :return:
     """
-    config_path = os.path.dirname(os.path.dirname(__file__)) + '/common'
-    file_path = os.path.join(config_path, 'basicinfo.yaml')
-    with open(file_path, 'r', encoding='utf-8') as f:
-        yaml_file = yaml.load(f, Loader=yaml.FullLoader)
-        for key in yaml_file:
-            CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
+
     url = "http://39.103.156.18:66/api/auth/oauth/token"
     data = {
         "grant_type": "password",
@@ -58,6 +53,18 @@ def work_login_init():
     # 将登录接口中的cookie写入缓存中，其中Authorization是缓存名称
     CacheHandler.update_cache(cache_name='Authorization', value=cookies)
 
+@pytest.fixture(scope="session", autouse=True)
+def pre_cache():
+    """
+    存入所有提前需要的缓存值
+    :return:
+    """
+    config_path = os.path.dirname(os.path.dirname(__file__)) + '/common'
+    file_path = os.path.join(config_path, 'basicinfo.yaml')
+    with open(file_path, 'r', encoding='utf-8') as f:
+        yaml_file = yaml.load(f, Loader=yaml.FullLoader)
+        for key in yaml_file:
+            CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
 
 def pytest_collection_modifyitems(items):
     """

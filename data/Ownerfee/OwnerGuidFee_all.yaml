@@ -89,6 +89,14 @@ allOwnerGuidFee_02:
         - dependent_type: sqlData
           jsonpath: $.objectguid
           set_cache: objectguid
+
+  current_request_set_cache:
+      # 1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.result
+      cache_list: fldGuid
+      # 自定义的缓存名称
+      name: objectguid1
   assert:
     errorCode:
     # 断言接口状态码
@@ -122,8 +130,7 @@ allOwnerGuidFee_03:
   data:
     fldAreaGuid: $cache{areaguid}
     fldOwnerGuid: $cache{ownerguid}
-    fldSelObjectGuidList:
-      - ded164b2a2904e218ebe15005713fb95
+    fldSelObjectGuidList: $cache{list:objectguid1}
   # 是否有依赖业务，为空或者false则表示没有
   dependence_case: True
   # 依赖的数据

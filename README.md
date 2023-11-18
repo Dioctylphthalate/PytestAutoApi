@@ -3,15 +3,6 @@
 
 本框架主要是基于 Python + pytest + allure + log + yaml + mysql + redis + 钉钉通知 + Jenkins 实现的接口自动化框架。
 
-* git地址: [https://gitee.com/yu_xiao_qi/pytest-auto-api2](https://gitee.com/yu_xiao_qi/pytest-auto-api2)
-* 项目参与者: YRGS
-* 技术支持邮箱: 1603453211@qq.com
-* 个人博客地址:  [https://blog.csdn.net/weixin_43865008](https://blog.csdn.net/weixin_43865008)
-
-如果对您有帮助，请点亮 小星星 以表支持，谢谢
-
-![img.png](Files/image/starts.png)
-
 ## 前言
 
 公司突然要求你做自动化，但是没有代码基础不知道怎么做？或者有自动化基础，但是不知道如何系统性的做自动化，
@@ -38,15 +29,6 @@
 * 自定义拓展字段: 如用例中需要生成的随机数据，可直接调用
 * 多线程执行
 * 支持swagger接口文档转成yaml用例，节省用例编写时间
-
-
-## 遇到问题
-
-* 请仔细阅读文档，文档中几乎可以帮你避免所有的问题
-* 可以添加微信： being_chaoren, 添加微信会将你拉倒自动化交流群中，群内有很多热心的小伙伴，但是前提是希望你已经阅读了文档中的所有内容
-* 你也可以请作者为你解答，当然我不是免费的
-
-![img.png](Files/image/wechat.png)
 
 ## 目录结构
 
@@ -102,7 +84,7 @@
     ├── Readme.md                       // help
     ├── pytest.ini                  
     ├── run.py                           // 运行入口  
-    
+
 
 ## 依赖库
 
@@ -287,7 +269,7 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
             value: 0
             AssertType:
         sql:
-            
+
 这里post请求，我们需要请求的数据格式是json格式的，那么requestType 则填写为json格式。
 包括 PUT/DELETE/HEAD 请求的数据格式都是一样的，唯一不同的就是需要配置 reuqestType，
 如果需要请求的参数是json格式，则requestType我们就填写json，如果是url拼接的形式，我们就填写 params
@@ -514,8 +496,8 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
 
 
 ### 请求参数为路径参数
-    
-    
+
+
     collect_delete_tool_01:
         host: ${{host()}}
         url: /lg/collect/deletetool/json/$cache{collect_delete_tool_01_id}
@@ -636,7 +618,7 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
         # 请求登录接口
         res = requests.post(url=url, data=data, verify=True, headers=headers).json()
         token = res['response']['token']
-
+    
         CacheHandler.update_cache(cache_name='work_login_init', value=token)
 
 这里在编写用例的时候，token 填写我们所编写的缓存名称即可。
@@ -825,9 +807,10 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
 下面为了方便大家对于teardown功能的理解，我会针对不同的场景进行举例：
 
 * 假设现在我们有一个新增接口，写完之后，我们需要先调用查询接口获取到新增接口的ID，然后再进行删除
-那么此时会设计到两个场景，首先执行新增接口ID，然后再拿到响应（这里有个逻辑上的先后关系，查询接口，是先发送请求，在提取数据）
+  那么此时会设计到两个场景，首先执行新增接口ID，然后再拿到响应（这里有个逻辑上的先后关系，查询接口，是先发送请求，在提取数据）
   获取到查询的ID之后，我们在执行删除，删除的话，我们是直接发送请求
   
+
 那么针对这个场景，我们就需要有个关键字去做区分，什么场景下先发送请求，什么场景下后发送请求，下面我们来看一下案例，方便大家理解
 
     teardown:
@@ -927,29 +910,21 @@ get请求我们 requestType 写的是 params ，这样发送请求时，我们�
 
 ![img.png](Files/image/allure2.png)
 
-### 其他
-
-本框架为2.0升级版本，升级之后的功能，现在基本上都是在yaml中维护用例，无需测试人员编写代码，
-和 1.0版本的区别在于，1.0版本还需要测试人员手动编写多业务逻辑的代码，需要有一定基础编码的能力
-
-但是1.0版本，同样也可以自动生成代码，yaml中维护数据，对相对简单，如果偏于yaml简单维护的同学，可以切换查看1.0分支
-下方是1.0分支的操作文档：[点我查看](https://blog.csdn.net/weixin_43865008/article/details/121903028?spm=1001.2014.3001.5502)
 
 *******************************************************
 
-以上便是整个框架的使用说明，这个框架属于个人业余时间开发，大家如果在使用中遇到什么问题，或者有相关建议，可以随时反馈给我，
-_框架内容会随着大家的反馈，持续更新！邮箱地址：1602343211@qq.com
 
-如果觉得框架有帮助到你，麻烦收藏一下哦~~谢谢。:)
 
-## 版本更新记录
-* V2.0.0(2022-04-07)
-  [重构] 新增多业务逻辑依赖处理，统一改成yaml文件中维护用例，无需编写代码，基于V1.0版本进行重构
-* [查看更多记录点此查看](https://gitee.com/yu_xiao_qi/pytest-auto-api2/wikis/Home)
 
-## 赞赏
 
-如果这个库有帮助到你并且你很想支持库的后续开发和维护，那么你可以扫描下方二维码随意打赏我，我将不胜感激
-
-![img_1.png](Files/image/img_1.png)  ![img_1.png](Files/image/weixin_pay.png)
+### 新增缓存list数据（先以jsonpath提取到列表数据，再以cache_list提取列表中字典的值。以list方式存入缓存，获取时可用  #cache{list:objectguid1} ）
+```
+current_request_set_cache:
+1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.result
+      cache_list: fldGuid
+      # 自定义的缓存名称
+      name: objectguid1
+```
 

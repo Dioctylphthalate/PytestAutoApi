@@ -103,6 +103,7 @@ class CurrentRequestSetCache(BaseModel):
     type: Text
     jsonpath: Text
     name: Text
+    cache_list: Text = None
 
 
 class TestCase(BaseModel):
