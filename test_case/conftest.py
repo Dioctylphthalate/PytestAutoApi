@@ -9,9 +9,7 @@ import requests
 import ast
 import json
 import os
-
 import yaml
-
 from common.setting import ensure_path_sep
 from utils.requests_tool.request_control import cache_regular
 from utils.logging_tool.log_control import INFO, ERROR, WARNING
@@ -53,6 +51,7 @@ def work_login_init():
     # 将登录接口中的cookie写入缓存中，其中Authorization是缓存名称
     CacheHandler.update_cache(cache_name='Authorization', value=cookies)
 
+
 @pytest.fixture(scope="session", autouse=True)
 def pre_cache():
     """
@@ -66,6 +65,7 @@ def pre_cache():
         for key in yaml_file:
             CacheHandler.update_cache(cache_name=key, value=yaml_file[key])
 
+
 def pytest_collection_modifyitems(items):
     """
     测试用例收集完成时，将收集到的 item 的 name 和 node_id 的中文显示在控制台上
@@ -77,7 +77,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_login", "test_AddBasicInfo", "test_OwnerGuidFee_all"]    # test_case 文件夹中的测试用例文件运行顺序
+    appoint_items = ["test_login", "test_AddBasicInfo", "test_OwnerGuidFee_all"]  # test_case 文件夹中的测试用例文件运行顺序
 
     # 指定运行顺序
     run_items = []
@@ -148,3 +148,4 @@ def pytest_terminal_summary(terminalreporter):
         INFO.logger.info("用例成功率: %.2f" % _RATE + " %")
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
+

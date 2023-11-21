@@ -55,7 +55,6 @@ class SetCurrentRequestCache:
                 jsonpath_value = item.jsonpath
                 cache_name = item.name
                 cache_list = item.cache_list
-
                 if cache_list:
                     values = []
                     response_json = json.loads(self.response_data)
