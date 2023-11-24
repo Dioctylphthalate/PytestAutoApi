@@ -71,24 +71,24 @@ allOwnerGuidFee_02:
     fldPublicGuid:
     fldCurObjectGuid: $cache{objectguid}
   # 是否有依赖业务，为空或者false则表示没有
-  dependence_case: True
+  dependence_case: false
   # 依赖的数据
   dependence_case_data:
     - case_id: self
-      dependent_data:
-        - dependent_type: sqlData
-          jsonpath: $.areaguid
-          set_cache: areaguid
-    - case_id: self
-      dependent_data:
-        - dependent_type: sqlData
-          jsonpath: $.ownerguid
-          set_cache: ownerguid
-    - case_id: self
-      dependent_data:
-        - dependent_type: sqlData
-          jsonpath: $.objectguid
-          set_cache: objectguid
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.areaguid
+#          set_cache: areaguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.ownerguid
+#          set_cache: ownerguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.objectguid
+#          set_cache: objectguid
 
   current_request_set_cache:
       # 1、response 从响应中提取内容  2、request从请求中提取内容
@@ -132,19 +132,19 @@ allOwnerGuidFee_03:
     fldOwnerGuid: $cache{ownerguid}
     fldSelObjectGuidList: $cache{list:objectguid1}
   # 是否有依赖业务，为空或者false则表示没有
-  dependence_case: True
+  dependence_case: false
   # 依赖的数据
   dependence_case_data:
-    - case_id: self
-      dependent_data:
-        - dependent_type: sqlData
-          jsonpath: $.areaguid
-          set_cache: areaguid
-    - case_id: self
-      dependent_data:
-        - dependent_type: sqlData
-          jsonpath: $.ownerguid
-          set_cache: ownerguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.areaguid
+#          set_cache: areaguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.ownerguid
+#          set_cache: ownerguid
   assert:
     errorCode:
     # 断言接口状态码

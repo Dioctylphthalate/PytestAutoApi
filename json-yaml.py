@@ -16,7 +16,8 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"bankPayAccountModel":'',"fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee","fldObjectId":"7901af1f-8b60-b706-4b33-5522c3047121","fldImmigrationTime":"","fldIsOwner":0,"newAddBillModel":[],"ownerInfomationRelationOwnerVos":[{"fldType":1,"fldContent":"13546356354","fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee"}],"fldRelation":"1级","naturalPersonModel":{"fldCardNum":"","fldCardType":"","fldBirthday":"","fldSex":"","fldNation":"","fldMarriage":"","fldEducation":"","fldName":"赵钱孙李","fldType":1},"legalPersonModel":'null',"fldOwnerGuid":"ae683f51-3d38-92b9-dbfe-b7dd78ccdea7","fldPhotoGuid":"","fldDesc":""}
+new_yaml = {"basePriceVos":[{"fldStartDate":"1900-01-01","fldEndDate":"9999-01-01","fldPrice":"5.00","operationType":1}],"fldTypeName":"测试新增周期性科目","priceUpVos":[],"priceDownVos":[],"fpgModels":[],"ladderVos":[],"fldLadderPeriod":0,"fldObjectType":2,"unitPriceTypeId":"","projectGuid":"540262ecda8d4201a2b3cd6f45db15c2","areaGuid":"67e6da69-8aa2-11ee-af7e-00163e1c1703","upAndDownStatus":False,"setOrdinaryThree":False,"setFpg":False,"fldFuncFormula":"","isChange":0,"disposableProject":{"areaId":"67e6da69-8aa2-11ee-af7e-00163e1c1703","priceId":"","projectId":"540262ecda8d4201a2b3cd6f45db15c2","objectIds":["6986ed1b-8aa2-11ee-af7e-00163e1c1703"]}}
+
 
 
 

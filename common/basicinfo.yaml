@@ -1,13 +1,15 @@
 webhost: https://ceshi.es-iot.cn
-areaname: 麓山
+areaname: 草堂之春
 batchname: 1批次
 buidingname: 1栋
 garagename: A车库
 cellname: 一单元
 objectname: 1-1-107
 assemblyname: 1批次/1栋/1单元     # 组合名称
-ownername: 赵钱孙李
+ownername: 罗大锅
 phone: 13576854774
-projectname: 商业物业费
+projecttypename: 测试新增科目类型
+projectname: 测试新增周期性科目
+projectfun: <基本单价>*<收费面积>    #计费公式
 time:
 

@@ -35,8 +35,8 @@ def work_login_init():
     url = "http://39.103.156.18:66/api/auth/oauth/token"
     data = {
         "grant_type": "password",
-        "username": "xXCyGNhXS23YpIdfE/PrHw==",
-        "password": "xXCyGNhXS23YpIdfE/PrHw=="
+        "username": "Y+AR7VaLSP7oh9FlhY7sUg==",
+        "password": "Y+AR7VaLSP7oh9FlhY7sUg=="
     }
     headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口
@@ -77,7 +77,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_login", "test_AddBasicInfo", "test_OwnerGuidFee_all"]  # test_case 文件夹中的测试用例文件运行顺序
+    appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge" "test_OwnerGuidFee_all"]  # test_case 文件夹中的测试用例文件运行顺序
 
     # 指定运行顺序
     run_items = []
