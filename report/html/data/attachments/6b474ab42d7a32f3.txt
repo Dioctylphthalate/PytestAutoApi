@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-11-24.log:log_decorator.py:42 
+======================================================
+用例标题: 基础中台新增楼栋
+请求路径: http://39.103.156.18:66/api/base/base_area/add_areaNode
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 3d8d2f6d-6d89-4430-80ee-f2ee363a977e', 'Content-Type': 'application/json', 'Content-Length': '478'}
+请求内容: {'fldGuid': '317591a5-8aae-11ee-af7e-00163e1c1703', 'fldAreaGuid': '310f3297-8aae-11ee-af7e-00163e1c1703', 'fldClassGuid': 'buiding', 'fldPguid': '3145e323-8aae-11ee-af7e-00163e1c1703', 'fldAssemblyName': '1栋', 'fldName': '1栋', 'fldCode': None, 'fldDeliveryStatus': 2, 'fldJhsj': None, 'HouseCount': 0, 'ParkCount': 0, 'PublicCount': 0, 'fldLocationType': '二维码', 'fldGpsLongitude': None, 'fldGpsLatitude': None, 'fldNfcCode': None, 'fldSpaceCode': None}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"fldGuid":"317591a5-8aae-11ee-af7e-00163e1c1703","fldCreateUser":"王科科","fldCreateDate":"2023-11-24T09:45:25.490+00:00","fldModifyUser":"王科科","fldModifyDate":"2023-11-24T09:45:25.490+00:00","fldTenancy":"easySoft","fldAreaGuid":"310f3297-8aae-11ee-af7e-00163e1c1703","fldPguid":"3145e323-8aae-11ee-af7e-00163e1c1703","fldClassGuid":"buiding","fldName":"1栋","fldCode":"420201","fldOrder":1,"fldStatus":1,"fldThirdId":"","fldAssemblyName":"1批次","fldZhs":0,"fldDeliveryStatus":2,"fldJzmj":0,"fldJhsj":"1900-01-01","fldDts":0,"fldPlanDeliveryTime":"1900-01-01","nodeType":99,"sjjfsj":"","fldTypeName":"楼栋","fldLocationType":"二维码","fldQrCode":"1727986771697401857","fldQrIndex":0,"fldNfcCode":"","fldGpsLongitude":"","fldGpsLatitude":"","fldSpaceCode":"KJ20231124121"},"timestamp":1700819125493}
+接口响应时长: 116 ms
+Http状态码: 200
+=====================================================
