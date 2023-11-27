@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-11-27.log:log_decorator.py:42 
+======================================================
+用例标题: 收费系统新增科目
+请求路径: http://39.103.156.18:66/api/base/globalsettings/billingaccount/saveProject
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 7dd36f46-52de-4749-a09e-542e237ca29c', 'Content-Type': 'application/json', 'Content-Length': '433'}
+请求内容: {'fldPeriodWatchType': [], 'projectModel': {'fldGuid': '', 'fldPguid': 'a5e82abb9bd249cf881789aa08a24b89', 'fldName': '测试新增周期性科目', 'fldAlias': '测试新增周期性科目', 'fldObjectT': '12', 'fldActive': 1, 'fldObjectType': 2, 'fldScroll': 0, 'fldIsDeposit': 0, 'fldIncomeType': '0', 'fldFlag': '145', 'fldPrintGroup': '1,2,3,4,5,6,7,8', 'fldUseSystem': ''}}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":"687e5ec9516c4a8abf53568c05196805","timestamp":1701054949882}
+接口响应时长: 124 ms
+Http状态码: 200
+=====================================================

@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2023-11-27.log:log_decorator.py:42 
+======================================================
+用例标题: 收费系统新增科目单价分类
+请求路径: http://39.103.156.18:66/api/charge/billing_standard_setting/confirm_data
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 7dd36f46-52de-4749-a09e-542e237ca29c', 'Content-Type': 'application/json', 'Content-Length': '730'}
+请求内容: {'basePriceVos': [{'fldStartDate': '1900-01-01', 'fldEndDate': '9999-01-01', 'fldPrice': '4.00', 'operationType': 1}], 'fldTypeName': '测试新增周期性科目', 'priceUpVos': [], 'priceDownVos': [], 'fpgModels': [], 'ladderVos': [], 'fldLadderPeriod': 0, 'fldObjectType': 2, 'unitPriceTypeId': '', 'projectGuid': '687e5ec9516c4a8abf53568c05196805', 'areaGuid': '428f7a33-8cd3-11ee-af7e-00163e1c1703', 'upAndDownStatus': False, 'setOrdinaryThree': False, 'setFpg': False, 'fldFuncFormula': '', 'isChange': 1, 'disposableProject': {'areaId': '428f7a33-8cd3-11ee-af7e-00163e1c1703', 'priceId': '', 'projectId': '687e5ec9516c4a8abf53568c05196805', 'objectIds': ['435b2c88-8cd3-11ee-af7e-00163e1c1703']}}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":null,"timestamp":1701054950585}
+接口响应时长: 124 ms
+Http状态码: 200
+=====================================================

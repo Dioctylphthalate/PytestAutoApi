@@ -76,25 +76,12 @@ def pytest_collection_modifyitems(items):
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
 
     # 期望用例顺序
-    # print("收集到的测试用例:%s" % items)
     appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge", "test_OwnerGuidFee_all"]  # test_case 文件夹中的测试用例文件运行顺序
 
     # 指定运行顺序
-    run_items = []
-    for i in appoint_items:
-        for item in items:
-            module_item = item.name.split("[")[0]
-            if i == module_item:
-                run_items.append(item)
+    run_items = [item for item in items if item.name.split("[")[0] in appoint_items]
 
-    for i in run_items:
-        run_index = run_items.index(i)
-        items_index = items.index(i)
-
-        if run_index != items_index:
-            n_data = items[run_index]
-            run_index = items.index(n_data)
-            items[items_index], items[run_index] = items[run_index], items[items_index]
+    items[:] = run_items + [item for item in items if item not in run_items]
 
 
 def pytest_configure(config):
