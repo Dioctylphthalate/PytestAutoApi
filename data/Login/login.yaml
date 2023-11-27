@@ -20,8 +20,8 @@ login_01:
     is_run:
     data:
       grant_type: password
-      username: xXCyGNhXS23YpIdfE/PrHw==
-      password: xXCyGNhXS23YpIdfE/PrHw==
+      username: Y+AR7VaLSP7oh9FlhY7sUg==
+      password: Y+AR7VaLSP7oh9FlhY7sUg==
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
@@ -52,7 +52,7 @@ login_02:
     is_run:
     data:
       grant_type: password
-      username: xXCyGNhXS23YpIdfE/PrHw==
+      username: Y+AR7VaLSP7oh9FlhY7sUg==
       password: xXCyGNhXS23YpIdfE/PrH
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
@@ -87,7 +87,7 @@ login_03:
     is_run:
     data:
       grant_type: password
-      username: xXCyGNhXS23YpIdfE/PrHw==
+      username: Y+AR7VaLSP7oh9FlhY7sUg==
       password:
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
