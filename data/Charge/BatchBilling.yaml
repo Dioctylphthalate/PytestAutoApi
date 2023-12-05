@@ -1,0 +1,138 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 批量计费模块
+  allureStory: 批量计费接口
+
+
+batchbilling-01:
+  host: ${{host()}}
+  url: /api/charge/batch_billing_management/document_name?areaId=$cache{areaguid}&documentType=1
+  method: POST
+  detail: 批量计费生成单据code
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    areaId: $cache{areaguid}
+    documentType: 1
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+  current_request_set_cache:
+      # 1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.message
+      # 自定义的缓存名称
+      name: batchbillingcode
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  sql:
+  setup_sql:
+
+batchbilling-02:
+    host: ${{host()}}
+    url: /api/charge/batch_billing_management/start_continuous_recurring_billing
+    method: POST
+    detail: 批量计费生成单据
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      areaId: $cache{areaguid}
+      billingMode: 0
+      chargingSpan: 12  # 计费跨度
+      endTime: ''
+      fldClientKey: ''
+      intStartTime: 0
+      noRepeatGeneration: 0
+      objectIds:
+        - $cache{objectguid}
+      projectIds:
+        - $cache{projectguid}
+      startTimeType: 0
+      strStartTime: ''
+      type: 0
+      useChargingSpan: 1
+      documentName: $cache{batchbillingcode}
+    dependence_case: False
+    # 依赖的数据
+    dependence_case_data:
+    current_request_set_cache:
+      # 1、response 从响应中提取内容  2、request从请求中提取内容
+      - type: response
+        jsonpath: $.result.fldGuid
+        # 自定义的缓存名称
+        name: batchbillingguid
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+    sql:
+
+
+batchbilling_03:
+  host: ${{host()}}
+  url: /api/workflow/wfTask/workflowStart
+  method: POST
+  detail: 发起批量计费单据
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    dinfoGuid: '7137330045541945344'  #  工作流运行主表id
+    infoGuid: ''   # 工作流模板id
+    keys: batchBilling
+    domainGuid: $cache{areaguid}
+    operatorGuid: $cache{username}
+    taList: []  # 需要保存的临时指定人
+    valueGuid: $cache{batchbillingguid}   #流程参数总id
+    businessTitle: ''
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: true
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.codeguid1
+          replace_key: $.data.dinfoGuid
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  sql:
+  setup_sql:
+    - SELECT uuid() as codeguid1
+

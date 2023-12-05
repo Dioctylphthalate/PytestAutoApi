@@ -15,6 +15,7 @@ from utils.notify.send_mail import SendEmail
 from utils.notify.lark import FeiShuTalkChatBot
 from utils.other_tools.allure_data.error_case_excel import ErrorCaseExcel
 from utils import config
+from utils.read_files_tools.case_automatic_control import TestCaseAutomaticGeneration
 
 
 def run():
@@ -33,7 +34,7 @@ def run():
         )
 
         # 判断现有的测试用例，如果未生成测试代码，则自动生成
-        # TestCaseAutomaticGeneration().get_case_automatic()
+        TestCaseAutomaticGeneration().get_case_automatic()
 
         pytest.main(['-s', '-W', 'ignore:Module already imported:pytest.PytestWarning',
                      '--alluredir', './report/tmp', "--clean-alluredir"])
@@ -67,7 +68,7 @@ def run():
             ErrorCaseExcel().write_case()
 
         # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
-        os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
+        # os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
 
     except Exception:
         # 如有异常，相关异常发送邮件
@@ -79,7 +80,6 @@ def run():
         # 如果执行没有异常，自动发送测试报告邮件
         # SendEmail(AllureFileClean().get_case_count()).send_main()
         pass
-
 
 
 if __name__ == '__main__':

@@ -1,69 +1,89 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","128","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:52 CST 2023","221","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目计费标准]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","98","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
+"passed","Tue Dec 05 17:19:50 CST 2023","Tue Dec 05 17:19:51 CST 2023","291","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:58 CST 2023","Mon Nov 27 11:15:58 CST 2023","355","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
+"passed","Tue Dec 05 17:19:51 CST 2023","Tue Dec 05 17:19:51 CST 2023","344","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:58 CST 2023","Mon Nov 27 11:15:59 CST 2023","363","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:52 CST 2023","124","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增计费单价]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","142","test_case.BasicInformation","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增计费单价]","
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:52 CST 2023","102","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目单价分类]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:59 CST 2023","Mon Nov 27 11:15:59 CST 2023","129","test_case.BasicInformation","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目]","
+"passed","Tue Dec 05 17:19:50 CST 2023","Tue Dec 05 17:19:50 CST 2023","365","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:57 CST 2023","Mon Nov 27 11:15:58 CST 2023","299","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:53 CST 2023","87","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","260","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
+"passed","Tue Dec 05 17:19:54 CST 2023","Tue Dec 05 17:19:55 CST 2023","1644","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[发起批量计费单据]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","129","test_case.BasicInformation","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目单价分类]","
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:53 CST 2023","369","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费生成费用]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:57 CST 2023","Mon Nov 27 11:15:57 CST 2023","323","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:54 CST 2023","262","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:01 CST 2023","187","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:53 CST 2023","223","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费预览费用]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:57 CST 2023","Mon Nov 27 11:15:57 CST 2023","395","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
+"passed","Tue Dec 05 17:19:50 CST 2023","Tue Dec 05 17:19:50 CST 2023","325","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:59 CST 2023","Mon Nov 27 11:16:00 CST 2023","565","test_case.BasicInformation","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目计费标准]","
+"passed","Tue Dec 05 17:19:49 CST 2023","Tue Dec 05 17:19:50 CST 2023","288","test_case.Login","test_login","TestLogin","","","test_login[登录密码为空]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:58 CST 2023","Mon Nov 27 11:15:58 CST 2023","315","test_case.BasicInformation","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
+"passed","Tue Dec 05 17:19:51 CST 2023","Tue Dec 05 17:19:51 CST 2023","329","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:01 CST 2023","Mon Nov 27 11:16:01 CST 2023","92","test_case.Ownerfee","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:53 CST 2023","149","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据code]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:15:59 CST 2023","Mon Nov 27 11:15:59 CST 2023","125","test_case.BasicInformation","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增分类]","
+"passed","Tue Dec 05 17:19:49 CST 2023","Tue Dec 05 17:19:49 CST 2023","92","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
         :param :
         :return:
         "
-"passed","Mon Nov 27 11:16:00 CST 2023","Mon Nov 27 11:16:00 CST 2023","88","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:52 CST 2023","121","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目]","
+        :param :
+        :return:
+        "
+"passed","Tue Dec 05 17:19:49 CST 2023","Tue Dec 05 17:19:49 CST 2023","80","test_case.Login","test_login","TestLogin","","","test_login[输入错误的密码]","
+        :param :
+        :return:
+        "
+"passed","Tue Dec 05 17:19:53 CST 2023","Tue Dec 05 17:19:53 CST 2023","89","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
+        :param :
+        :return:
+        "
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:53 CST 2023","95","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
+        :param :
+        :return:
+        "
+"passed","Tue Dec 05 17:19:52 CST 2023","Tue Dec 05 17:19:52 CST 2023","124","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增分类]","
+        :param :
+        :return:
+        "
+"passed","Tue Dec 05 17:19:51 CST 2023","Tue Dec 05 17:19:52 CST 2023","353","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
         :param :
         :return:
         "

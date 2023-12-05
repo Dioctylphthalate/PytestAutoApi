@@ -1,0 +1,260 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 综合收费模块
+  allureStory: 综合收费接口
+
+
+allOwnerGuidFee_01:
+    host: ${{host()}}
+    url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
+    method: POST
+    detail: 综合收费查询客户欠费
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldAreaGuid: 33734acda31f4c1888771a04d11efa26
+      fldOwnerGuid: 0deda6e121f9414b9b3e77239de1b825
+      fldPublicGuid: ""
+      fldCurObjectGuid: 952a8c37bdf34d7a8133efe7267a2952
+      fldSelObjectGuidList:
+        - 952a8c37bdf34d7a8133efe7267a2952
+
+    dependence_case: False
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+
+    current_request_set_cache:
+      - type: response
+        jsonpath: $.success
+        # 自定义的缓存名称
+        name: ceshi
+      - type: response
+        jsonpath: $.message
+        # 自定义的缓存名称
+        name: msg
+    sql:
+
+
+allOwnerGuidFee_02:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/getOwnerGuidObjectInfo
+  method: POST
+  detail: 查询客户的关联资源
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldPublicGuid:
+    fldCurObjectGuid: $cache{objectguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.areaguid
+#          set_cache: areaguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.ownerguid
+#          set_cache: ownerguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.objectguid
+#          set_cache: objectguid
+
+  current_request_set_cache:
+      # 1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.result
+      cache_list: fldGuid
+      # 自定义的缓存名称
+      name: objectguid1
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  sql:
+
+  setup_sql:
+    - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '$cache{areaname}'
+    - SELECT o.fld_guid as ownerguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
+    - SELECT oo.fld_object_guid as objectguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' INNER JOIN es_info_object j on j.fld_area_guid = i.fld_guid and j.fld_name = '$cache{objectname}' INNER JOIN es_info_object_and_owner oo on oo.fld_area_guid =  i.fld_guid and oo.fld_object_guid = j.fld_guid and oo.fld_owner_guid = o.fld_guid WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
+
+
+allOwnerGuidFee_03:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/getOwnerGuidPrePayInfo
+  method: POST
+  detail: 查询客户的预存账户余额
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldSelObjectGuidList: $cache{list:objectguid1}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.areaguid
+#          set_cache: areaguid
+#    - case_id: self
+#      dependent_data:
+#        - dependent_type: sqlData
+#          jsonpath: $.ownerguid
+#          set_cache: ownerguid
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  sql:
+
+  setup_sql:
+    - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '$cache{areaname}'
+    - SELECT o.fld_guid as ownerguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
+
+allOwnerGuidFee_04:
+  host: ${{host()}}
+  url: /api/charge/account_billing/billing_preview
+  method: POST
+  detail: 科目计费预览费用
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    - areaId: $cache{areaguid}
+      objectId: $cache{objectguid}
+      projectId: $cache{projectguid}
+      source: 单户计费
+      endTime: ''
+      months: 2
+      timeType: 1   # 0:上次计费到期时间,1:起费时间, 2接房日期 3入住日期，4自选时间
+      startTime: ''
+      type: 2    # 计费类型：1.预存账户2.周期性费用3.一次性费用
+      whetherToPreview: 0   # 0预览 1生成
+      repeatGeneration: 0   # 是否重复生成：0.否1.是
+      patternType: 0    # 0标准模式  1强制模式
+      chargingType: 0   # 0连续 1不连续
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result.[0].result
+      cache_list: id
+      # 自定义的缓存名称
+      name: ylownerfeeguid
+  sql:
+
+  setup_sql:
+
+allOwnerGuidFee_05:
+  host: ${{host()}}
+  url: /api/charge/account_billing/billing_preview
+  method: POST
+  detail: 科目计费生成费用
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    - areaId: $cache{areaguid}
+      objectId: $cache{objectguid}
+      projectId: $cache{projectguid}
+      source: 单户计费
+      endTime: ''
+      months: 2
+      timeType: 1   # 0:上次计费到期时间,1:起费时间, 2接房日期 3入住日期，4自选时间
+      startTime: ''
+      type: 2    # 计费类型：1.预存账户2.周期性费用3.一次性费用
+      whetherToPreview: 1   # 0预览 1生成
+      repeatGeneration: 0   # 是否重复生成：0.否1.是
+      patternType: 0    # 0标准模式  1强制模式
+      chargingType: 0   # 0连续 1不连续
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+    result:
+      jsonpath: $.result.[0].result
+      type: contains
+      value: $.ownerfeeguid
+      AssertType: SQL
+
+  sql:
+    - SELECT fld_guid as ownerfeeguid FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}'  and fld_owner_guid = '$cache{ownerguid}' limit 1;
+
+  setup_sql:

@@ -1,4 +1,5 @@
 webhost: https://ceshi.es-iot.cn
+username: 王科科
 areaname: 草堂之春
 batchname: 1批次
 buidingname: 1栋
@@ -6,6 +7,7 @@ garagename: A车库
 cellname: 一单元
 objectname: 1-1-107
 assemblyname: 1批次/1栋/1单元     # 组合名称
+startfeedate: 2023-01-01   # 起费日期
 ownername: 罗大锅
 phone: 13576854774
 projecttypename: 测试新增科目类型

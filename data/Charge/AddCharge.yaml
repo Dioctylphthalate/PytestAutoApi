@@ -1,0 +1,426 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 收费模块
+  allureStory: 收费接口
+
+addchargeproject_01:
+  host: ${{host()}}
+  url: /api/base/globalsettings/billingaccount/saveCategory
+  method: POST
+  detail: 收费系统新增分类
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldGuid: ''
+    fldPguid: root
+    fldName: $cache{projecttypename}
+    fldAlias: $cache{projecttypename}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+  current_request_set_cache:
+    # 1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.result
+      # 自定义的缓存名称
+      name: projecttypeguid
+  assert:
+    fldGuid:
+    # 断言接口状态码
+      jsonpath: $.result
+      type: ==
+      value: $cache{projecttypeguid}
+      AssertType:
+  sql:
+
+  setup_sql:
+
+addchargeproject_02:
+  host: ${{host()}}
+  url: /api/base/globalsettings/billingaccount/saveProject
+  method: POST
+  detail: 收费系统新增科目
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldPeriodWatchType: []
+    projectModel:
+      fldGuid: ''
+      fldPguid: $cache{projecttypeguid} # 科目分类节点id
+      fldName: $cache{projectname}  # 科目名称
+      fldAlias: $cache{projectname}  # 打印别名
+      fldObjectT: '12'  # 可用资源(1房屋2车位3车辆4公共区域)3
+      fldActive: 1
+      fldObjectType: 2   # 计费类型(-1分类 0预付款 1三表类费用 2周期性费用 3一次性费用)
+      fldScroll: 0   # 周期：强制连续 1是 0否
+      fldIsDeposit: 0
+      fldIncomeType: '0'   # 收入类型(0物业类 1租金)
+      fldFlag: '145'    # 科目属性（0未知 1物管费 2车位物管费 3车位租赁费 4押金类 5代收代付类 ）
+      fldPrintGroup: 1,2,3,4,5,6,7,8   # 票据类型(1纸质普票 2纸质专票 3电子普票 4电子专票  5纸质收据 6 电子收据 逗号分隔)
+      fldUseSystem: ''   # 系统展示：0 所有系统 1工单系统
+      # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    success:
+    # 断言接口状态码
+      jsonpath: $.success
+      type: ==
+      value: true
+      AssertType:
+    result:
+      # 断言接口状态码
+      jsonpath: $.result
+      type: ==
+      value: $cache{projectguid}
+      AssertType:
+  current_request_set_cache:
+      # 1、response 从响应中提取内容  2、request从请求中提取内容
+    - type: response
+      jsonpath: $.result
+      # 自定义的缓存名称
+      name: projectguid
+  sql:
+
+  setup_sql:
+
+addchargeproject_03:
+  host: ${{host()}}
+  url: /api/charge/billing_standard_setting/update_or_save_billing_account
+  method: POST
+  detail: 收费系统新增科目计费标准
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    projectName: $cache{projectname}
+    fldFuncFormula: $cache{projectfun}
+    fldDescFormula: '[起始时间]至[结束时间]'
+    fldUnit: 月
+    fldPrintNike: $cache{projectname}
+    fldFeeOrder: '012'    # 基本设置-计费顺序 1租户、2业主、3地产公司
+    fldKey1: 0   # 基本设置-计数保留1 舍入方式：0四舍五入、1只舍不入、2只入不舍
+    fldKey2: 2   # 基本设置-计数保留2 舍入方式：0舍入到元、1舍入到角、2舍入到分
+    fldMinValue: 1   # 基本设置-科目合成方式 0不合 1标准 2强制
+    fldRepeat: 0   # 周期类费用-欠费生成周期 0按月 1按季度 2按年
+    fldDayOrMonth: 0   # 周期类费用-欠费拆分模式 0 按30天
+    fldScroll: 0  # 周期类费用-是否强制连续生成 1是 0否
+    esChargeProjectMonths:
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 1
+        fldOwnerMonth: '1'
+        fldAllotMonth: '1'
+        fldFinanceMonth: '1'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 2
+        fldOwnerMonth: '2'
+        fldAllotMonth: '2'
+        fldFinanceMonth: '2'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 3
+        fldOwnerMonth: '3'
+        fldAllotMonth: '3'
+        fldFinanceMonth: '3'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 4
+        fldOwnerMonth: '4'
+        fldAllotMonth: '4'
+        fldFinanceMonth: '4'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 5
+        fldOwnerMonth: '5'
+        fldAllotMonth: '5'
+        fldFinanceMonth: '5'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 6
+        fldOwnerMonth: '6'
+        fldAllotMonth: '6'
+        fldFinanceMonth: '6'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 7
+        fldOwnerMonth: '7'
+        fldAllotMonth: '7'
+        fldFinanceMonth: '7'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 8
+        fldOwnerMonth: '8'
+        fldAllotMonth: '8'
+        fldFinanceMonth: '8'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 9
+        fldOwnerMonth: '9'
+        fldAllotMonth: '9'
+        fldFinanceMonth: '9'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 10
+        fldOwnerMonth: '10'
+        fldAllotMonth: '10'
+        fldFinanceMonth: '10'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 11
+        fldOwnerMonth: '11'
+        fldAllotMonth: '11'
+        fldFinanceMonth: '11'
+      - fldGuid: ''
+        fldCreateUser: ''
+        fldCreateDate: ''
+        fldModifyUser: ''
+        fldModifyDate: ''
+        fldTenancy: ''
+        fldAreaGuid: ''
+        fldProjectGuid: ''
+        fldBaseMonth: 12
+        fldOwnerMonth: '12'
+        fldAllotMonth: '12'
+        fldFinanceMonth: '12'
+    projectScrollStatus: 0
+    fldChangePrice: 0  # 一次性费用-收费时是否允许修改单价 0不允许 1允许
+    operationType: 2  # 操作类型 1 一次性费用 2 三表费用 3 周期费用
+    projectGuid: $cache{projectguid}
+    areaGuid: $cache{areaguid}
+
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    success:
+    # 断言接口状态码
+      jsonpath: $.message
+      type: ==
+      value: 操作成功
+      AssertType:
+    result:
+      # 断言接口状态码
+      jsonpath: $.result.projectId
+      type: ==
+      value: $cache{projectguid}
+      AssertType:
+  current_request_set_cache:
+
+  sql:
+
+  setup_sql:
+
+addchargeproject_04:
+  host: ${{host()}}
+  url: /api/charge/billing_standard_setting/confirm_data
+  method: POST
+  detail: 收费系统新增科目单价分类
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    basePriceVos:
+      - fldStartDate: '1900-01-01'
+        fldEndDate: '9999-01-01'
+        fldPrice: '4.00'
+        operationType: 1
+    fldTypeName: $cache{projectname}
+    priceUpVos: [ ]
+    priceDownVos: [ ]
+    fpgModels: [ ]
+    ladderVos: [ ]
+    fldLadderPeriod: 0
+    fldObjectType: 2
+    unitPriceTypeId: ''
+    projectGuid: $cache{projectguid}
+    areaGuid: $cache{areaguid}
+    upAndDownStatus: false
+    setOrdinaryThree: false
+    setFpg: false
+    fldFuncFormula: ''
+    isChange: 1
+    disposableProject:
+      areaId: $cache{areaguid}
+      priceId: ''
+      projectId: $cache{projectguid}
+      objectIds:
+        - $cache{objectguid}
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    success:
+    # 断言接口状态码
+      jsonpath: $.message
+      type: ==
+      value: 操作成功
+      AssertType:
+
+  current_request_set_cache:
+
+  sql:
+
+  setup_sql:
+
+addchargeproject_05:
+  host: ${{host()}}
+  url: /api/charge/billing_standard_setting/final_confirmation
+  method: POST
+  detail: 收费系统新增计费单价
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    basePriceVos:
+      - fldStartDate: '1900-01-01'
+        fldEndDate: '9999-01-01'
+        fldPrice: '4.00'
+        operationType: 1
+    fldTypeName: $cache{projectname}
+    priceUpVos: [ ]
+    priceDownVos: [ ]
+    fpgModels: [ ]
+    ladderVos: [ ]
+    fldLadderPeriod: 0
+    fldObjectType: 2
+    unitPriceTypeId: ''
+    projectGuid: $cache{projectguid}
+    areaGuid: $cache{areaguid}
+    upAndDownStatus: false
+    setOrdinaryThree: false
+    setFpg: false
+    fldFuncFormula: ''
+    isChange: 0
+    disposableProject:
+      areaId: $cache{areaguid}
+      priceId: ''
+      projectId: $cache{projectguid}
+      objectIds:
+        - $cache{objectguid}
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    success:
+    # 断言接口状态码
+      jsonpath: $.message
+      type: ==
+      value: 操作成功
+      AssertType:
+    proj:
+      jsonpath: $.result.projectId
+      type: ==
+      value: $cache{projectguid}
+      AssertType:
+
+  current_request_set_cache:
+
+  sql:
+
+  setup_sql:
