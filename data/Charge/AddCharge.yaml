@@ -8,7 +8,7 @@ addchargeproject_01:
   host: ${{host()}}
   url: /api/base/globalsettings/billingaccount/saveCategory
   method: POST
-  detail: 收费系统新增分类
+  detail: 收费系统新增科目分类
   headers:
     # 这里cookie的值，写的是存入缓存的名称
     Authorization: $cache{Authorization}

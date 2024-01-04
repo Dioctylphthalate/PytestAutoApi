@@ -135,4 +135,3 @@ batchbilling_03:
   sql:
   setup_sql:
     - SELECT uuid() as codeguid1
-

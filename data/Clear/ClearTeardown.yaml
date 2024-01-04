@@ -1,0 +1,57 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 登录模块
+  allureStory: 登录
+
+clear_01:
+  host: ${{host()}}
+  url: /api/auth/oauth/logout?type=
+  method: POST
+  detail: 退出登录
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+    Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: params
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+      # 依赖的数据
+  dependence_case_data:
+
+#    current_request_set_cache:
+#      # 断言接口状态码
+#      - type: response
+#        jsonpath: $.access_token
+#          # 自定义的缓存名称
+#        name: Authorization
+  assert:
+    # 断言接口状态码
+    status_code: 200
+  sql:
+  teardown_sql:
+    - DELETE FROM es_info_area WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_area_batch WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_area_building WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_area_cell WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_area_info WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_object_house WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_object_and_owner WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_object WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_platform_domain WHERE fld_guid = '33734acda31f4c1888771a04d11efa26' and fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_info_owner WHERE fld_create_date >'2023-11-16' and fld_create_user = '王科科';
+    - DELETE FROM es_charge_project WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_project_setup WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_project_price_type WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_project_price WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_object_join_project WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_owner_fee WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_generate_record_detail1 WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_generate_record WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_batch_fee_document_detail WHERE fld_document_id in (SELECT fld_id FROM es_charge_batch_fee_document_main WHERE fld_create_user = '王科科');
+    - DELETE FROM es_charge_batch_fee_document_main WHERE fld_create_user = '王科科';
