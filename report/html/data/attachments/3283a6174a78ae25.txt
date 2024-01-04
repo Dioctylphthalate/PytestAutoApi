@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-01-04.log:log_decorator.py:42 
+======================================================
+用例标题: 科目计费生成费用
+请求路径: http://39.103.156.18:66/api/charge/account_billing/billing_preview
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 6b83af33-1605-4037-a5c7-4ec1e633bf74', 'Content-Type': 'application/json', 'Content-Length': '345'}
+请求内容: [{'areaId': '4305e728-aaa7-11ee-af7e-00163e1c1703', 'objectId': '43c9ee78-aaa7-11ee-af7e-00163e1c1703', 'projectId': '9878f6cce61b412e9b1f78df04685e5e', 'source': '单户计费', 'endTime': '', 'months': 2, 'timeType': 1, 'startTime': '', 'type': 2, 'whetherToPreview': 1, 'repeatGeneration': 0, 'patternType': 0, 'chargingType': 0}]
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":[{"success":true,"message":"操作成功","detail":"","code":200,"result":["18719349017e4416b2791176e51a5d98","a60b60ec64154e069d97dfc3a3761ea9"],"timestamp":1704334588586}],"timestamp":1704334588590}
+接口响应时长: 217 ms
+Http状态码: 200
+=====================================================
