@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-01-04.log:log_decorator.py:42 
+======================================================
+用例标题: 批量计费生成单据
+请求路径: http://39.103.156.18:66/api/charge/batch_billing_management/start_continuous_recurring_billing
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 6b83af33-1605-4037-a5c7-4ec1e633bf74', 'Content-Type': 'application/json', 'Content-Length': '403'}
+请求内容: {'areaId': '685212b0-aaa6-11ee-af7e-00163e1c1703', 'billingMode': 0, 'chargingSpan': 12, 'endTime': '', 'fldClientKey': '', 'intStartTime': 0, 'noRepeatGeneration': 0, 'objectIds': ['692b5fbf-aaa6-11ee-af7e-00163e1c1703'], 'projectIds': ['0c686f9f11a24bc38f4029475d3358f1'], 'startTimeType': 0, 'strStartTime': '', 'type': 0, 'useChargingSpan': 1, 'documentName': '草堂之春202401040007'}
+接口响应内容: {"success":true,"message":"操作成功！","detail":"","code":200,"result":{"fldGuid":"1742730156634132482","fldAreaGuid":"685212b0-aaa6-11ee-af7e-00163e1c1703","businessKey":"batchBilling"},"timestamp":1704334222446}
+接口响应时长: 205 ms
+Http状态码: 200
+=====================================================

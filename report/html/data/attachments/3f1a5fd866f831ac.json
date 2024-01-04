@@ -1,0 +1,1 @@
+"{'errorCode': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}, 'result': {'jsonpath': '$.result.[0].result', 'type': 'contains', 'value': '$.ownerfeeguid', 'AssertType': 'SQL'}}"
