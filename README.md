@@ -927,4 +927,5 @@ current_request_set_cache:
       # 自定义的缓存名称
       name: objectguid1
 ```
-
+### conftest，py 中用例执行顺序的 test_ClearTeardown 需要放最后，是退出登录和清除生成数据的用例
+![img_1.png](img_1.png)
