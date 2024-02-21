@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2023-12-05 15:02:42
+# @Time   : 2024-02-21 13:40:14
 
 
 import allure
@@ -18,10 +18,10 @@ re_data = regular(str(TestData))
 
 
 @allure.epic("测试平台接口")
-@allure.feature("综合收费模块")
+@allure.feature("批量计费模块")
 class TestBatchbilling:
 
-    @allure.story("综合收费接口")
+    @allure.story("批量计费接口")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_BatchBilling(self, in_data, case_skip):
         """

@@ -249,12 +249,134 @@ allOwnerGuidFee_05:
       value: 200
       AssertType:
     result:
-      jsonpath: $.result.[0].result
-      type: contains
+      jsonpath: $.result.[0].result.[0]
+      type: contained_by
       value: $.ownerfeeguid
       AssertType: SQL
 
   sql:
-    - SELECT fld_guid as ownerfeeguid FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}'  and fld_owner_guid = '$cache{ownerguid}' limit 1;
+    - SELECT GROUP_CONCAT("'",fld_guid,"'") as ownerfeeguid FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}'  and fld_owner_guid = '$cache{ownerguid}';
 
   setup_sql:
+
+allOwnerGuidFee_06:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
+  method: POST
+  detail: 当前客户所有资源下所有客户的欠费明细列表
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldPublicGuid: ''
+    fldCurObjectGuid: $cache{objectguid}
+    fldSelObjectGuidList:
+      - $cache{objectguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+#    result:
+#      jsonpath: $.result.[0].result
+#      type: contains
+#      value: $.ownerfeeguid
+#      AssertType: SQL
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+      # 自定义的缓存名称
+      name: sourceDataList
+  sql:
+
+  setup_sql:
+
+allOwnerGuidFee_07:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/confirmCharge
+  method: POST
+  detail: 收取费用
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    payModeList:
+      - fldObjectGuid: ''
+        fldPayType: 0
+        fldPayAmount: '$cache{feeamount}'
+        fldPayModeGuid: '1675688951754571777'
+        fldOrderNo: ''
+        fldPaymentDesc: ''
+        source: 2
+        authCode: ''
+    feeChargeMxList:
+      - $cache{list:feeChargeMxList}
+    addFeeChargeMxList: [ ]
+    sourceDataList: $cache{list:sourceDataList}
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldObjectGuid: ''
+    fldChangeProcessMoney: '0.00'
+    fldChangeProcessType: 0
+    fldChargeNotes: ''
+    fldChargingDate: '2024-01-17'
+    fldIsLagFee: 1
+    fldIsPrintBills: 1
+    fldNetReceiptsAmount: '480.00'
+    fldPayableAmount: '480.00'
+    fldPayModeGuid: ''
+    chooseSmallChange: '0.00'
+    fldTypeGuid: ''
+    fldDetailGuid: ''
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: True
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.feeamount
+          set_cache: feeamount
+        - dependent_type: sqlData
+          jsonpath: $.feeChargeMxList
+          set_cache: feeChargeMxList
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+#    result:
+#      jsonpath: $.result.[0].result
+#      type: contains
+#      value: $.ownerfeeguid
+#      AssertType: SQL
+
+  sql:
+  setup_sql:
+    - SELECT SUM(t.fld_amount) as feeamount FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
+    - SELECT GROUP_CONCAT('{"fldGuid":"',t.fld_guid,'","fldLateDate":"',t.fld_late_date,'","fldLateFee":"',t.fld_late_fee,'","fldBusiGuid":"","fldFictitiousFee":"0.00"}') as feeChargeMxList FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
+
+

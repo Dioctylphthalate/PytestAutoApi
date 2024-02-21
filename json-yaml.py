@@ -16,13 +16,8 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"dinfoGuid":"7137330045541945344","infoGuid":"","keys":"batchBilling","domainGuid":"4a358d7af3e44777a14c80ba0cfe0115","operatorGuid":"易软王科","taList":[],"valueGuid":"${ttt}","businessTitle":""}
-
+new_yaml = {"fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee","fldOwnerGuid":"9fff6e05e5d049bba970489f4816a4a7","fldPublicGuid":"","fldCurObjectGuid":"6231df584a994a56b164e2bb48374f5f","fldSelObjectGuidList":["6231df584a994a56b164e2bb48374f5f"]}
 
 
 
 add_dict('auth.yaml',  new_yaml)
-
-
-
-

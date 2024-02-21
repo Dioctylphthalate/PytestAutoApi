@@ -7,6 +7,7 @@
 缓存文件处理
 """
 
+import json
 import os
 from typing import Any, Text, Union
 from common.setting import ensure_path_sep
@@ -49,6 +50,7 @@ class Cache:
             with open(self.path, 'r', encoding='utf-8') as file:
 
                 aa = file.read().replace("None", "\"\"")
+
                 return aa
         except FileNotFoundError:
             pass
