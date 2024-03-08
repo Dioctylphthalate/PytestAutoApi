@@ -14,4 +14,5 @@ projecttypename: 测试新增科目类型
 projectname: 测试新增周期性科目
 projectfun: <基本单价>*<收费面积>    #计费公式
 time:
+payname: 微信专用    # 付款方式名称
 

@@ -25,25 +25,27 @@ def clear_report():
     del_file(ensure_path_sep("\\report"))
 
 
-@pytest.fixture(scope="session", autouse=True)
+# @pytest.fixture(scope="session", autouse=True)
 def work_login_init():
     """
     获取登录的cookie
     :return:
     """
 
-    url = "http://39.103.156.18:66/api/auth/oauth/token"
-    data = {
-        "grant_type": "password",
-        "username": "Y+AR7VaLSP7oh9FlhY7sUg==",
-        "password": "Y+AR7VaLSP7oh9FlhY7sUg=="
-    }
+    # url = "http://39.103.156.18:66/api/auth/oauth/token"
+    # data = {
+    #     "grant_type": "password",
+    #     "username": "Y+AR7VaLSP7oh9FlhY7sUg==",
+    #     "password": "Y+AR7VaLSP7oh9FlhY7sUg=="
+    # }
+    url = 'http://saas1.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='
+    data = {}
     headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口
     res = requests.post(url=url, params=data, verify=True, headers=headers)
     response_cookie = json.loads(res.content)
     cookies = ''
-    k = response_cookie["token_type"]
+    k = "bearer"
     v = response_cookie["access_token"]
     _cookie = k + " " + v
     # 拿到登录的cookie内容，cookie拿到的是字典类型，转换成对应的格式
@@ -149,3 +151,6 @@ def pytest_terminal_summary(terminalreporter):
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
 
+
+
+work_login_init()

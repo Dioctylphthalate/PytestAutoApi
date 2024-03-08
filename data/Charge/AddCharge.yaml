@@ -424,3 +424,67 @@ addchargeproject_05:
   sql:
 
   setup_sql:
+
+addchargeproject_06:
+  host: ${{host()}}
+  url: /api/charge/pay_mode/save
+  method: POST
+  detail: 收费系统新增付款方式
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldGuid: af597696-2e61-11ec-a455-a4bb6d58a26d
+    fldCreateUser: autouser
+    fldCreateDate: '2024-03-05'
+    fldModifyUser: autouser
+    fldModifyDate: '2024-03-05'
+    fldTenancy: ''
+    fldCode: SFFKFS014
+    fldName: $cache{payname}
+    fldAttribute: 2
+    fldPaymentRefund: 0
+    fldStatus: 1
+    fldPrePay: 0
+    fldPaymentCollection: 1
+    fldOrder: 14
+    fldAlias: ''
+    fldUseObjectHouse: 1
+    fldUseObjectCar: 1
+    fldUseObjectArea: 1
+    fldInterest: 0
+    fldResource: ''
+    fldDownTime: '1900-01-01'
+    fldDisplayOrNot: 1
+    treeDataGuids: []
+    treeUserGuids: []
+
+    # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: False
+  # 依赖的数据
+  dependence_case_data:
+
+  assert:
+    success:
+    # 断言接口状态码
+      jsonpath: $.message
+      type: ==
+      value: 操作成功
+      AssertType:
+    proj:
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  current_request_set_cache:
+
+  sql:
+
+  setup_sql:

@@ -6,7 +6,7 @@ case_common:
 
 login_01:
     host: ${{host()}}
-    url: /api/auth/oauth/token
+    url: /api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid=
     method: POST
     detail: 正常登录
     headers:
@@ -19,9 +19,11 @@ login_01:
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      grant_type: password
-      username: Y+AR7VaLSP7oh9FlhY7sUg==
-      password: Y+AR7VaLSP7oh9FlhY7sUg==
+#      grant_type: password
+#      username: Y+AR7VaLSP7oh9FlhY7sUg==
+#      password: Y+AR7VaLSP7oh9FlhY7sUg==
+#      captcha=:
+#      uuid=:
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
@@ -49,7 +51,7 @@ login_02:
     # 请求的数据，是 params 还是 json、或者file、data
     requestType: params
     # 是否执行，空或者 true 都会执行
-    is_run:
+    is_run: False
     data:
       grant_type: password
       username: Y+AR7VaLSP7oh9FlhY7sUg==
@@ -84,7 +86,7 @@ login_03:
     # 请求的数据，是 params 还是 json、或者file、data
     requestType: params
     # 是否执行，空或者 true 都会执行
-    is_run:
+    is_run: False
     data:
       grant_type: password
       username: Y+AR7VaLSP7oh9FlhY7sUg==

@@ -5,7 +5,7 @@ env: 测试环境
 tester_name: OvO
 
 # 域名1
-host: http://java.es-iot.cn:66
+host: http://saas1.es-iot.cn
 # 域名2，支持多个域名配置
 app_host: ""
 # 请求头
@@ -38,11 +38,16 @@ ding_talk:
 mysql_db:
   # 数据库开关
   switch: True
+#  host: 39.103.156.18
+#  user: easysoft_user
+#  password: ABCabc123+
+#  port: 3306
+#  database: maindb
   host: 39.103.156.18
   user: easysoft_user
   password: ABCabc123+
-  port: 3306
-  database: maindb
+  port: 3307
+  database: saas1
 
 # 镜像源
 mirror_source: http://mirrors.aliyun.com/pypi/simple/

@@ -16,8 +16,7 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"fldAreaGuid":"5b131245-a387-177d-d212-0fe66addceee","fldOwnerGuid":"9fff6e05e5d049bba970489f4816a4a7","fldPublicGuid":"","fldCurObjectGuid":"6231df584a994a56b164e2bb48374f5f","fldSelObjectGuidList":["6231df584a994a56b164e2bb48374f5f"]}
-
+new_yaml = {"fldGuid":"af597696-2e61-11ec-a455-a4bb6d58a26d","fldCreateUser":"autouser","fldCreateDate":"2024-03-05","fldModifyUser":"autouser","fldModifyDate":"2024-03-05","fldTenancy":"","fldCode":"SFFKFS014","fldName":"微信专用","fldAttribute":2,"fldPaymentRefund":0,"fldStatus":1,"fldPrePay":0,"fldPaymentCollection":1,"fldOrder":14,"fldAlias":"","fldUseObjectHouse":1,"fldUseObjectCar":1,"fldUseObjectArea":1,"fldInterest":0,"fldResource":"","fldDownTime":"1900-01-01","fldDisplayOrNot":1,"treeDataGuids":[],"treeUserGuids":[]}
 
 
 add_dict('auth.yaml',  new_yaml)

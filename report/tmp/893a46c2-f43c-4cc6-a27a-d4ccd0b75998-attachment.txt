@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-08.log:log_decorator.py:42 
+======================================================
+用例标题: 正常登录
+请求路径: http://saas1.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid=
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ=', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {"access_token":"44227bca-f460-4d0e-b0ee-89c011f0ffd9","token_type":"bearer","refresh_token":"69469e64-c96c-4fa0-8525-d4c78921444c","expires_in":49843,"scope":"all","code":200}
+接口响应时长: 164 ms
+Http状态码: 200
+=====================================================

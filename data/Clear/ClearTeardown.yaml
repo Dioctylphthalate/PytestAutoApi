@@ -57,3 +57,4 @@ clear_01:
     - DELETE FROM es_charge_batch_fee_document_main WHERE fld_create_user = '王科科';
     - DELETE FROM es_charge_incoming_data WHERE fld_create_user = '王科科';
     - DELETE FROM es_charge_incoming_fee WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_pay_mode WHERE fld_create_user = '王科科';

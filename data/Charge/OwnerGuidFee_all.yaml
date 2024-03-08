@@ -325,7 +325,7 @@ allOwnerGuidFee_07:
       - fldObjectGuid: ''
         fldPayType: 0
         fldPayAmount: '$cache{feeamount}'
-        fldPayModeGuid: '1675688951754571777'
+        fldPayModeGuid: $cache{payguid}
         fldOrderNo: ''
         fldPaymentDesc: ''
         source: 2
@@ -361,6 +361,9 @@ allOwnerGuidFee_07:
         - dependent_type: sqlData
           jsonpath: $.feeChargeMxList
           set_cache: feeChargeMxList
+        - dependent_type: sqlData
+          jsonpath: $.payguid
+          set_cache: payguid
   assert:
     errorCode:
     # 断言接口状态码
@@ -378,5 +381,6 @@ allOwnerGuidFee_07:
   setup_sql:
     - SELECT SUM(t.fld_amount) as feeamount FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
     - SELECT GROUP_CONCAT('{"fldGuid":"',t.fld_guid,'","fldLateDate":"',t.fld_late_date,'","fldLateFee":"',t.fld_late_fee,'","fldBusiGuid":"","fldFictitiousFee":"0.00"}') as feeChargeMxList FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
+    - SELECT fld_guid as payguid FROM es_charge_pay_mode WHERE fld_name = '$cache{payname}';
 
 

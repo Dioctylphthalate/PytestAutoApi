@@ -1,0 +1,1 @@
+"{'success': {'jsonpath': '$.message', 'type': '==', 'value': '操作成功', 'AssertType': None}, 'proj': {'jsonpath': '$.result.projectId', 'type': '==', 'value': '$cache{projectguid}', 'AssertType': None}}"
