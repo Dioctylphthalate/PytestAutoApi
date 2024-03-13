@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-13.log:log_decorator.py:42 
+======================================================
+用例标题: 欠费汇总表
+请求路径: http://saas1.es-iot.cn/api/report/ownerFeeReport/ownerFeeSummary
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'bearer 7162f361-68f6-4e3c-9001-4ceca38fdf8f', 'Content-Length': '573'}
+请求内容: {'nodeTypeGuid': 'info', 'exclude': False, 'fldAreaGuid': ['df9f8b98-e10d-11ee-9935-00163e251185'], 'fldAttribute': [], 'fldEndDate': '', 'fldExcludeFee': [4], 'fldExcludeQiFei': False, 'fldIsBeforeFee': True, 'fldLiveType': [], 'fldObjectList': [], 'fldOwnerList': [], 'fldProjectList': [], 'fldStartDate': '', 'fldStatisticsDate': '', 'operatorDate': '', 'income': False, 'incomeSource': False, 'isPage': False, 'memoryAdr': '', 'modelType': 0, 'pageIndex': 0, 'pageSize': 100, 'projectMode': 0, 'selectDate': '2024', 'selectType': 0, 'timeType': 0, 'excludeZero': False}
+接口响应内容: {"success":true,"message":"操作成功！","detail":"","code":200,"result":{"rowNames":null,"rowDatas":null,"tableList":[{"prop":"fld_name","length":"170px","label":"项目名称"},{"prop":"class_name","length":"170px","label":"业态"},{"prop":"total","length":"140px","label":"欠费总计"}],"tableData":[{"fld_assembly_name":"集团","fld_name":"草堂之春","fld_area_guid":"df9f8b98-e10d-11ee-9935-00163e251185","class_name":"文旅","total":5760.00},{"total":5760.0,"fld_assembly_name":"总计(共1条)"}],"pageNum":0,"pageSize":100,"isPage":null,"memoryAdr":"7a4c3b8b-a129-4e86-94ba-d34d0236793e","rowCount":1,"pageCount":1},"timestamp":1710316025262}
+接口响应时长: 106 ms
+Http状态码: 200
+=====================================================

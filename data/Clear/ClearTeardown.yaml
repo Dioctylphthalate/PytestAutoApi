@@ -36,10 +36,6 @@ clear_01:
   sql:
   teardown_sql:
     - DELETE FROM es_info_area WHERE fld_area_guid = '$cache{areaguid}' and fld_create_user = '王科科';
-    - DELETE FROM es_info_area_batch WHERE fld_area_guid= '$cache{areaguid}' and fld_create_user = '王科科';
-    - DELETE FROM es_info_area_building WHERE fld_area_guid= '$cache{areaguid}' and  fld_create_user = '王科科';
-    - DELETE FROM es_info_area_cell WHERE fld_area_guid= '$cache{areaguid}' and  fld_create_user = '王科科';
-    - DELETE FROM es_info_area_info WHERE fld_guid= '$cache{areaguid}' and  fld_create_user = '王科科';
     - DELETE FROM es_info_object_house WHERE fld_area_guid= '$cache{areaguid}' and  fld_create_user = '王科科';
     - DELETE FROM es_info_object_and_owner WHERE fld_area_guid= '$cache{areaguid}' and  fld_create_user = '王科科';
     - DELETE FROM es_info_object WHERE fld_area_guid= '$cache{areaguid}' and  fld_create_user = '王科科';

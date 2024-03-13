@@ -16,7 +16,10 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"fldGuid":"af597696-2e61-11ec-a455-a4bb6d58a26d","fldCreateUser":"autouser","fldCreateDate":"2024-03-05","fldModifyUser":"autouser","fldModifyDate":"2024-03-05","fldTenancy":"","fldCode":"SFFKFS014","fldName":"微信专用","fldAttribute":2,"fldPaymentRefund":0,"fldStatus":1,"fldPrePay":0,"fldPaymentCollection":1,"fldOrder":14,"fldAlias":"","fldUseObjectHouse":1,"fldUseObjectCar":1,"fldUseObjectArea":1,"fldInterest":0,"fldResource":"","fldDownTime":"1900-01-01","fldDisplayOrNot":1,"treeDataGuids":[],"treeUserGuids":[]}
+new_yaml = {"nodeTypeGuid":"info","exclude":False,"fldAreaGuid":["5b131245-a387-177d-d212-0fe66addceee"],"fldAttribute":[],"fldEndDate":"","fldExcludeFee":[4],"fldExcludeQiFei":False,"fldIsBeforeFee":True,"fldLiveType":[],"fldObjectList":[],"fldOwnerList":[],"fldProjectList":[],"fldStartDate":"","fldStatisticsDate":"","operatorDate":"","income":False,"incomeSource":False,"isPage":False,"memoryAdr":"","modelType":0,"pageIndex":0,"pageSize":100,"projectMode":0,"selectDate":"2024-2","selectType":2,"timeType":0,"excludeZero":False}
+
+
+
 
 
 add_dict('auth.yaml',  new_yaml)
