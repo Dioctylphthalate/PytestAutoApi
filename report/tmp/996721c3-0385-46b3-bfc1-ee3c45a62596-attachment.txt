@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-13.log:log_decorator.py:42 
+======================================================
+用例标题: 欠费科目汇总表
+请求路径: http://saas1.es-iot.cn/api/report/ownerFeeReport/ownerFeeProjectSummary
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 7162f361-68f6-4e3c-9001-4ceca38fdf8f', 'Content-Length': '573', 'Content-Type': 'application/json'}
+请求内容: {'nodeTypeGuid': 'info', 'exclude': False, 'fldAreaGuid': ['184ce9ad-e11f-11ee-9935-00163e251185'], 'fldAttribute': [], 'fldEndDate': '', 'fldExcludeFee': [4], 'fldExcludeQiFei': False, 'fldIsBeforeFee': True, 'fldLiveType': [], 'fldObjectList': [], 'fldOwnerList': [], 'fldProjectList': [], 'fldStartDate': '', 'fldStatisticsDate': '', 'operatorDate': '', 'income': False, 'incomeSource': False, 'isPage': False, 'memoryAdr': '', 'modelType': 0, 'pageIndex': 0, 'pageSize': 100, 'projectMode': 1, 'selectDate': '2024', 'selectType': 0, 'timeType': 0, 'excludeZero': False}
+接口响应内容: {"success":true,"message":"操作成功！","detail":"","code":200,"result":{"rowNames":null,"rowDatas":null,"tableList":[{"prop":"fld_dq","length":"170px","label":"科目名称"},{"prop":"total","length":"140px","label":"欠费总计"}],"tableData":[{"fld_dq":"测试新增周期性科目","total":5760.00},{"total":5760.0,"fld_dq":"总计(共1条)"}],"pageNum":0,"pageSize":100,"isPage":null,"memoryAdr":"3d7f1985-b4e6-4f10-973a-3c2e3f5452e9","rowCount":1,"pageCount":1},"timestamp":1710323423620}
+接口响应时长: 101 ms
+Http状态码: 200
+=====================================================

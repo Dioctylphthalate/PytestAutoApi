@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-13.log:log_decorator.py:42 
+======================================================
+用例标题: 退出登录
+请求路径: http://saas1.es-iot.cn/api/auth/oauth/logout?type=
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'bearer 7162f361-68f6-4e3c-9001-4ceca38fdf8f', 'Content-Length': '0'}
+请求内容: None
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":null,"timestamp":1710323435267}
+接口响应时长: 93 ms
+Http状态码: 200
+=====================================================
