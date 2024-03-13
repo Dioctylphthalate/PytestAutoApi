@@ -16,10 +16,6 @@ def add_dict(filename, new_yaml):
     return new_yaml
 
 
-new_yaml = {"nodeTypeGuid":"info","exclude":False,"fldAreaGuid":["5b131245-a387-177d-d212-0fe66addceee"],"fldAttribute":[],"fldEndDate":"","fldExcludeFee":[4],"fldExcludeQiFei":False,"fldIsBeforeFee":True,"fldLiveType":[],"fldObjectList":[],"fldOwnerList":[],"fldProjectList":[],"fldStartDate":"","fldStatisticsDate":"","operatorDate":"","income":False,"incomeSource":False,"isPage":False,"memoryAdr":"","modelType":0,"pageIndex":0,"pageSize":100,"projectMode":0,"selectDate":"2024-2","selectType":2,"timeType":0,"excludeZero":False}
-
-
-
-
+new_yaml = {"dataFreshness":2,"excludeZero":False,"nodeTypename":"项目","nodeTypeGuid":"info","copyfldAreaGuid":[{"id":"7fc3e9c2-e114-11ee-9935-00163e251185","fldGuid":"5b131245-a387-177d-d212-0fe66addceee","fldPguid":"c318035c08fa45e7981cdb6e0cb8d774","fldTypeKey":"area","fldName":"麓山国际","fldTypeName":"项目","fldOrder":2,"nodeType":0,"fldCode":"0013022010202","children":[],"holidayStatus":'',"fldStatus":1,"fldAssemblyName":'',"hasRight":1,"addSlotShow":False,"show":False}],"copyfldObjectList":[],"copyfldowlist":[],"copyProjectList":[],"modelType":3,"fldExcludeFee":[4],"fldAreaGuid":["5b131245-a387-177d-d212-0fe66addceee"],"fldObjectList":[],"fldOwnerList":[],"fldProjectList":[],"timeType":0,"chargeDate":'',"fldStartDate":"","fldEndDate":"","fldStatisticsDate":"","fldLiveType":[],"fldIsBeforeFee":True,"exclude":False,"fldAttribute":[],"queryId":"","fldGarageList":[],"pageIndex":1,"pageSize":100}
 
 add_dict('auth.yaml',  new_yaml)

@@ -1,1 +1,0 @@
-"{'fldGuid': {'jsonpath': '$.result.fldGuid', 'type': '==', 'value': '$cache{ownerguid}', 'AssertType': None}}"

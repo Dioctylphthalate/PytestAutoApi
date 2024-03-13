@@ -1,29 +1,45 @@
+dataFreshness: 2
+excludeZero: false
+nodeTypename: 项目
 nodeTypeGuid: info
-exclude: false
-fldAreaGuid:
-- 5b131245-a387-177d-d212-0fe66addceee
-fldAttribute: []
-fldEndDate: ''
+copyfldAreaGuid:
+- id: 7fc3e9c2-e114-11ee-9935-00163e251185
+  fldGuid: 5b131245-a387-177d-d212-0fe66addceee
+  fldPguid: c318035c08fa45e7981cdb6e0cb8d774
+  fldTypeKey: area
+  fldName: 麓山国际
+  fldTypeName: 项目
+  fldOrder: 2
+  nodeType: 0
+  fldCode: '0013022010202'
+  children: []
+  holidayStatus: ''
+  fldStatus: 1
+  fldAssemblyName: ''
+  hasRight: 1
+  addSlotShow: false
+  show: false
+copyfldObjectList: []
+copyfldowlist: []
+copyProjectList: []
+modelType: 3
 fldExcludeFee:
 - 4
-fldExcludeQiFei: false
-fldIsBeforeFee: true
-fldLiveType: []
+fldAreaGuid:
+- 5b131245-a387-177d-d212-0fe66addceee
 fldObjectList: []
 fldOwnerList: []
 fldProjectList: []
-fldStartDate: ''
-fldStatisticsDate: ''
-operatorDate: ''
-income: false
-incomeSource: false
-isPage: false
-memoryAdr: ''
-modelType: 0
-pageIndex: 0
-pageSize: 100
-projectMode: 0
-selectDate: 2024-2
-selectType: 2
 timeType: 0
-excludeZero: false
+chargeDate: ''
+fldStartDate: ''
+fldEndDate: ''
+fldStatisticsDate: ''
+fldLiveType: []
+fldIsBeforeFee: true
+exclude: false
+fldAttribute: []
+queryId: ''
+fldGarageList: []
+pageIndex: 1
+pageSize: 100

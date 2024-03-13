@@ -79,7 +79,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge", "test_BatchBilling", "test_OwnerGuidFee_all", "test_Report", "test_ClearTeardown"]  # test_case 文件夹中的测试用例文件运行顺序,test_ClearTeardown这个放最后，是退出登录和清除生成数据的用例
+    appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge", "test_BatchBilling", "test_OwnerGuidFee_all", "test_ArrearsReport", "test_ReceivablesReport", "test_ClearTeardown"]  # test_case 文件夹中的测试用例文件运行顺序,test_ClearTeardown这个放最后，是退出登录和清除生成数据的用例
 
     # 指定运行顺序
     run_items = []
