@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-28.log:log_decorator.py:42 
+======================================================
+用例标题: 组合汇总表
+请求路径: https://saas-uat.es-iot.cn/api/report/combinedQuery/select_community_summary
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'bearer d5b4a1f9-3a3f-4131-b6e2-9bc61280a048', 'Content-Length': '604'}
+请求内容: {'nodeTypeGuid': 'info', 'modelType': '', 'fldAreaGuid': ['52b4cd3c-ecd4-11ee-8f34-00163e18a2aa'], 'fldObjectList': [], 'fldOwnerList': [], 'showType': 1, 'fldPayType': [], 'projectMode': 1, 'fldProjectList': [], 'timeType': 0, 'dataFreshness': 2, 'fldStartDate': '2024-01-01', 'fldEndDate': '2024-12-31', 'chargeStartDate': '', 'chargeEndDate': '', 'fldStatisticsDate': '', 'fldLiveType': [], 'fldIsBeforeFee': True, 'exclude': False, 'fldAttribute': [], 'fldExcludeFee': [4], 'fldExcludeQiFei': False, 'fldExcludeBackFee': False, 'excludeZero': False, 'inquiryTerm': 0, 'pageIndex': 1, 'pageSize': 100}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"hideColumn":[],"listPageInfo":{"total":1,"list":[{"paidLiquidatedDamages":0,"receivableLiquidatedDamages":0,"fldAssemblyName":"集团","area":"草堂之春","resourceNumber":1,"amountReceivable":"960.00","paidInAmount":"0","collectionRate":"0.0000","fldAreaGuid":"52b4cd3c-ecd4-11ee-8f34-00163e18a2aa","nodeGuid":null}],"pageNum":1,"pageSize":100,"size":1,"startRow":1,"endRow":0,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1},"totalVo":{"resourceNumber":1,"chargeArea":null,"amountReceivable":960.00,"paidInAmount":0,"collectionRate":0.0000,"price":null,"fldRebate":null,"taxes":null,"receivableNumberOf":null,"actualAmountNumberOf":null},"handLength":{"area":"170px","fldAssemblyName":"310px","paidInAmount":"140px","actualAmount":"140px","amountReceivable":"140px","collectionRate":"140px","resourceNumber":"140px"}},"timestamp":1711610739906}
+接口响应时长: 530 ms
+Http状态码: 200
+=====================================================

@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-28.log:log_decorator.py:42 
+======================================================
+用例标题: 发起批量计费单据
+请求路径: https://saas-uat.es-iot.cn/api/workflow/wfTask/workflowStart
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer d5b4a1f9-3a3f-4131-b6e2-9bc61280a048', 'Content-Type': 'application/json', 'Content-Length': '256'}
+请求内容: {'dinfoGuid': '5619aae0-ecd4-11ee-8f34-00163e18a2aa', 'infoGuid': '', 'keys': 'batchBilling', 'domainGuid': '52b4cd3c-ecd4-11ee-8f34-00163e18a2aa', 'operatorGuid': '王科科', 'taList': [], 'valueGuid': '1773250005315981313', 'businessTitle': ''}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":"","timestamp":1711610721994}
+接口响应时长: 319 ms
+Http状态码: 200
+=====================================================

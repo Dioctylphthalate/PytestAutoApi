@@ -333,9 +333,11 @@ allOwnerGuidFee_07:
     feeChargeMxList:
       - $cache{list:feeChargeMxList}
     addFeeChargeMxList: [ ]
+    chargePreferentialSchemeList: []
     sourceDataList: $cache{list:sourceDataList}
     fldAreaGuid: $cache{areaguid}
     fldOwnerGuid: $cache{ownerguid}
+    fldApplicableEnd: 0   # 0 收费系统  1 易软云  2 小程序  3 公众号  4 催缴H5
     fldObjectGuid: ''
     fldChangeProcessMoney: '0.00'
     fldChangeProcessType: 0

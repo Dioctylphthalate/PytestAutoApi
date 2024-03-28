@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-03-13 16:37:38
+# @Time   : 2024-03-22 11:19:05
 
 
 import allure
@@ -21,7 +21,7 @@ re_data = regular(str(TestData))
 @allure.feature("报表模块")
 class TestArrearsreport:
 
-    @allure.story("报表")
+    @allure.story("欠费报表")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_ArrearsReport(self, in_data, case_skip):
         """

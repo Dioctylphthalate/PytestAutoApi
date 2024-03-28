@@ -1,4 +1,4 @@
-webhost: https://ceshi.es-iot.cn
+webhost: http://saas1-uat.es-iot.cn
 username: 王科科
 areaname: 草堂之春
 batchname: 1批次
@@ -15,4 +15,5 @@ projectname: 测试新增周期性科目
 projectfun: <基本单价>*<收费面积>    #计费公式
 time:
 payname: 微信专用    # 付款方式名称
-
+reportstartdate: 2024-01-01   # 报表查询开始时间
+reportenddate: 2024-12-31    # 报表查询结束时间

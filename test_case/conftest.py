@@ -25,7 +25,7 @@ def clear_report():
     del_file(ensure_path_sep("\\report"))
 
 
-# @pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def work_login_init():
     """
     获取登录的cookie
@@ -38,7 +38,8 @@ def work_login_init():
     #     "username": "Y+AR7VaLSP7oh9FlhY7sUg==",
     #     "password": "Y+AR7VaLSP7oh9FlhY7sUg=="
     # }
-    url = 'http://saas1.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='
+    # url = 'http://saas1.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='  # 测试环境
+    url = 'https://saas-uat.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='  # uat环境
     data = {}
     headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口
@@ -79,7 +80,7 @@ def pytest_collection_modifyitems(items):
 
     # 期望用例顺序
     # print("收集到的测试用例:%s" % items)
-    appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge", "test_BatchBilling", "test_OwnerGuidFee_all", "test_ArrearsReport", "test_ReceivablesReport", "test_ClearTeardown"]  # test_case 文件夹中的测试用例文件运行顺序,test_ClearTeardown这个放最后，是退出登录和清除生成数据的用例
+    appoint_items = ["test_login", "test_AddBasicInfo", "test_AddCharge", "test_BatchBilling", "test_OwnerGuidFee_all", "test_ArrearsReport", "test_ReceivablesReport", "test_CombinationReport", "test_PaidReport", "test_ClearTeardown"]  # test_case 文件夹中的测试用例文件运行顺序,test_ClearTeardown这个放最后，是退出登录和清除生成数据的用例
 
     # 指定运行顺序
     run_items = []
@@ -150,7 +151,3 @@ def pytest_terminal_summary(terminalreporter):
         INFO.logger.info("用例成功率: %.2f" % _RATE + " %")
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
-
-
-
-work_login_init()

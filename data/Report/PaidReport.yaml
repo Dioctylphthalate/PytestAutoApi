@@ -1,0 +1,835 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 报表模块
+  allureStory: 实收报表
+
+summary_list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/summary_list
+    method: POST
+    detail: 实收汇总表
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: []
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: ''
+          fldStatus: 1
+          fldAssemblyName: ''
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      selectType: 0
+      tableLists:
+        - 组合名称
+        - 业态
+        - 资源数
+        - 实收
+        - 税金
+        - 不含税实收
+
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+
+#    current_request_set_cache:
+#      # 断言接口状态码
+#      - type: response
+#        jsonpath: $.access_token
+#          # 自定义的缓存名称
+#        name: Authorization
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+project_summary_list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/project_summary_list
+    method: POST
+    detail: 实收科目汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      selectType: 0
+      selectModel: 0
+      tableLists:
+        - 科目名称
+        - 实收
+        - 税金
+        - 不含税实收
+
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+item_subject_summary_list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/item_subject_summary_list
+    method: POST
+    detail: 实收项目科目汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      selectModel: 0
+      tableLists:
+        - 项目名称
+        - 业态
+        - 资源数
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+
+item_charge_method_list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/item_charge_method_list
+    method: POST
+    detail: 实收项目收费方式汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 业态
+        - 资源数
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+#      errorMsg:
+#        jsonpath: $.message
+#        type: ==
+#        value: "操作成功"
+#        AssertType:
+    sql:
+
+resource_schedule_list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/resource_schedule_list
+    method: POST
+    detail: 实收资源明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: 76955922-e1cc-11ee-9935-00163e251185
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 52
+          nodeType: 0
+          fldCode: '00152'
+          children: [ ]
+          holidayStatus: 0
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      pageNum: 1
+      pageSize: 100
+      selectModel: 0
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 空间名称
+        - 资源名称
+        - 收费面积
+        - 房屋状态
+        - 房间业态/车位性质
+        - 客户名称
+        - 居住关系
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+     #  断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+
+owner_detail__list:
+    host: ${{host()}}
+    url: /api/report/incoming_data/owner_detail__list
+    method: POST
+    detail: 实收客户明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      pageNum: 1
+      pageSize: 100
+      selectModel: 0
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 客户名称
+        - 联系电话
+        - 居住关系
+        - 资源名称
+        - 房间业态/车位性质
+        - 房屋面积
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+owner_resource_detail:
+    host: ${{host()}}
+    url: /api/report/incoming_data/owner_resource_detail
+    method: POST
+    detail: 实收客户资源明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      selectModel: 0
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 空间名称
+        - 资源名称
+        - 客户名称
+        - 房间业态/车位性质
+        - 房屋状态
+        - 居住关系
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+bill_detail:
+    host: ${{host()}}
+    url: /api/report/incoming_data/bill_detail
+    method: POST
+    detail: 实收票据明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      selectModel: 0
+      invoicingStatus: 2
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 空间名称
+        - 资源名称
+        - 房屋状态
+        - 房间业态/车位性质
+        - 客户
+        - 居住关系
+        - 发票号
+        - 发票代码
+        - 发票类型
+        - 收据号
+        - 收费日期
+        - 收款人
+        - 付款方式
+        - 实收
+        - 税金
+        - 不含税实收
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+checklist_detail:
+    host: ${{host()}}
+    url: /api/report/incoming_data/checklist_detail
+    method: POST
+    detail: 实收清单明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      fldExcludeDataWithAmountZreo: false
+      nodeTypename: 项目
+      nodeTypeGuid: info
+      copyfldowlist: [ ]
+      copyfldAreaGuid:
+        - id: $cache{areaguid}
+          fldGuid: $cache{areaguid}
+          fldPguid: root
+          fldTypeKey: area
+          fldName: $cache{areaname}
+          fldTypeName: 项目
+          fldOrder: 2
+          nodeType: 0
+          fldCode: '0013022010202'
+          children: [ ]
+          holidayStatus: null
+          fldStatus: 1
+          fldAssemblyName: null
+          hasRight: 1
+          addSlotShow: false
+          show: false
+      copyfldObjectList: [ ]
+      copyProjectList: [ ]
+      modelType: 3
+      fldExcludeFee:
+        - 4
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      fldProjectList: [ ]
+      fldPayeeList: [ ]
+      fldPayType: [ ]
+      chargeDate: ''
+      fldStartDate: ''
+      fldEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      isFldExcludeFee: false
+      fldExcludeEstateStatus: [ ]
+      fldBackFee: false
+      fldGarageList: [ ]
+      pageNum: 1
+      pageSize: 100
+      tableLists:
+        - 组合名称
+        - 项目名称
+        - 空间名称
+        - 资源名称
+        - 房屋状态
+        - 房间业态/车位性质
+        - 客户名称
+        - 居住关系
+        - 客户描述
+        - 科目名称
+        - 单价
+        - 费用描述
+        - 应收日期
+        - 分摊日期
+        - 财务时间
+        - 开始日期
+        - 结束日期
+        - 生成人
+        - 生成日期
+        - 欠费原因
+        - 应收来源
+        - 优惠金额
+        - 实收
+        - 收费日期
+        - 付款方式分类
+        - 付款方式
+        - 收款人
+        - 收费备注
+        - 实收来源
+        - 操作日期
+        - 税金
+        - 税率
+        - 发票号
+        - 发票代码
+        - 发票类型
+        - 收据号
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:

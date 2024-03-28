@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-03-28.log:log_decorator.py:42 
+======================================================
+用例标题: 收费系统新增计费单价
+请求路径: https://saas-uat.es-iot.cn/api/charge/billing_standard_setting/final_confirmation
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer d5b4a1f9-3a3f-4131-b6e2-9bc61280a048', 'Content-Type': 'application/json', 'Content-Length': '730'}
+请求内容: {'basePriceVos': [{'fldStartDate': '1900-01-01', 'fldEndDate': '9999-01-01', 'fldPrice': '4.00', 'operationType': 1}], 'fldTypeName': '测试新增周期性科目', 'priceUpVos': [], 'priceDownVos': [], 'fpgModels': [], 'ladderVos': [], 'fldLadderPeriod': 0, 'fldObjectType': 2, 'unitPriceTypeId': '', 'projectGuid': '26e50e6dd3bf433e828d84315eab9876', 'areaGuid': '52b4cd3c-ecd4-11ee-8f34-00163e18a2aa', 'upAndDownStatus': False, 'setOrdinaryThree': False, 'setFpg': False, 'fldFuncFormula': '', 'isChange': 0, 'disposableProject': {'areaId': '52b4cd3c-ecd4-11ee-8f34-00163e18a2aa', 'priceId': '', 'projectId': '26e50e6dd3bf433e828d84315eab9876', 'objectIds': ['53d79942-ecd4-11ee-8f34-00163e18a2aa']}}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"fldCode":"SFJFKM82001","projectId":"26e50e6dd3bf433e828d84315eab9876","fldPguid":"47cb7c04f59748c694dc585fbfb5f930","projectName":"测试新增周期性科目","fldType":1,"fldObjectType":2,"fldProjectStatus":"可用","unitPriceType":"测试新增周期性科目,测试新增周期性科目","fldModifyUser":"王科科","fldModifyDate":"2024-03-28","fldOrder":1,"children":[]},"timestamp":1711610720537}
+接口响应时长: 265 ms
+Http状态码: 200
+=====================================================

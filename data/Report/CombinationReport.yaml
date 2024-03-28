@@ -1,0 +1,511 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 报表模块
+  allureStory: 组合报表
+
+select_community_summary:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_community_summary
+    method: POST
+    detail: 组合汇总表
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 0
+      pageIndex: 1
+      pageSize: 100
+
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+
+#    current_request_set_cache:
+#      # 断言接口状态码
+#      - type: response
+#        jsonpath: $.access_token
+#          # 自定义的缓存名称
+#        name: Authorization
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+select_account_summary:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_account_summary
+    method: POST
+    detail: 组合科目汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+select_project_account_summary:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_project_account_summary
+    method: POST
+    detail: 组合项目科目汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+
+select_summary_of_project_formats:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_summary_of_project_formats
+    method: POST
+    detail: 组合项目业态汇总表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+select_resource_schedule:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_resource_schedule
+    method: POST
+    detail: 组合资源明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+
+select_customer_resource_details:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_customer_resource_details
+    method: POST
+    detail: 组合客户资源明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+select_list_details:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_list_details
+    method: POST
+    detail: 组合清单明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+select_theoretical_saturation:
+    host: ${{host()}}
+    url: /api/report/combinedQuery/select_theoretical_saturation
+    method: POST
+    detail: 组合理论饱和明细表
+    headers:
+      Authorization: $cache{Authorization}
+#      Content-Type: multipart/form-data;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      nodeTypeGuid: info
+      modelType: ''
+      fldAreaGuid:
+        - $cache{areaguid}
+      fldObjectList: [ ]
+      fldOwnerList: [ ]
+      showType: 1
+      fldPayType: [ ]
+      projectMode: 1
+      fldProjectList: [ ]
+      timeType: 0
+      dataFreshness: 2
+      fldStartDate: $cache{reportstartdate}
+      fldEndDate: $cache{reportenddate}
+      chargeStartDate: ''
+      chargeEndDate: ''
+      fldStatisticsDate: ''
+      fldLiveType: [ ]
+      fldIsBeforeFee: true
+      exclude: false
+      fldAttribute: [ ]
+      fldExcludeFee:
+        - 4
+      fldExcludeQiFei: false
+      fldExcludeBackFee: false
+      excludeZero: false
+      inquiryTerm: 1
+      pageIndex: 1
+      pageSize: 100
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:

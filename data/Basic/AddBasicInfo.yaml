@@ -379,5 +379,76 @@ addbasic_06:
     setup_sql:
       - SELECT UUID() as ownerguid
 
+addbasic_07:
+    host: ${{host()}}
+    url: /api/tool/redis_manage/redis_keys_delete
+    method: POST
+    detail: 删除项目树缓存
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      - 'base:domainview:tree:area'
+
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+     #  断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
+addbasic_08:
+    host: ${{host()}}
+    url: /api/base/management_area/management_area_tree
+    method: POST
+    detail: 请求项目树
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      typeKey: area
+      fldSystemId: ''
+
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+     #  断言接口返回的username
+      errorMsg:
+        jsonpath: $.message
+        type: ==
+        value: "操作成功"
+        AssertType:
+    sql:
+
 
 

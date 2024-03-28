@@ -1,45 +1,50 @@
-dataFreshness: 2
-excludeZero: false
+fldExcludeDataWithAmountZreo: false
 nodeTypename: 项目
 nodeTypeGuid: info
-copyfldAreaGuid:
-- id: 7fc3e9c2-e114-11ee-9935-00163e251185
-  fldGuid: 5b131245-a387-177d-d212-0fe66addceee
-  fldPguid: c318035c08fa45e7981cdb6e0cb8d774
-  fldTypeKey: area
-  fldName: 麓山国际
-  fldTypeName: 项目
-  fldOrder: 2
-  nodeType: 0
-  fldCode: '0013022010202'
-  children: []
-  holidayStatus: ''
-  fldStatus: 1
-  fldAssemblyName: ''
-  hasRight: 1
-  addSlotShow: false
-  show: false
-copyfldObjectList: []
 copyfldowlist: []
+copyfldAreaGuid:
+  - id: e9b2e504-e1a8-11ee-9935-00163e251185
+    fldGuid: 5b131245-a387-177d-d212-0fe66addceee
+    fldPguid: c318035c08fa45e7981cdb6e0cb8d774
+    fldTypeKey: area
+    fldName: 麓山国际
+    fldTypeName: 项目
+    fldOrder: 2
+    nodeType: 0
+    fldCode: '0013022010202'
+    children: []
+    holidayStatus: null
+    fldStatus: 1
+    fldAssemblyName: null
+    hasRight: 1
+    addSlotShow: false
+    show: false
+copyfldObjectList: []
 copyProjectList: []
 modelType: 3
 fldExcludeFee:
-- 4
+  - 4
 fldAreaGuid:
-- 5b131245-a387-177d-d212-0fe66addceee
+  - 5b131245-a387-177d-d212-0fe66addceee
 fldObjectList: []
 fldOwnerList: []
 fldProjectList: []
-timeType: 0
+fldPayeeList: []
+fldPayType: []
 chargeDate: ''
 fldStartDate: ''
 fldEndDate: ''
 fldStatisticsDate: ''
 fldLiveType: []
 fldIsBeforeFee: true
-exclude: false
-fldAttribute: []
-queryId: ''
+isFldExcludeFee: false
+fldExcludeEstateStatus: []
+fldBackFee: false
 fldGarageList: []
-pageIndex: 1
-pageSize: 100
+selectType: 0
+selectModel: 0
+tableLists:
+  - 科目名称
+  - 实收
+  - 税金
+  - 不含税实收
