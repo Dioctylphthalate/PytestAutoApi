@@ -373,16 +373,529 @@ allOwnerGuidFee_07:
       type: ==
       value: 200
       AssertType:
-#    result:
-#      jsonpath: $.result.[0].result
-#      type: contains
-#      value: $.ownerfeeguid
-#      AssertType: SQL
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+      # 自定义的缓存名称
+      name: incomfeeguid
 
   sql:
   setup_sql:
     - SELECT SUM(t.fld_amount) as feeamount FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
     - SELECT GROUP_CONCAT('{"fldGuid":"',t.fld_guid,'","fldLateDate":"',t.fld_late_date,'","fldLateFee":"',t.fld_late_fee,'","fldBusiGuid":"","fldFictitiousFee":"0.00"}') as feeChargeMxList FROM (SELECT * FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' ORDER BY fld_allot_date LIMIT 2) t;
     - SELECT fld_guid as payguid FROM es_charge_pay_mode WHERE fld_name = '$cache{payname}';
+
+
+allOwnerGuidFee_08:
+  host: ${{host()}}
+  url: /api/charge/historical_payment/is_back
+  method: POST
+  detail: 判断能否返销
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    areaId: $cache{areaguid}
+    fldGuid: $cache{incomfeeguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+    result:
+      jsonpath: $.result.type
+      type: ==
+      value: 1
+      AssertType:
+  current_request_set_cache:
+  sql:
+  setup_sql:
+
+allOwnerGuidFee_09:
+  host: ${{host()}}
+  url: /api/charge/historical_payment/ordinary_rebate
+  method: POST
+  detail: 返销实收费
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    areaId: $cache{areaguid}
+    desc: '测试'
+    incomingId: $cache{incomfeeguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+    result:
+      jsonpath: $.message
+      type: ==
+      value: 操作成功
+      AssertType:
+  current_request_set_cache:
+  sql:
+  setup_sql:
+
+allOwnerGuidFee_10:
+  host: ${{host()}}
+  url: /api/charge/esChargeOmnibusFee/confirmCharge
+  method: POST
+  detail: 收取费用
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    payModeList:
+      - fldObjectGuid: ''
+        fldPayType: 0
+        fldPayAmount: '$cache{feeamount}'
+        fldPayModeGuid: $cache{payguid}
+        fldOrderNo: ''
+        fldPaymentDesc: ''
+        source: 2
+        authCode: ''
+    feeChargeMxList:
+      - $cache{list:feeChargeMxList}
+    addFeeChargeMxList: [ ]
+    chargePreferentialSchemeList: []
+    sourceDataList: $cache{list:sourceDataList}
+    fldAreaGuid: $cache{areaguid}
+    fldOwnerGuid: $cache{ownerguid}
+    fldApplicableEnd: 0   # 0 收费系统  1 易软云  2 小程序  3 公众号  4 催缴H5
+    fldObjectGuid: ''
+    fldChangeProcessMoney: '0.00'
+    fldChangeProcessType: 0
+    fldChargeNotes: ''
+    fldChargingDate: '2024-01-17'
+    fldIsLagFee: 1
+    fldIsPrintBills: 1
+    fldNetReceiptsAmount: '480.00'
+    fldPayableAmount: '480.00'
+    fldPayModeGuid: ''
+    chooseSmallChange: '0.00'
+    fldTypeGuid: ''
+    fldDetailGuid: ''
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+      # 自定义的缓存名称
+      name: incomfeeguid1
+
+  sql:
+  setup_sql:
+
+allOwnerGuidFee_11:
+  host: ${{host()}}
+  url: /api/charge/historical_payment/customer_history_payment
+  method: POST
+  detail: 历史缴费列表
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    areaId: $cache{areaguid}
+    objectIds:
+      - $cache{objectguid}
+    ownerId: $cache{ownerguid}
+    billNo: ''
+    isDetailed: 0
+    num: 1
+    size: 20000
+    incomingId: ''
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  current_request_set_cache:
+  sql:
+  setup_sql:
+
+
+allOwnerGuidFee_12:
+  host: ${{host()}}
+  url: /api/charge/incoming_back/refund_name
+  method: POST
+  detail: 退款单据名称
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldGuid: $cache{tuicode}
+    fldOwnerGuid: $cache{ownerguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: true
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.tuicode
+          set_cache: tuicode
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+        # 自定义的缓存名称
+      name: tuicodename
+  sql:
+  setup_sql:
+    - SELECT UUID() as tuicode;
+
+allOwnerGuidFee_13:
+  host: ${{host()}}
+  url: /api/charge/owner_fee/arrears_objects
+  method: POST
+  detail: 转款可抵扣欠费明细
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldObjectGuids:
+      - $cache{objectguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: false
+  # 依赖的数据
+  dependence_case_data:
+
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+        # 自定义的缓存名称
+      name: getArrearsByOwnerVos
+  sql:
+  setup_sql:
+
+allOwnerGuidFee_14:
+  host: ${{host()}}
+  url: /api/charge/incoming_back/insert_commit
+  method: POST
+  detail: 退款
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldGuid: $cache{tuicode}
+    backDetailModels:
+      - fldFeeBack: '480.00'
+        fldFeeConvert: 0
+        fldFeeKou: 0
+        backDetailGuid: ''
+        fldIncomingGuid: $cache{incomdataguid1}
+        fldIsLate: 0
+        clientName: $cache{ownername}
+        liveRelation: 业主
+        num: 1
+        payAmount: '480.00'
+        refunAmount: '0.00'
+        refunBalance: '480.00'
+        resourceName: $cache{objectname}
+        subjectName: $cache{projectname}
+        fldObjectGuid: $cache{objectguid}
+        fldOwnerGuid: $cache{ownerguid}
+        subjectGuid: $cache{projectguid}
+    cdTotal: 0
+    craTotal: 480
+    crtTotal: 0
+    curArrears: 0
+    curPreDeposit: '0.00'
+    curRefunAmount: 480
+    fldAreaGuid: $cache{areaguid}
+    fldBankCode: ''
+    fldBankKhh: ''
+    fldBankKhzh: ''
+    fldBankLhh: ''
+    fldBankType: 0
+    fldBankUser: ''
+    fldFeeBack: 0
+    fldCashBack: 480
+    fldReconciliationMoney: 0
+    fldCashUser: 测试
+    fldFeeConvert: 0
+    fldFeeKou: 0
+    fldIsBack: 0
+    fldOldBankCode: ''
+    fldOwnerFee: ''
+    fldOwnerGuid: $cache{ownerguid}
+    fldReason: 729f9858bbcaf964cc2e7670dcaf7c83
+    fldTotal: 480
+    getArrearsByOwnerVos: $cache{list:getArrearsByOwnerVos}
+    paTotal: 480
+    pooModel: [ ]
+    raTotal: 0
+    rbTotal: 480
+    transferListModels: [ ]
+    fldName: $cache{tuicodename}
+    fldProjectName: ''
+    fldPrePayName: ''
+    fldIsPrePayBack: 0
+    payModePrePayBackModels: [ ]
+    fldIncludeLateFee: 0
+    fldPayTimeStr: ''
+
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: true
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.incomdataguid1
+          set_cache: incomdataguid1
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  sql:
+  setup_sql:
+    - SELECT fld_guid as incomdataguid1 FROM es_charge_incoming_data WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}' and fld_cancel !=1 and fld_adjust_guid = '' and fld_total >0 ORDER BY fld_guid LIMIT 1;
+
+allOwnerGuidFee_15:
+  host: ${{host()}}
+  url: /api/charge/incoming_back/refund_name
+  method: POST
+  detail: 转款单据名称
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldAreaGuid: $cache{areaguid}
+    fldGuid: $cache{zhuancode}
+    fldOwnerGuid: $cache{ownerguid}
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: true
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.zhuancode
+          set_cache: zhuancode
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+  current_request_set_cache:
+    - type: response
+      jsonpath: $.result
+        # 自定义的缓存名称
+      name: zhuancodename
+  sql:
+  setup_sql:
+    - SELECT UUID() as zhuancode;
+
+allOwnerGuidFee_16:
+  host: ${{host()}}
+  url: /api/charge/incoming_back/insert_commit
+  method: POST
+  detail: 转款
+  headers:
+    # 这里cookie的值，写的是存入缓存的名称
+    Authorization: $cache{Authorization}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+    Content-Type: application/json
+  # 请求的数据，是 params 还是 json、或者file、data
+  requestType: json
+  # 是否执行，空或者 true 都会执行
+  is_run:
+  data:
+    fldGuid: $cache{zhuancode}
+    backDetailModels:
+      - fldFeeBack: 0
+        fldFeeConvert: '480.00'
+        fldFeeKou: 0
+        backDetailGuid: ''
+        fldIncomingGuid: $cache{incomdataguid2}
+        fldIsLate: 0
+        clientName: $cache{ownername}
+        liveRelation: 业主
+        num: 1
+        payAmount: '480.00'
+        refunAmount: '0.00'
+        refunBalance: '480.00'
+        resourceName: $cache{objectname}
+        subjectName: $cache{projectname}
+        fldObjectGuid: $cache{objectguid}
+        fldOwnerGuid: $cache{ownerguid}
+        subjectGuid: $cache{projectguid}
+    cdTotal: 0
+    craTotal: 0
+    crtTotal: 480
+    curArrears: '480.00'
+    curPreDeposit: '0.00'
+    curRefunAmount: 0
+    fldAreaGuid: $cache{areaguid}
+    fldBankCode: ''
+    fldBankKhh: ''
+    fldBankKhzh: ''
+    fldBankLhh: ''
+    fldBankType: 0
+    fldBankUser: ''
+    fldFeeBack: 0
+    fldCashBack: 0
+    fldReconciliationMoney: 0
+    fldCashUser: ''
+    fldFeeConvert: 480
+    fldFeeKou: 0
+    fldIsBack: 0
+    fldOldBankCode: ''
+    fldOwnerFee: $cache{ownerfeeguid1}
+    fldOwnerGuid: $cache{ownerguid}
+    fldReason: 729f9858bbcaf964cc2e7670dcaf7c83
+    fldTotal: 480
+    getArrearsByOwnerVos: $cache{list:getArrearsByOwnerVos}
+    paTotal: 480
+    pooModel:
+      - fldGuid: 3a87a850401b46d095dd456dc02e2e22
+        fldObjectGuid: $cache{objectguid}
+        fldOwnerGuid: $cache{ownerguid}
+        fldProjectGuid: $cache{projectguid}
+    raTotal: 0
+    rbTotal: 480
+    transferListModels:
+      - chargeDuring: $cache{ownerfeedesc}
+        transferAmount: '480.00'
+        num: 1
+        subjectName: $cache{projectname}
+    fldName: $cache{zhuancodename}
+    fldProjectName: $cache{projectname}
+    fldPrePayName: ''
+    fldIsPrePayBack: 0
+    payModePrePayBackModels:
+      -
+    fldIncludeLateFee: 0
+    fldPayTimeStr: ''
+
+
+  # 是否有依赖业务，为空或者false则表示没有
+  dependence_case: true
+  # 依赖的数据
+  dependence_case_data:
+    - case_id: self
+      dependent_data:
+        - dependent_type: sqlData
+          jsonpath: $.incomdataguid2
+          set_cache: incomdataguid2
+        - dependent_type: sqlData
+          jsonpath: $.ownerfeedesc
+          set_cache: ownerfeedesc
+        - dependent_type: sqlData
+          jsonpath: $.ownerfeeguid1
+          set_cache: ownerfeeguid1
+  assert:
+    errorCode:
+    # 断言接口状态码
+      jsonpath: $.code
+      type: ==
+      value: 200
+      AssertType:
+
+  sql:
+  setup_sql:
+    - SELECT fld_guid as incomdataguid2 FROM es_charge_incoming_data WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}' and fld_cancel !=1 and fld_adjust_guid = '' and fld_total >0 ORDER BY fld_guid LIMIT 1,2;
+    - SELECT fld_guid as ownerfeeguid1,fld_desc as ownerfeedesc FROM es_charge_owner_fee WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}' and fld_adjust_guid = '' and fld_total >0 and fld_income =0 ORDER BY fld_allot_date LIMIT 1;
+
 
 
