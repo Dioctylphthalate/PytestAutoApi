@@ -7,6 +7,7 @@ case_common:
 login_01:
     host: ${{host()}}
     url: /api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid=
+#    url: /api/auth/oauth/token?grant_type=password&username=PL2EBbELLm%2BVGVSdoOZGFQ%3D%3D&password=xXCyGNhXS23YpIdfE%2FPrHw%3D%3D&captcha=&uuid=   #生产模拟客户
     method: POST
     detail: 正常登录
     headers:

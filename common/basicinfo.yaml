@@ -1,4 +1,6 @@
 webhost: http://saas1-uat.es-iot.cn
+#webhost: https://saas-uat.es-iot.cn
+#webhost: https://saas-prod.es-it.cn    # 生产模拟客户
 username: 王科科
 areaname: 草堂之春
 batchname: 1批次

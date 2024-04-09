@@ -5,8 +5,9 @@ env: 测试环境
 tester_name: OvO
 
 # 域名1
-#host: http://saas1.es-iot.cn  # 测试环境
-host: https://saas-uat.es-iot.cn  # uat环境
+host: http://saas1.es-iot.cn  # 测试环境
+#host: https://saas-uat.es-iot.cn  # uat环境
+#host: https://saas-prod.es-it.cn  # 生产模拟客户
 
 # 域名2，支持多个域名配置
 app_host: ""
@@ -40,16 +41,16 @@ ding_talk:
 mysql_db:
   # 数据库开关
   switch: True
-#  host: 39.103.156.18
-#  user: easysoft_user
-#  password: ABCabc123+
-#  port: 3307
-#  database: saas1
-  host: 39.100.76.20
+  host: 39.103.156.18
   user: easysoft_user
   password: ABCabc123+
-  port: 3306
-  database: saas_uat
+  port: 3307
+  database: saas1
+#  host: 39.100.76.20
+#  user: easysoft_user
+#  password: ABCabc123+
+#  port: 3306
+#  database: saas_uat
 
 # 镜像源
 mirror_source: http://mirrors.aliyun.com/pypi/simple/

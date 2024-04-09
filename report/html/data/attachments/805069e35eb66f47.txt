@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-04-09.log:log_decorator.py:42 
+======================================================
+用例标题: 返销实收费
+请求路径: http://saas1.es-iot.cn/api/charge/historical_payment/ordinary_rebate
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 44b95ccf-45f4-44a8-85bf-8204bc1a3445', 'Content-Type': 'application/json', 'Content-Length': '124'}
+请求内容: {'areaId': '712dd9db-f61c-11ee-9935-00163e251185', 'desc': '测试', 'incomingId': '8a81578307a5a7af4d72197048d98126'}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":null,"timestamp":1712631257301}
+接口响应时长: 216 ms
+Http状态码: 200
+=====================================================
