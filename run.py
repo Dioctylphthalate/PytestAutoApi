@@ -16,8 +16,23 @@ from utils.notify.lark import FeiShuTalkChatBot
 from utils.other_tools.allure_data.error_case_excel import ErrorCaseExcel
 from utils import config
 from utils.read_files_tools.case_automatic_control import TestCaseAutomaticGeneration
+from flask import Flask
+from flask import request
+from flask_cors import CORS
+import logging
+
+log = logging.getLogger("monitor.default")
+
+#  创建flask服务对象
+app = Flask(__name__)
+#  动态解决前端跨域问题
+CORS(app, supports_credentials=True)
+app.debug = True
 
 
+#  指定请求路径、方法
+
+@app.route('/', methods=['GET'])
 def run():
     # 从配置文件中获取项目名称
     try:
@@ -69,6 +84,8 @@ def run():
 
         # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
         # os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
+        SendEmail(AllureFileClean().get_case_count()).send_main()
+        return 'http://192.168.1.137:8080/'
 
     except Exception:
         # 如有异常，相关异常发送邮件
@@ -76,11 +93,8 @@ def run():
         send_email = SendEmail(AllureFileClean.get_case_count())
         send_email.error_mail(e)
         raise
-    else:
-        # 如果执行没有异常，自动发送测试报告邮件
-        # SendEmail(AllureFileClean().get_case_count()).send_main()
-        pass
 
 
 if __name__ == '__main__':
-    run()
+    # run()
+    app.run(port=1234)

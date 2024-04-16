@@ -402,6 +402,3 @@ class GetTestCase:
             case_lists.append(_data)
 
         return case_lists
-
-
-
