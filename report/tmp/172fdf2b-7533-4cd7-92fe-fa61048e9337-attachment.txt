@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-04-17.log:log_decorator.py:42 
+======================================================
+用例标题: 批量计费生成单据code
+请求路径: http://saas1.es-iot.cn/api/charge/batch_billing_management/document_name?areaId=449636ac-fc5e-11ee-9935-00163e251185&documentType=1
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 822fd3a4-1678-4f71-95fc-fe371f6f65e3', 'Content-Type': 'application/json', 'Content-Length': '69'}
+请求内容: {'areaId': '449636ac-fc5e-11ee-9935-00163e251185', 'documentType': 1}
+接口响应内容: {"success":true,"message":"草堂之春202404170002","detail":"","code":200,"result":null,"timestamp":1713319233548}
+接口响应时长: 124 ms
+Http状态码: 200
+=====================================================

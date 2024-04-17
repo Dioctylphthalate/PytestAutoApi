@@ -84,7 +84,6 @@ def run():
 
         # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
         # os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
-        SendEmail(AllureFileClean().get_case_count()).send_main()
         return 'http://192.168.1.137:8080/'
 
     except Exception:
