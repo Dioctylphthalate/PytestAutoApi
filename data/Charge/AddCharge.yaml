@@ -4,7 +4,7 @@ case_common:
   allureFeature: 收费模块
   allureStory: 收费接口
 
-addchargeproject_01:
+saveCategory:
   host: ${{host()}}
   url: /api/base/globalsettings/billingaccount/saveCategory
   method: POST
@@ -44,7 +44,7 @@ addchargeproject_01:
 
   setup_sql:
 
-addchargeproject_02:
+saveProject:
   host: ${{host()}}
   url: /api/base/globalsettings/billingaccount/saveProject
   method: POST
@@ -101,7 +101,7 @@ addchargeproject_02:
 
   setup_sql:
 
-addchargeproject_03:
+update_or_save_billing_account:
   host: ${{host()}}
   url: /api/charge/billing_standard_setting/update_or_save_billing_account
   method: POST
@@ -302,7 +302,7 @@ addchargeproject_03:
 
   setup_sql:
 
-addchargeproject_04:
+confirm_data:
   host: ${{host()}}
   url: /api/charge/billing_standard_setting/confirm_data
   method: POST
@@ -361,7 +361,7 @@ addchargeproject_04:
 
   setup_sql:
 
-addchargeproject_05:
+final_confirmation:
   host: ${{host()}}
   url: /api/charge/billing_standard_setting/final_confirmation
   method: POST
@@ -425,7 +425,7 @@ addchargeproject_05:
 
   setup_sql:
 
-addchargeproject_06:
+save:
   host: ${{host()}}
   url: /api/charge/pay_mode/save
   method: POST

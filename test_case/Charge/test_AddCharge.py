@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-04-07 17:16:39
+# @Time   : 2024-04-19 15:11:07
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['addchargeproject_01', 'addchargeproject_02', 'addchargeproject_03', 'addchargeproject_04', 'addchargeproject_05', 'addchargeproject_06']
+case_id = ['saveCategory', 'saveProject', 'update_or_save_billing_account', 'confirm_data', 'final_confirmation', 'save']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 

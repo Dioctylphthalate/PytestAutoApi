@@ -5,7 +5,7 @@ case_common:
   allureStory: 批量计费接口
 
 
-batchbilling-01:
+document_name:
   host: ${{host()}}
   url: /api/charge/batch_billing_management/document_name?areaId=$cache{areaguid}&documentType=1
   method: POST
@@ -42,7 +42,7 @@ batchbilling-01:
   sql:
   setup_sql:
 
-batchbilling-02:
+start_continuous_recurring_billing:
     host: ${{host()}}
     url: /api/charge/batch_billing_management/start_continuous_recurring_billing
     method: POST
@@ -93,7 +93,7 @@ batchbilling-02:
     sql:
 
 
-batchbilling_03:
+workflowStart:
   host: ${{host()}}
   url: /api/workflow/wfTask/workflowStart
   method: POST

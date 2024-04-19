@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-04-01 11:02:53
+# @Time   : 2024-04-19 15:11:08
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['addbasic_08', 'select_community_summary', 'select_account_summary', 'select_project_account_summary', 'select_summary_of_project_formats', 'select_resource_schedule', 'select_customer_resource_details', 'select_list_details', 'select_theoretical_saturation']
+case_id = ['addbasic_00008', 'select_community_summary', 'select_account_summary', 'select_project_account_summary', 'select_summary_of_project_formats', 'select_resource_schedule', 'select_customer_resource_details', 'select_list_details', 'select_theoretical_saturation']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 

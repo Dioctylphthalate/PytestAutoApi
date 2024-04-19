@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-04-07 17:20:27
+# @Time   : 2024-04-19 15:11:08
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['allOwnerGuidFee_01', 'allOwnerGuidFee_02', 'allOwnerGuidFee_03', 'allOwnerGuidFee_04', 'allOwnerGuidFee_05', 'allOwnerGuidFee_06', 'allOwnerGuidFee_07', 'allOwnerGuidFee_08', 'allOwnerGuidFee_09', 'allOwnerGuidFee_10', 'allOwnerGuidFee_11', 'allOwnerGuidFee_12', 'allOwnerGuidFee_13', 'allOwnerGuidFee_14', 'allOwnerGuidFee_15', 'allOwnerGuidFee_16']
+case_id = ['allOwnerGuidFee1', 'getOwnerGuidObjectInfo', 'getOwnerGuidPrePayInfo', 'billing_preview1', 'billing_preview2', 'allOwnerGuidFee2', 'confirmCharge1', 'is_back', 'ordinary_rebate', 'confirmCharge2', 'customer_history_payment', 'refund_name1', 'arrears_objects', 'insert_commit1', 'refund_name2', 'insert_commit2']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 

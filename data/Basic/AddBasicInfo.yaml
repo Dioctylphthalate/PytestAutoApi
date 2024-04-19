@@ -4,7 +4,7 @@ case_common:
   allureFeature: 基础中台模块
   allureStory: 基础中台接口
 
-addbasic_01:
+save_area:
   host: ${{host()}}
   url: /api/base/base_domain/save_area
   method: POST
@@ -80,7 +80,7 @@ addbasic_01:
   setup_sql:
     - SELECT UUID() as areaguid
 
-addbasic_02:
+add_areaNode1:
   host: ${{host()}}
   url: /api/base/base_area/add_areaNode
   method: POST
@@ -135,7 +135,7 @@ addbasic_02:
     - SELECT UUID() as batchguid
 
 
-addbasic_03:
+add_areaNode2:
   host: ${{host()}}
   url: /api/base/base_area/add_areaNode
   method: POST
@@ -191,7 +191,7 @@ addbasic_03:
     - SELECT UUID() as buidingguid
 
 
-addbasic_04:
+add_areaNode3:
   host: ${{host()}}
   url: /api/base/base_area/add_areaNode
   method: POST
@@ -246,7 +246,7 @@ addbasic_04:
   setup_sql:
     - SELECT UUID() as cellguid
 
-addbasic_05:
+save_house:
     host: ${{host()}}
     url: /api/base/base_object/save_house
     method: POST
@@ -318,7 +318,7 @@ addbasic_05:
       - SELECT UUID() as objectguid
 
 
-addbasic_06:
+newAddOwnerV3:
     host: ${{host()}}
     url: /api/base/base_info_owner/newAddOwnerV3
     method: POST
@@ -379,7 +379,7 @@ addbasic_06:
     setup_sql:
       - SELECT UUID() as ownerguid
 
-addbasic_07:
+redis_keys_delete:
     host: ${{host()}}
     url: /api/tool/redis_manage/redis_keys_delete
     method: POST
@@ -414,7 +414,7 @@ addbasic_07:
         AssertType:
     sql:
 
-addbasic_08:
+management_area_tree:
     host: ${{host()}}
     url: /api/base/management_area/management_area_tree
     method: POST

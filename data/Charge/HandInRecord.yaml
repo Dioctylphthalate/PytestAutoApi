@@ -1,0 +1,120 @@
+# 公共参数
+case_common:
+  allureEpic: 测试平台接口
+  allureFeature: 交款模块
+  allureStory: 交款接口
+
+
+is_cash:
+    host: ${{host()}}
+    url: /api/charge/payment_application/is_cash
+    method: POST
+    detail: 交款验证
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      areaId: $cache{areaguid}
+      startDate: $cache{handinstartdate}
+      endDate: $cache{handinenddate}
+      tollCollector: ''
+    dependence_case: False
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+
+    current_request_set_cache:
+    sql:
+
+submit_payment_application:
+    host: ${{host()}}
+    url: /api/charge/payment_application/submit_payment_application
+    method: POST
+    detail: 发起交款申请
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      areaId: $cache{areaguid}
+      desc: ''
+      startDate: $cache{handinstartdate}
+      endDate: $cache{handinenddate}
+      fldGuid: $cache{handinguid}
+      tollCollector: ''
+      fldGuidList:
+        -
+    dependence_case: True
+    # 依赖的数据
+    dependence_case_data:
+        - case_id: self
+          dependent_data:
+            - dependent_type: sqlData
+              jsonpath: $.handinguid
+              set_cache: handinguid
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+
+    current_request_set_cache:
+    sql:
+    setup_sql:
+      - SELECT uuid() as handinguid;
+
+batch_pass_or_return:
+    host: ${{host()}}
+    url: /api/charge/payment_approval/batch_pass_or_return
+    method: POST
+    detail: 审核交款申请
+    headers:
+      # 这里cookie的值，写的是存入缓存的名称
+      Authorization: $cache{Authorization}
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\
+      Content-Type: application/json
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      type: 3
+      statusModels:
+        - areaGuid: $cache{areaguid}
+          fldGuid: $cache{handinguid}
+    dependence_case: False
+    # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      errorCode:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+        message: "操作成功"
+
+    current_request_set_cache:
+    sql:
+    setup_sql:

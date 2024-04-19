@@ -19,3 +19,6 @@ time:
 payname: 微信专用    # 付款方式名称
 reportstartdate: 2024-01-01   # 报表查询开始时间
 reportenddate: 2024-12-31    # 报表查询结束时间
+operatedate: 2024-04-18
+handinstartdate: 2024-04-18 00:00:00
+handinenddate: 2024-04-18 23:59:59

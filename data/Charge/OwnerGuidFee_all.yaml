@@ -5,7 +5,7 @@ case_common:
   allureStory: 综合收费接口
 
 
-allOwnerGuidFee_01:
+allOwnerGuidFee1:
     host: ${{host()}}
     url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
     method: POST
@@ -20,12 +20,12 @@ allOwnerGuidFee_01:
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-      fldAreaGuid: 33734acda31f4c1888771a04d11efa26
-      fldOwnerGuid: 0deda6e121f9414b9b3e77239de1b825
+      fldAreaGuid: $cache{areaguid}
+      fldOwnerGuid: $cache{ownerguid}
       fldPublicGuid: ""
-      fldCurObjectGuid: 952a8c37bdf34d7a8133efe7267a2952
+      fldCurObjectGuid: $cache{objectguid}
       fldSelObjectGuidList:
-        - 952a8c37bdf34d7a8133efe7267a2952
+        - $cache{objectguid}
 
     dependence_case: False
     # 依赖的数据
@@ -51,7 +51,7 @@ allOwnerGuidFee_01:
     sql:
 
 
-allOwnerGuidFee_02:
+getOwnerGuidObjectInfo:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/getOwnerGuidObjectInfo
   method: POST
@@ -113,7 +113,7 @@ allOwnerGuidFee_02:
     - SELECT oo.fld_object_guid as objectguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' INNER JOIN es_info_object j on j.fld_area_guid = i.fld_guid and j.fld_name = '$cache{objectname}' INNER JOIN es_info_object_and_owner oo on oo.fld_area_guid =  i.fld_guid and oo.fld_object_guid = j.fld_guid and oo.fld_owner_guid = o.fld_guid WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
 
 
-allOwnerGuidFee_03:
+getOwnerGuidPrePayInfo:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/getOwnerGuidPrePayInfo
   method: POST
@@ -159,7 +159,7 @@ allOwnerGuidFee_03:
     - SELECT fld_guid as areaguid FROM es_info_area_info where fld_name = '$cache{areaname}'
     - SELECT o.fld_guid as ownerguid FROM es_info_owner o INNER JOIN es_info_area_info i on i.fld_guid = o.fld_area_guid and i.fld_name = '$cache{areaname}' WHERE  o.fld_name = '$cache{ownername}' LIMIT 1
 
-allOwnerGuidFee_04:
+billing_preview1:
   host: ${{host()}}
   url: /api/charge/account_billing/billing_preview
   method: POST
@@ -209,7 +209,7 @@ allOwnerGuidFee_04:
 
   setup_sql:
 
-allOwnerGuidFee_05:
+billing_preview2:
   host: ${{host()}}
   url: /api/charge/account_billing/billing_preview
   method: POST
@@ -259,7 +259,7 @@ allOwnerGuidFee_05:
 
   setup_sql:
 
-allOwnerGuidFee_06:
+allOwnerGuidFee2:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/allOwnerGuidFee
   method: POST
@@ -306,7 +306,7 @@ allOwnerGuidFee_06:
 
   setup_sql:
 
-allOwnerGuidFee_07:
+confirmCharge1:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/confirmCharge
   method: POST
@@ -386,7 +386,7 @@ allOwnerGuidFee_07:
     - SELECT fld_guid as payguid FROM es_charge_pay_mode WHERE fld_name = '$cache{payname}';
 
 
-allOwnerGuidFee_08:
+is_back:
   host: ${{host()}}
   url: /api/charge/historical_payment/is_back
   method: POST
@@ -423,7 +423,7 @@ allOwnerGuidFee_08:
   sql:
   setup_sql:
 
-allOwnerGuidFee_09:
+ordinary_rebate:
   host: ${{host()}}
   url: /api/charge/historical_payment/ordinary_rebate
   method: POST
@@ -461,7 +461,7 @@ allOwnerGuidFee_09:
   sql:
   setup_sql:
 
-allOwnerGuidFee_10:
+confirmCharge2:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/confirmCharge
   method: POST
@@ -497,7 +497,7 @@ allOwnerGuidFee_10:
     fldChangeProcessMoney: '0.00'
     fldChangeProcessType: 0
     fldChargeNotes: ''
-    fldChargingDate: '2024-01-17'
+    fldChargingDate: $cache{operatedate}
     fldIsLagFee: 1
     fldIsPrintBills: 1
     fldNetReceiptsAmount: '480.00'
@@ -527,7 +527,7 @@ allOwnerGuidFee_10:
   sql:
   setup_sql:
 
-allOwnerGuidFee_11:
+customer_history_payment:
   host: ${{host()}}
   url: /api/charge/historical_payment/customer_history_payment
   method: POST
@@ -568,7 +568,7 @@ allOwnerGuidFee_11:
   setup_sql:
 
 
-allOwnerGuidFee_12:
+refund_name1:
   host: ${{host()}}
   url: /api/charge/incoming_back/refund_name
   method: POST
@@ -611,7 +611,7 @@ allOwnerGuidFee_12:
   setup_sql:
     - SELECT UUID() as tuicode;
 
-allOwnerGuidFee_13:
+arrears_objects:
   host: ${{host()}}
   url: /api/charge/owner_fee/arrears_objects
   method: POST
@@ -649,7 +649,7 @@ allOwnerGuidFee_13:
   sql:
   setup_sql:
 
-allOwnerGuidFee_14:
+insert_commit1:
   host: ${{host()}}
   url: /api/charge/incoming_back/insert_commit
   method: POST
@@ -743,7 +743,7 @@ allOwnerGuidFee_14:
   setup_sql:
     - SELECT fld_guid as incomdataguid1 FROM es_charge_incoming_data WHERE fld_area_guid = '$cache{areaguid}' and fld_object_guid = '$cache{objectguid}' and fld_cancel !=1 and fld_adjust_guid = '' and fld_total >0 ORDER BY fld_guid LIMIT 1;
 
-allOwnerGuidFee_15:
+refund_name2:
   host: ${{host()}}
   url: /api/charge/incoming_back/refund_name
   method: POST
@@ -786,7 +786,7 @@ allOwnerGuidFee_15:
   setup_sql:
     - SELECT UUID() as zhuancode;
 
-allOwnerGuidFee_16:
+insert_commit2:
   host: ${{host()}}
   url: /api/charge/incoming_back/insert_commit
   method: POST
