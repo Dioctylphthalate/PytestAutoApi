@@ -34,11 +34,11 @@ document.getElementById("getURLBtn").addEventListener("click", function() {
     document.getElementById("getURLBtn").style.display = "none";
     document.getElementById("loader").style.display = "block";
 
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                var response = xhr.responseText;
+                const response = xhr.responseText;
                 // 隐藏加载图标，显示获取到的链接并跳转
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("urlContainer").innerHTML = '<a href="' + response + '" target="_blank">' + response + '</a>';
