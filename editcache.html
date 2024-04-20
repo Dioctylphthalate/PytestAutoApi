@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Actions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #modifyPopup {
+            width: 400px;
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+
+        #modifyPopup ul {
+            padding: 20px;
+            list-style-type: none;
+        }
+
+        #modifyPopup li {
+            margin-bottom: 10px;
+        }
+
+        #modifyPopup input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #modifyPopup button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #modifyPopup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button id="startButton">开始运行</button>
+            <button id="modifyButton">修改数据</button>
+        </div>
+        <div class="dataList" id="dataList">
+            <!-- 数据列表动态生成 -->
+        </div>
+    </div>
+    <div id="loader" style="display: none;">加载中...</div>
+    <script>
+        // 控制按钮和列表的显示与隐藏函数
+        function toggleButtonsAndListVisibility(showButtons, showList) {
+            const buttonContainer = document.querySelector('.button-container');
+            const dataListDiv = document.getElementById('dataList');
+
+            if (showButtons) {
+                buttonContainer.style.display = 'block';
+            } else {
+                buttonContainer.style.display = 'none';
+            }
+
+            if (showList) {
+                dataListDiv.style.display = 'block';
+            } else {
+                dataListDiv.style.display = 'none';
+            }
+        }
+
+        // 开始运行按钮点击事件处理函数
+        document.getElementById('startButton').addEventListener('click', function() {
+
+            // 隐藏获取网址按钮，显示加载图标
+            document.getElementById("startButton").style.display = "none";
+            document.getElementById("modifyButton").style.display = "none";
+            document.getElementById("loader").style.display = "block";
+            // 发送 POST 请求到 http://127.0.0.1:1234/run
+            fetch('http://127.0.0.1:1234/run', { method: 'POST' })
+                .then(response => response.text()) // 解析响应为文本
+                .then(url => {
+                    // 自动跳转到返回的网址
+                    window.location.href = url;
+                })
+                .catch(error => console.error('Error starting run:', error));
+        });
+
+        // 修改数据按钮点击事件处理函数
+        document.getElementById('modifyButton').addEventListener('click', function() {
+            // 隐藏按钮
+            toggleButtonsAndListVisibility(false, true);
+
+            // 发送 POST 请求到 http://127.0.0.1:5000/readcache
+            fetch('http://127.0.0.1:1235/readcache', { method: 'POST' })
+                .then(response => response.json()) // 解析响应为 JSON 格式
+                .then(data => {
+                    // 构建列表内容
+                    let listContent = '<ul>';
+                    // 获取 result 中的字典数据并构建列表项
+                    Object.keys(data.result).forEach(key => {
+                        listContent += `
+                            <li>
+                                <label>${key}:</label>
+                                <input type="text" name="${key}" value="${data.result[key]}">
+                            </li>`;
+                    });
+                    listContent += '</ul>';
+                    listContent += `
+                        <button class="submit-button" id="submitButton">提交</button>
+                        <button class="submit-button" id="backButton">返回</button>`;
+
+                    // 渲染列表
+                    const dataListDiv = document.getElementById('dataList');
+                    dataListDiv.innerHTML = listContent;
+
+                    // 提交按钮点击事件处理函数
+                    document.getElementById('submitButton').addEventListener('click', function() {
+                        // 构建提交的数据
+                        const formData = new FormData();
+                        dataListDiv.querySelectorAll('input').forEach(input => {
+                            formData.append(input.name, input.value);
+                        });
+
+                        // 发送 POST 请求到 http://127.0.0.1:5000/editcache
+                        fetch('http://127.0.0.1:1235/editcache', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            alert(`修改成功！Code: ${result.code}, Message: ${result.message}`);
+                        })
+                        .catch(error => console.error('Error editing cache:', error));
+                    });
+
+                    // 返回按钮点击事件处理函数
+                    document.getElementById('backButton').addEventListener('click', function() {
+                        // 显示按钮
+                        toggleButtonsAndListVisibility(true, false);
+                    });
+                })
+                .catch(error => console.error('Error modifying data:', error));
+        });
+    </script>
+</body>
+</html>

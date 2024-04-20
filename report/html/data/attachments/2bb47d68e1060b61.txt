@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-04-20.log:log_decorator.py:42 
+======================================================
+用例标题: 审核交款申请
+请求路径: http://saas1.es-iot.cn/api/charge/payment_approval/batch_pass_or_return
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 3ddfe3f6-04fb-448f-bc1a-f825896f70ef', 'Content-Type': 'application/json', 'Content-Length': '134'}
+请求内容: {'type': 3, 'statusModels': [{'areaGuid': 'daf701d4-fee4-11ee-9935-00163e251185', 'fldGuid': 'e001961e-fee4-11ee-9935-00163e251185'}]}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":null,"timestamp":1713596946217}
+接口响应时长: 102 ms
+Http状态码: 200
+=====================================================

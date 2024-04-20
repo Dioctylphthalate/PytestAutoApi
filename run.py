@@ -32,7 +32,7 @@ app.debug = True
 
 #  指定请求路径、方法
 
-@app.route('/', methods=['GET'])
+@app.route('/run', methods=['POST'])
 def run():
     # 从配置文件中获取项目名称
     try:
@@ -95,5 +95,4 @@ def run():
 
 
 if __name__ == '__main__':
-    # run()
     app.run(port=1234)

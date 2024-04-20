@@ -57,3 +57,5 @@ clear_01:
     - DELETE FROM es_info_area_info WHERE  fld_create_user = '王科科';
     - DELETE FROM es_charge_incoming_back WHERE fld_create_user = '王科科';
     - DELETE FROM es_charge_incoming_back_detail WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_hand_in_record WHERE fld_create_user = '王科科';
+    - DELETE FROM es_charge_hand_in_record_log WHERE fld_create_user = '王科科';

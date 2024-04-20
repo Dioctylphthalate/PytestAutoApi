@@ -1,297 +1,297 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","103","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目单价分类]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:01 CST 2024","160","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增计费单价]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:02 CST 2024","168","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收清单明细表]","
+"passed","Sat Apr 20 15:08:58 CST 2024","Sat Apr 20 15:08:58 CST 2024","428","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:49 CST 2024","91","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费汇总表]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:08 CST 2024","109","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费分户分项明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:41 CST 2024","Fri Apr 19 15:20:41 CST 2024","310","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","107","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费项目科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","110","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合项目业态汇总表]","
+"passed","Sat Apr 20 15:09:06 CST 2024","Sat Apr 20 15:09:07 CST 2024","375","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[发起交款申请]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","105","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源按月明细表]","
+"passed","Sat Apr 20 15:09:00 CST 2024","Sat Apr 20 15:09:01 CST 2024","235","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:42 CST 2024","Fri Apr 19 15:20:43 CST 2024","119","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[请求项目树]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","154","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收清单明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","121","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合清单明细表]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:01 CST 2024","86","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目单价分类]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:45 CST 2024","Fri Apr 19 15:20:46 CST 2024","563","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[收取费用0]","
+"passed","Sat Apr 20 15:09:10 CST 2024","Sat Apr 20 15:09:11 CST 2024","1026","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收项目科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","141","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收资源明细表]","
+"passed","Sat Apr 20 15:08:58 CST 2024","Sat Apr 20 15:08:58 CST 2024","127","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","153","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收客户明细表]","
+"passed","Sat Apr 20 15:09:00 CST 2024","Sat Apr 20 15:09:00 CST 2024","403","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","113","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收票据明细表]","
+"passed","Sat Apr 20 15:09:00 CST 2024","Sat Apr 20 15:09:00 CST 2024","116","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[请求项目树]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:50 CST 2024","108","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费项目业态汇总表]","
+"passed","Sat Apr 20 15:09:16 CST 2024","Sat Apr 20 15:09:16 CST 2024","109","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[请求项目树]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","115","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收项目科目汇总表]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","102","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收项目收费方式汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","105","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合理论饱和明细表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","127","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合项目科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:47 CST 2024","Fri Apr 19 15:20:47 CST 2024","283","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[历史缴费列表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","100","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合项目业态汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:52 CST 2024","Fri Apr 19 15:20:53 CST 2024","1116","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收科目汇总表]","
+"passed","Sat Apr 20 15:09:02 CST 2024","Sat Apr 20 15:09:02 CST 2024","100","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:49 CST 2024","412","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[发起交款申请]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","153","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收客户明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","110","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收项目收费方式汇总表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","109","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","239","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目计费标准]","
+"passed","Sat Apr 20 15:09:12 CST 2024","Sat Apr 20 15:09:13 CST 2024","1028","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收客户明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:46 CST 2024","Fri Apr 19 15:20:46 CST 2024","201","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[返销实收费]","
+"passed","Sat Apr 20 15:09:03 CST 2024","Sat Apr 20 15:09:04 CST 2024","553","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[收取费用0]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:44 CST 2024","Fri Apr 19 15:20:44 CST 2024","314","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","110","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合清单明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:42 CST 2024","Fri Apr 19 15:20:42 CST 2024","427","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增客户]","
+"passed","Sat Apr 20 15:09:02 CST 2024","Sat Apr 20 15:09:02 CST 2024","391","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[发起批量计费单据]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:44 CST 2024","Fri Apr 19 15:20:44 CST 2024","381","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[发起批量计费单据]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","100","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","126","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增付款方式]","
+"passed","Sat Apr 20 15:09:04 CST 2024","Sat Apr 20 15:09:05 CST 2024","280","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[历史缴费列表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","100","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合汇总表]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:09 CST 2024","973","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:44 CST 2024","Fri Apr 19 15:20:44 CST 2024","108","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
+"passed","Sat Apr 20 15:09:05 CST 2024","Sat Apr 20 15:09:06 CST 2024","323","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款单据名称]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:45 CST 2024","Fri Apr 19 15:20:45 CST 2024","391","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费生成费用]","
+"passed","Sat Apr 20 15:09:05 CST 2024","Sat Apr 20 15:09:05 CST 2024","308","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[退款单据名称]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:46 CST 2024","Fri Apr 19 15:20:46 CST 2024","167","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[判断能否返销]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","99","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","127","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合项目科目汇总表]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:08 CST 2024","116","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费客户明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:41 CST 2024","Fri Apr 19 15:20:41 CST 2024","315","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","98","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费项目业态汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:45 CST 2024","Fri Apr 19 15:20:45 CST 2024","197","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费预览费用]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","98","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收客户资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:49 CST 2024","100","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[审核交款申请]","
+"passed","Sat Apr 20 15:09:02 CST 2024","Sat Apr 20 15:09:02 CST 2024","93","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","107","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合客户资源明细表]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:08 CST 2024","107","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源按月明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:48 CST 2024","Fri Apr 19 15:20:49 CST 2024","529","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款]","
+"passed","Sat Apr 20 15:09:02 CST 2024","Sat Apr 20 15:09:02 CST 2024","107","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[综合收费查询客户欠费]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:45 CST 2024","Fri Apr 19 15:20:45 CST 2024","104","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[当前客户所有资源下所有客户的欠费明细列表]","
+"passed","Sat Apr 20 15:08:59 CST 2024","Sat Apr 20 15:09:00 CST 2024","336","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","97","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收客户资源明细表]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","128","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:56 CST 2024","Fri Apr 19 15:20:57 CST 2024","1119","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收客户资源明细表]","
+"passed","Sat Apr 20 15:08:59 CST 2024","Sat Apr 20 15:08:59 CST 2024","322","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增楼栋]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","105","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合科目汇总表]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:01 CST 2024","124","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据code]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:42 CST 2024","Fri Apr 19 15:20:42 CST 2024","92","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[删除项目树缓存]","
+"passed","Sat Apr 20 15:08:59 CST 2024","Sat Apr 20 15:08:59 CST 2024","322","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增单元]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:01 CST 2024","97","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收汇总表]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:01 CST 2024","125","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增付款方式]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:51 CST 2024","107","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源按年明细表]","
+"passed","Sat Apr 20 15:09:13 CST 2024","Sat Apr 20 15:09:14 CST 2024","1161","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收客户资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","162","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增计费单价]","
+"passed","Sat Apr 20 15:09:05 CST 2024","Sat Apr 20 15:09:05 CST 2024","109","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款可抵扣欠费明细]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:48 CST 2024","Fri Apr 19 15:20:48 CST 2024","333","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款单据名称]","
+"passed","Sat Apr 20 15:08:58 CST 2024","Sat Apr 20 15:08:59 CST 2024","314","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:44 CST 2024","Fri Apr 19 15:20:45 CST 2024","96","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的预存账户余额]","
+"passed","Sat Apr 20 15:09:11 CST 2024","Sat Apr 20 15:09:12 CST 2024","1040","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:44 CST 2024","Fri Apr 19 15:20:44 CST 2024","103","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[查询客户的关联资源]","
+"passed","Sat Apr 20 15:09:06 CST 2024","Sat Apr 20 15:09:06 CST 2024","503","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:53 CST 2024","Fri Apr 19 15:20:54 CST 2024","1113","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收项目科目汇总表]","
+"passed","Sat Apr 20 15:09:14 CST 2024","Sat Apr 20 15:09:16 CST 2024","1888","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收清单明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:02 CST 2024","Fri Apr 19 15:21:07 CST 2024","5483","test_case.Clear","test_ClearTeardown","TestClearteardown","","","test_ClearTeardown[退出登录]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:01 CST 2024","233","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目计费标准]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:47 CST 2024","Fri Apr 19 15:20:48 CST 2024","447","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[退款]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:08 CST 2024","111","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源按年明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:49 CST 2024","116","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[交款验证]","
+"passed","Sat Apr 20 15:09:09 CST 2024","Sat Apr 20 15:09:10 CST 2024","967","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","97","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费科目汇总表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","100","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合客户资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","144","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目分类]","
+"passed","Sat Apr 20 15:09:04 CST 2024","Sat Apr 20 15:09:04 CST 2024","175","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[判断能否返销]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:59 CST 2024","Fri Apr 19 15:21:00 CST 2024","109","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[请求项目树]","
+"passed","Sat Apr 20 15:09:16 CST 2024","Sat Apr 20 15:09:17 CST 2024","98","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:55 CST 2024","Fri Apr 19 15:20:56 CST 2024","1259","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收客户明细表]","
+"passed","Sat Apr 20 15:09:06 CST 2024","Sat Apr 20 15:09:06 CST 2024","102","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[交款验证]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:40 CST 2024","Fri Apr 19 15:20:40 CST 2024","128","test_case.Login","test_login","TestLogin","","","test_login[正常登录]","
+"passed","Sat Apr 20 15:09:05 CST 2024","Sat Apr 20 15:09:05 CST 2024","444","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[退款]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:57 CST 2024","Fri Apr 19 15:20:59 CST 2024","2112","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收清单明细表]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:08 CST 2024","117","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费清单明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:51 CST 2024","Fri Apr 19 15:20:52 CST 2024","1078","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收汇总表]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","105","test_case.Charge","test_HandInRecord","TestHandinrecord","","","test_HandInRecord[审核交款申请]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:00 CST 2024","Fri Apr 19 15:21:00 CST 2024","102","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合资源明细表]","
+"passed","Sat Apr 20 15:09:01 CST 2024","Sat Apr 20 15:09:02 CST 2024","308","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:47 CST 2024","Fri Apr 19 15:20:47 CST 2024","325","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[退款单据名称]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","95","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:47 CST 2024","Fri Apr 19 15:20:47 CST 2024","88","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[转款可抵扣欠费明细]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","116","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收票据明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:21:01 CST 2024","Fri Apr 19 15:21:01 CST 2024","100","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收科目汇总表]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:18 CST 2024","113","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收项目科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:54 CST 2024","Fri Apr 19 15:20:55 CST 2024","1025","test_case.Report","test_ReceivablesReport","TestReceivablesreport","","","test_ReceivablesReport[应收资源明细表]","
+"passed","Sat Apr 20 15:09:07 CST 2024","Sat Apr 20 15:09:07 CST 2024","163","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:40 CST 2024","Fri Apr 19 15:20:41 CST 2024","302","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增批次]","
+"passed","Sat Apr 20 15:09:18 CST 2024","Sat Apr 20 15:09:24 CST 2024","5844","test_case.Clear","test_ClearTeardown","TestClearteardown","","","test_ClearTeardown[退出登录]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","135","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费清单明细表]","
+"passed","Sat Apr 20 15:09:00 CST 2024","Sat Apr 20 15:09:00 CST 2024","84","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[删除项目树缓存]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:46 CST 2024","Fri Apr 19 15:20:47 CST 2024","260","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[收取费用1]","
+"passed","Sat Apr 20 15:09:08 CST 2024","Sat Apr 20 15:09:08 CST 2024","179","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费客户资源明细表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:43 CST 2024","140","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","100","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","119","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费分户分项明细表]","
+"passed","Sat Apr 20 15:09:00 CST 2024","Sat Apr 20 15:09:00 CST 2024","131","test_case.Charge","test_AddCharge","TestAddcharge","","","test_AddCharge[收费系统新增科目分类]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","121","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费客户明细表]","
+"passed","Sat Apr 20 15:09:04 CST 2024","Sat Apr 20 15:09:04 CST 2024","252","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[收取费用1]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:43 CST 2024","Fri Apr 19 15:20:44 CST 2024","135","test_case.Charge","test_BatchBilling","TestBatchbilling","","","test_BatchBilling[批量计费生成单据code]","
+"passed","Sat Apr 20 15:09:04 CST 2024","Sat Apr 20 15:09:04 CST 2024","211","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[返销实收费]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","183","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费客户资源明细表]","
+"passed","Sat Apr 20 15:09:03 CST 2024","Sat Apr 20 15:09:03 CST 2024","112","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[当前客户所有资源下所有客户的欠费明细列表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:41 CST 2024","Fri Apr 19 15:20:42 CST 2024","391","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增资源]","
+"passed","Sat Apr 20 15:09:03 CST 2024","Sat Apr 20 15:09:03 CST 2024","382","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费生成费用]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:50 CST 2024","Fri Apr 19 15:20:50 CST 2024","171","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费资源明细表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:18 CST 2024","106","test_case.Report","test_PaidReport","TestPaidreport","","","test_PaidReport[实收科目汇总表]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:40 CST 2024","Fri Apr 19 15:20:40 CST 2024","418","test_case.Basic","test_AddBasicInfo","TestAddbasicinfo","","","test_AddBasicInfo[基础中台新增项目]","
+"passed","Sat Apr 20 15:09:02 CST 2024","Sat Apr 20 15:09:03 CST 2024","186","test_case.Charge","test_OwnerGuidFee_all","TestOwnerguidfeeAll","","","test_OwnerGuidFee_all[科目计费预览费用]","
         :param :
         :return:
         "
-"passed","Fri Apr 19 15:20:49 CST 2024","Fri Apr 19 15:20:49 CST 2024","107","test_case.Report","test_ArrearsReport","TestArrearsreport","","","test_ArrearsReport[欠费项目科目汇总表]","
+"passed","Sat Apr 20 15:09:17 CST 2024","Sat Apr 20 15:09:17 CST 2024","108","test_case.Report","test_CombinationReport","TestCombinationreport","","","test_CombinationReport[组合理论饱和明细表]","
         :param :
         :return:
         "

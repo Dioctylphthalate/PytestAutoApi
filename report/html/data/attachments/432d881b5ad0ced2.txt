@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-04-20.log:log_decorator.py:42 
+======================================================
+用例标题: 发起交款申请
+请求路径: http://saas1.es-iot.cn/api/charge/payment_application/submit_payment_application
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 3ddfe3f6-04fb-448f-bc1a-f825896f70ef', 'Content-Type': 'application/json', 'Content-Length': '227'}
+请求内容: {'areaId': 'daf701d4-fee4-11ee-9935-00163e251185', 'desc': '', 'startDate': '2024-04-18 00:00:00', 'endDate': '2024-04-18 23:59:59', 'fldGuid': 'e001961e-fee4-11ee-9935-00163e251185', 'tollCollector': '', 'fldGuidList': [None]}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":null,"timestamp":1713596946107}
+接口响应时长: 178 ms
+Http状态码: 200
+=====================================================
