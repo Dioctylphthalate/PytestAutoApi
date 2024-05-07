@@ -133,13 +133,13 @@
                 .then(response => response.json()) // 解析响应为 JSON 格式
                 .then(data => {
                     // 构建列表内容
-                    let listContent = '<ul>';
+                    let listContent = '<ul style="list-style: none; padding: 0;">'; // 移除默认的列表样式和内边距
                     // 获取 result 中的字典数据并构建列表项
                     Object.keys(data.result).forEach(key => {
                         listContent += `
-                            <li>
-                                <label>${key}:</label>
-                                <input type="text" name="${key}" value="${data.result[key]}">
+                            <li style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <label style="flex: 0 0 150px; margin-right: 10px;">${key}:</label> <!-- 固定标签的宽度为 150px，添加右边距 -->
+                                <input type="text" name="${key}" value="${data.result[key]}" style="flex-grow: 1;"> <!-- 输入框占据剩余空间 -->
                             </li>`;
                     });
                     listContent += '</ul>';
