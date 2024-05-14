@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-05-14.log:log_decorator.py:42 
+======================================================
+用例标题: 交款验证
+请求路径: http://saas1.es-iot.cn/api/charge/payment_application/is_cash
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 6b9f1486-7cb2-4173-aedf-aeb693f451da', 'Content-Type': 'application/json', 'Content-Length': '141'}
+请求内容: {'areaId': 'a53b3b9c-11cb-11ef-9935-00163e251185', 'startDate': '2024-04-18 00:00:00', 'endDate': '2024-04-18 23:59:59', 'tollCollector': ''}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"cash":false,"arrearsDataVoList":[]},"timestamp":1715675191591}
+接口响应时长: 126 ms
+Http状态码: 200
+=====================================================

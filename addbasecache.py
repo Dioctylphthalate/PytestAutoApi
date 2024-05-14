@@ -21,7 +21,8 @@ app.debug = True
 @app.route('/editcache', methods=['POST'])
 def edit_cache():
     # 获取 POST 请求中的 JSON 数据
-    req_data = request.json
+    req_data = request.form
+    req_data = dict(req_data)
     file_path = os.path.join(root_path() + '/common', 'basicinfo.yaml')
     with open(file_path, 'w', encoding='utf-8') as f1:
         yaml.dump(req_data, stream=f1, allow_unicode=True, sort_keys=False)
