@@ -2621,3 +2621,4 @@ k = [
 ]
 values = [d['fldGuid'] for d in k if 'fldGuid' in d]
 print(values)
+
