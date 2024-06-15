@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-06-14.log:log_decorator.py:42 
+======================================================
+用例标题: 组合汇总表
+请求路径: http://saas1.es-iot.cn/api/report/combinedQuery/select_community_summary
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'bearer 11ebd374-0594-4cf7-b9f8-c08090b3a457', 'Content-Length': '604'}
+请求内容: {'nodeTypeGuid': 'info', 'modelType': '', 'fldAreaGuid': ['bbe15c1c-29f8-11ef-8446-00163e1c1703'], 'fldObjectList': [], 'fldOwnerList': [], 'showType': 1, 'fldPayType': [], 'projectMode': 1, 'fldProjectList': [], 'timeType': 0, 'dataFreshness': 2, 'fldStartDate': '2024-01-01', 'fldEndDate': '2024-12-31', 'chargeStartDate': '', 'chargeEndDate': '', 'fldStatisticsDate': '', 'fldLiveType': [], 'fldIsBeforeFee': True, 'exclude': False, 'fldAttribute': [], 'fldExcludeFee': [4], 'fldExcludeQiFei': False, 'fldExcludeBackFee': False, 'excludeZero': False, 'inquiryTerm': 0, 'pageIndex': 1, 'pageSize': 100}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"hideColumn":["饱和应收"],"listPageInfo":{"total":0,"list":[],"pageNum":1,"pageSize":100,"size":0,"startRow":1,"endRow":0,"pages":0,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":false,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[],"navigateFirstPage":0,"navigateLastPage":0},"totalVo":{"resourceNumber":0,"chargeArea":null,"amountReceivable":0,"receivableNumberOf":null,"saturationReceivable":0,"saturationNumberOf":null,"paidInAmount":0,"actualAmountNumberOf":null,"collectionRate":0,"price":null,"fldRebate":null,"taxes":null,"liquidatedDamages":null},"handLength":{"area":"170px","fldAssemblyName":"310px","paidInAmount":"140px","actualAmount":"140px","amountReceivable":"140px","collectionRate":"140px","resourceNumber":"140px"}},"timestamp":1718333389686}
+接口响应时长: 105 ms
+Http状态码: 200
+=====================================================

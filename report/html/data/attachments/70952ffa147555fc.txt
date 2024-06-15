@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-06-14.log:log_decorator.py:42 
+======================================================
+用例标题: 科目计费生成费用
+请求路径: http://saas1.es-iot.cn/api/charge/account_billing/billing_preview
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 11ebd374-0594-4cf7-b9f8-c08090b3a457', 'Content-Type': 'application/json', 'Content-Length': '345'}
+请求内容: [{'areaId': 'bbe15c1c-29f8-11ef-8446-00163e1c1703', 'objectId': 'bd2ee6ef-29f8-11ef-8446-00163e1c1703', 'projectId': '979dd0a3647747569ee6e16f40f7c0f3', 'source': '单户计费', 'endTime': '', 'months': 2, 'timeType': 0, 'startTime': '', 'type': 2, 'whetherToPreview': 1, 'repeatGeneration': 0, 'patternType': 0, 'chargingType': 0}]
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":[{"success":true,"message":"操作成功","detail":"","code":200,"result":["5afe26c313bf4d6ea06875ad86839e1e","a234b3261f9148f29ba2fe359506de23"],"timestamp":1718333380451}],"timestamp":1718333380457}
+接口响应时长: 161 ms
+Http状态码: 200
+=====================================================

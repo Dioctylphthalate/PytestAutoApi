@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-04-19 15:11:07
+# @Time   : 2024-06-14 10:17:38
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['document_name', 'start_continuous_recurring_billing', 'workflowStart']
+case_id = ['document_name', 'start_continuous_recurring_billing']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 

@@ -127,7 +127,7 @@ update_or_save_billing_account:
     fldMinValue: 1   # 基本设置-科目合成方式 0不合 1标准 2强制
     fldRepeat: 0   # 周期类费用-欠费生成周期 0按月 1按季度 2按年
     fldDayOrMonth: 0   # 周期类费用-欠费拆分模式 0 按30天
-    fldScroll: 0  # 周期类费用-是否强制连续生成 1是 0否
+    fldScroll: 1  # 周期类费用-是否强制连续生成 1是 0否
     esChargeProjectMonths:
       - fldGuid: ''
         fldCreateUser: ''
