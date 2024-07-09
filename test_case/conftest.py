@@ -32,15 +32,11 @@ def work_login_init():
     :return:
     """
 
-    # url = "http://39.103.156.18:66/api/auth/oauth/token"
-    # data = {
-    #     "grant_type": "password",
-    #     "username": "Y+AR7VaLSP7oh9FlhY7sUg==",
-    #     "password": "Y+AR7VaLSP7oh9FlhY7sUg=="
-    # }
-    url = 'http://saas1.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='  # 测试环境
-    # url = 'https://saas-uat.es-iot.cn/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid='  # uat环境
-    # url = 'https://saas-prod.es-it.cn/api/auth/oauth/token?grant_type=password&username=PL2EBbELLm%2BVGVSdoOZGFQ%3D%3D&password=xXCyGNhXS23YpIdfE%2FPrHw%3D%3D&captcha=&uuid='  # 生产模拟客户
+    config_path = os.path.dirname(os.path.dirname(__file__)) + '/common'
+    yaml_path = os.path.join(config_path, 'config.yaml')
+    with open(yaml_path, 'r', encoding='utf-8') as f:
+        value = yaml.load(f, Loader=yaml.FullLoader).get('host')
+    url = value + "/api/auth/oauth/token?grant_type=password&username=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&password=Y%2BAR7VaLSP7oh9FlhY7sUg%3D%3D&captcha=&uuid="
     data = {}
     headers = {'Content-Type': 'application/x-www-form-urlencoded', "Authorization": "Basic ZWFzeXNvZnQ6ZWFzeXNvZnQ="}
     # 请求登录接口

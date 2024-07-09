@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-07-09.log:log_decorator.py:42 
+======================================================
+用例标题: 基础中台新增客户
+请求路径: https://saas-uat.es-iot.cn/api/base/base_info_owner/newAddOwnerV3
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer 8452b965-70ee-44a1-b3e6-fa4cc74b9a9a', 'Content-Type': 'application/json', 'Content-Length': '702'}
+请求内容: {'bankPayAccountModel': None, 'fldAreaGuid': 'a91d49f4-3db6-11ef-a171-00163e18a2aa', 'fldObjectId': 'aa496984-3db6-11ef-a171-00163e18a2aa', 'fldImmigrationTime': None, 'fldIsOwner': 0, 'newAddBillModel': [], 'ownerInfomationRelationOwnerVos': [{'fldType': 1, 'fldContent': '13576854774', 'fldAreaGuid': 'a91d49f4-3db6-11ef-a171-00163e18a2aa'}], 'fldRelation': '1级', 'naturalPersonModel': {'fldCardNum': None, 'fldCardType': None, 'fldBirthday': None, 'fldSex': None, 'fldNation': None, 'fldMarriage': None, 'fldEducation': None, 'fldName': '罗大锅', 'fldType': 1}, 'legalPersonModel': None, 'fldOwnerGuid': 'aa91f092-3db6-11ef-a171-00163e18a2aa', 'fldPhotoGuid': None, 'fldDesc': None}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"fldGuid":"aa91f092-3db6-11ef-a171-00163e18a2aa","fldCreateUser":"王科科","fldCreateDate":"2024-07-09T05:47:02.970+00:00","fldModifyUser":"王科科","fldModifyDate":"2024-07-09T05:47:02.970+00:00","fldTenancy":"saas_uat","fldType":1,"fldClass":0,"fldAreaGuid":"a91d49f4-3db6-11ef-a171-00163e18a2aa","fldName":"罗大锅","fldCode":"20240709003","fldOrder":1,"fldDesc":"","fldNotBindObject":0,"fldThirdId":"","fldPhoneNumber":"","fldStatus":1,"fldPhotoGuid":"","fldRelation":"1级"},"timestamp":1720504023062}
+接口响应时长: 387 ms
+Http状态码: 200
+=====================================================

@@ -99,7 +99,13 @@ batch_pass_or_return:
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
+      tollCollector: ''
+      excludeData: 0
       type: 3
+      areaIds: []
+      page: 1
+      size: 20
+      checkAll: false
       statusModels:
         - areaGuid: $cache{areaguid}
           fldGuid: $cache{handinguid}

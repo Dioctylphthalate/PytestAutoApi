@@ -39,15 +39,23 @@ update_code_set:
         - key: fld_code5
           value: 税额编码
         - key: fld_code6
-          value: ''
+          value: 大业主科目编码
         - key: 公共配置-凭证生成规则
           value: ''
         - key: 公共配置-凭证摘要规则-收款凭证摘要
           value: $A$B$C$D年$E月$F日--$G年$H月$I日
         - key: 公共配置-凭证摘要规则-应收凭证摘要
-          value: $A$B$C$D年$E月$F日--$G年$H月$I日
+          value: 应收-$A$B$C$D年$E月$F日--$G年$H月$I日
         - key: 公共配置-凭证摘要规则-结转凭证摘要
+          value: 结转-$A$B$C$D年$E月$F日--$G年$H月$I日
+        - key: 公共配置-凭证生成规则
+          value: ''
+        - key: 公共配置-凭证摘要规则-收款凭证摘要
           value: $A$B$C$D年$E月$F日--$G年$H月$I日
+        - key: 公共配置-凭证摘要规则-应收凭证摘要
+          value: 应收-$A$B$C$D年$E月$F日--$G年$H月$I日
+        - key: 公共配置-凭证摘要规则-结转凭证摘要
+          value: 结转-$A$B$C$D年$E月$F日--$G年$H月$I日
         - key: fld_code1
           value: 记账凭证科目编码
         - key: fld_code2
@@ -64,18 +72,8 @@ update_code_set:
           value: 'fld_code1,fld_code2,fld_code3,fld_code4'
         - key: 编码范围-税
           value: 'fld_code1,fld_code2,fld_code3,fld_code4'
-        - key: fld_code5
-          value: 税额编码
-        - key: fld_code6
-          value: ''
-        - key: 公共配置-凭证生成规则
-          value: ''
-        - key: 公共配置-凭证摘要规则-收款凭证摘要
-          value: $A$B$C$D年$E月$F日--$G年$H月$I日
-        - key: 公共配置-凭证摘要规则-应收凭证摘要
-          value: $A$B$C$D年$E月$F日--$G年$H月$I日
-        - key: 公共配置-凭证摘要规则-结转凭证摘要
-          value: $A$B$C$D年$E月$F日--$G年$H月$I日
+
+
 
 
       # 是否有依赖业务，为空或者false则表示没有
