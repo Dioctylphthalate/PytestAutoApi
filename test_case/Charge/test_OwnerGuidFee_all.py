@@ -11,7 +11,6 @@ from utils.requests_tool.request_control import RequestControl
 from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
-
 case_id = ['allOwnerGuidFee1', 'getOwnerGuidObjectInfo', 'getOwnerGuidPrePayInfo', 'billing_preview1', 'billing_preview2', 'allOwnerGuidFee2', 'confirmCharge1', 'is_back', 'ordinary_rebate', 'confirmCharge2', 'customer_history_payment', 'refund_name1', 'arrears_objects', 'insert_commit1', 'refund_name2', 'insert_commit2']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))

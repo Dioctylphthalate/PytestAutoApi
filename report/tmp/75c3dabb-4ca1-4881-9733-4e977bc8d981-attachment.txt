@@ -1,0 +1,11 @@
+INFO     E:\PytestAutoApi\logs\info-2024-08-24.log:log_decorator.py:42 
+======================================================
+用例标题: 判断能否返销
+请求路径: http://saas1.es-iot.cn/api/charge/historical_payment/is_back
+请求方式: POST
+请求头:   {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203\\', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'bearer d9636676-a964-431a-8cdb-19a1f0820300', 'Content-Type': 'application/json', 'Content-Length': '97'}
+请求内容: {'areaId': '574a91ac-61fe-11ef-8fc2-00163e1c1703', 'fldGuid': 'e78ca23570ff24fa464bdcccd3156c95'}
+接口响应内容: {"success":true,"message":"操作成功","detail":"","code":200,"result":{"areaId":"574a91ac-61fe-11ef-8fc2-00163e1c1703","fldGuid":"e78ca23570ff24fa464bdcccd3156c95","explain":"","type":1,"source":0},"timestamp":1724493056215}
+接口响应时长: 521 ms
+Http状态码: 200
+=====================================================

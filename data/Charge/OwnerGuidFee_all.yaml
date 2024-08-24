@@ -310,7 +310,7 @@ confirmCharge1:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/confirmCharge
   method: POST
-  detail: 收取费用
+  detail: 收取费用1
   headers:
     # 这里cookie的值，写的是存入缓存的名称
     Authorization: $cache{Authorization}
@@ -465,7 +465,7 @@ confirmCharge2:
   host: ${{host()}}
   url: /api/charge/esChargeOmnibusFee/confirmCharge
   method: POST
-  detail: 收取费用
+  detail: 收取费用2
   headers:
     # 这里cookie的值，写的是存入缓存的名称
     Authorization: $cache{Authorization}
